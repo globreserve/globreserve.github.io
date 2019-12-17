@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html><head>
+<title>GLOBAL RESERVE SYSTEM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head><link rel="stylesheet" href="csss/boots.css">
+<style>
+html{height:100%;}
+body{overflow-y:scroll;
+//overflow-x:hidden;
+//-moz-user-select: none;
+//-khtml-user-select: none;
+//user-select: none; 
+height:100%;}
+header{max-width:100%;position:fixed;left:0;top:0;z-index:999;}
+.tabs{margin:0;}
+
+//a{font-family: Verdana}
+.tabs-left{border-bottom:none;}.tabs-left>ul{margin-top:-4px;}
+.navbar{min-height:0px;}
+.navbar,.tabs-left>li{float:none;margin-bottom:0;}
+.table{margin:0;}
+
+.tabs{min-height:100%;height:100%;padding:58px 15px 0 15px;margin:0 auto;text-align:left;}
+.tabs .row{height:100%;%;height:100%;}
+
+.help{padding:15px 0;}
+.tabs-left>li{margin-top:-1px; margin-right:10px;padding:0; border-radius:0;}
+.tabs-left>li.active{margin-right:-1px;}
+.tab-pane>div{background-color: #35475b;}
+.tab-pane>.col-md-6.tabs-left{max-width:600px;height:100%;min-height:100%;background-color: #35475b;}
+.tab-pane{min-height:100%; padding-top:10px; background-color: #35475b;}
+.tab-content{padding:10px 0; min-height:100%;height:100%;}
+.tab-pane{padding:0 15px;}
+
+
+
+.tabs-left>li>a {margin:10px 0 14px 10px; padding:14px 0 12px 20px;border-radius:0;background-color: #2d3c4d;font-size:18px; color:#C0C0C0;}
+.tabs-left>li>a:hover{color:white;}
+
+.tabs-left>li.active>a img{opacity:1;}
+.tabs-left>li>a img{opacity:0.7;}
+.tabs-left>li>a:hover img{opacity:1;}
+
+.tabs-left>li.active>a,.tabs-left>li.active>a:hover,.tabs-left>li.active>a:focus{background-color: #35475b;font-weight:500; color:white; }
+.tabs-left>li.active>a span,.tabs-left>li.active>a:hover span,.tabs-left>li.active>a:focus span{font-weight:normal;}
+
+.nav > li.hida > a{display:none;font-weight:normal;}
+
+small{margin-top:4px;}
+
+.tab-pane.col-sm-12{margin:0;}
+.rowl{margin:0 -10px 0 -15px;}
+.rowr{margin:0 -15px 0 -10px;}
+
+textarea.form-control, input.form-control,.btn{outline:none !important;border:0px solid transparent;background-color:#151d2a;color:white;}
+input.form-control:disabled{background-color:#151d2a;color:#fff;}
+.btn:focus, textarea.form-control:focus, input.form-control:focus{outline:none !important;box-shadow:none !important;}
+.shad_{width:100%;top:0px;left:0px;right:0px;bottom:-500px;position:absolute;background-color:rgba(13,13,13,0.4);z-index:999999;display:none;}
+.shads_{width:100%;top:0px;left:0px;right:0px;bottom:-500px;position:absolute;background-color:rgba(13,13,23,0.4);z-index:999999999;display:none;cursor:wait;}
+
+th{height:40px;background-color:#151d2a;}
+th,td{padding:10px;outline:none;border: solid 0 transparent;}
+.ura,.sst{height:60px;} 
+.sst>th,.sst>td{padding:20px;outline:none;cursor:pointer;}
+.ura>th,.ura>td{padding:20px;outline:none; }
+.st>th,.st>td{padding:8px;outline:none;}
+.ura,.ura>td{background-color:#151d2a;padding:10px 20px;font-size:16px;}
+
+
+input.form-control{background-color:#151d2a;color:#fff;}
+input.form-control:hover{background-color:#0f141b;color:#fff;}
+
+
+.ura>td>h4{margin:20px 0 10px 0;}
+.ura>td>p{text-align:left;margin:10px 0;line-height:135%}
+
+.bgg{font-size:45px;}
+
+.tab-pane .form-group{width:100%;padding:0;margin:0;clear:both;min-height:32px;}
+h1,h2,h3,h4{line-height:1.42;color:white;margin:0;}
+
+.hida{display:none;}
+.tx_waiting6{position:fixed;top:68px;right:10px;width:405px;display:none;}
+.tx_waiting5{position:fixed;top:68px;right:10px;width:405px;display:none;}
+.tx_waiting4{position:fixed;top:68px;right:10px;width:405px;display:none;}
+.tx_waiting3{position:fixed;top:68px;right:10px;width:405px;display:none;}
+.tx_waiting2{position:fixed;top:68px;right:10px;width:405px;display:none;}
+.tx_waiting1{position:fixed;top:68px;right:10px;width:405px;display:none;}
+.tx_waiting7{position:fixed;bottom:10px;right:10px;width:405px;}
+
+.tx_waiting{position:fixed; bottom:40px;right:30px;background-color:transparent;width:350px;display:none;}
+
+
+label{width:100%;font-weight:normal;}
+
+.tabl{padding:0;}
+.tabr{padding:0;padding-right:10px; height:100%;}
+
+.soy {min-height:120px;min-width:125px;background-color:#151d2a;text-align:center; padding:30px 0;margin:5px 0;}
+.soy p{font-family:Verdana;font-size:22px;font-weight:bold;color:#fff;margin-bottom:10px;}
+.soy p.gg{color:#EDC240;}
+
+.soy:hover{background-color:#0f141b; }
+
+.bulog{width:100%; padding:0 20px; margin:15px 0; background-color:#2d3c4d; cursor:pointer;}
+.bulog p{width:100%;display:block;text-align:center;font-size:22px;padding:13px 0;margin:0;color:#c0c0c0;cursor:pointer;}
+.bulog:hover{background-color:#1d2c3d;}
+.bulog:hover p{color:white;}
+.puppa{cursor:pointer;}
+
+.toww{text-align:left;}
+
+.consoley {display:none;width:100%;height:500px; margin:17px auto 0 auto;max-width:400px;padding:4px 0 4px 12px;background-color:#151d2a;overflow:hidden;overflow-y:auto;}
+.consoley p{foont-size:8px;margin:1px;padding:0;font-family:monospace,monospace;font-weight:bold;color:#C0C0C0;text-align:left;}
+
+.kuk{position:absolute;display:none;top:12px;right:8px;font-size:24px;cursor:pointer;background-color:#151d2a;color:#C0C0C0;padding:8px;}
+.u_txt:hover .kuk{display:block;}
+.be_txt:hover .kuk{display:block;}
+
+input[type=radio]{padding:0.4em;-webkit-appearance:none;outline:0.08em solid #c8c8c8;outline-offset:0.08em;}
+input[type=radio]:checked{display:inline-block;background-color:#c8c8c8;}
+input[type=radio]:focus{padding:0.4em;-webkit-appearance:none;outline:0.08em solid #c8c8c8;outline-offset:0.08em;}
+
+
+input[type=checkbox]{padding:0.5em;-webkit-appearance:none;outline:0.1em solid #c8c8c8;outline-offset:0.1em;}
+input[type=checkbox]:checked{display:inline-block;background-color:#c8c8c8;}
+input[type=checkbox]:focus{padding:0.5em;-webkit-appearance:none;outline:0.1em solid #c8c8c8;outline-offset:0.1em;}
+
+
+//input[type="checkbox"]{width:30px !important;height:30px !important;float:right;margin:0;}
+
+
+.search{margin:7px 0 7px 15px;} 
+@keyframes blinker{50%{opacity:0.2;}}
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{-webkit-box-shadow: inset 0 0 7px rgba(0,0,0,0.3);border-radius: 6px;}
+::-webkit-scrollbar-thumb{border-radius: 6px;-webkit-box-shadow: inset 0 0 7px rgba(0,0,0,0.5);}
+.bulog .metam img{opacity: 0.7;}
+.bulog:hover .metam img{opacity: 1;}
+
+
+
+
+
+
+
+.connsi{margin-bottom:16px;}
+.table.table-hover{background-color:#212d41 !important;border:none !important;}
+.table.table-hover>tr.stt.hover{background-color:#212d41 !important;border:none !important;}
+.table.table-hover>tr.stt.hover>td{background-color:#212d41 !important;border:none !important;}
+
+.table.table-hover:hover{background-color:#212d41 !important;border:none !important;}
+.table.table-hover>tr.stt.hover:hover{background-color:#212d41 !important;border:none !important;}
+.table.table-hover>tr.stt.hover>td:hover{background-color:#212d41 !important;border:none !important;}
+
+
+.ura.hover>td{background-color:#212d41 !important;border:none !important;padding-top:0;}
+
+.navbar .navbar-nav.navbar-right > li > a{border-left:solid 1px #151d2a  !important;outline:none !important;}
+.navbar-left>li.home>a{border-left:solid 0 transparent;outline:none !important;}
+.navbar-left>li.activ>a{background-color:#151d2a;border-bottom:solid 0 transparent;outline:none !important;}
+.navbar-right>li.activ>a{background-color:#151d2a;border-bottom:solid 0 transparent;outline:none !important;}
+
+tr.blaaa,tr.blaaa>td{background-color:#151d2a;color:#fff;border-bottom:1px solid #35475b;}
+tr.blaaa:hover{background-color:#0f141b !important;}
+tr.blaaa:hover>td{background-color:#0f141b !important;}
+tr.toto,tr.toto>td{border-bottom:1px solid #35475b;}
+tr>td{color:#c8c8c8;}
+tr:hover>td{color:#fff;}
+tr>td:hover{color:#fff;}
+label.btn{color:#c8c8c8;}
+label.btn:hover{color:#fff;}
+</style>
+
+<body style="text-align:center;min-width:1270px !important;"><input type='text' class='hidden' style='display:none' spellcheck='false' id='sssr' /><a class='hidden serrr' style='display:none'></a>
+
+<header   style='width:100%;'>
+<div class="navbar">
+<div class="pull-left">
+<ul class="nav navbar-nav navbar-left" style='cursor:pointer;clear:none;'>
+<li class='home activ' style="font-size:18px !important;" data-toggle="tooltip" data-html="true" data-placement="right" title="ABOUT" onclick="$(this).addClass('activ');">
+<a onclick="$('#intro_up').click();" style="height:53px;"><img border="0" src="pics/G!!.png" style="width:22px;margin-top:0px;" /></a></li>
+<li class='' style="font-size:14px !important;cursor:default;"><strong><a class="navbar-brand globid" style="margin:0;padding:16px 14px;height:51px;cursor:default;font-size:14px !important;">GLOB WALLET</a></strong></li>
+
+<li class='renew hidden-sm hidden-xs' style="font-size:18px !important;display:none;"  data-html="true" data-toggle="tooltip" data-placement="right" title="GLOB BALANCE">
+<a style="height:53px;" onclick="$('#home_up').click();"><small style="font-size:14px !important;"><span class='getheee'>0</span> <small style="font-weight:bold;">GLOB</small></small></a></li>
+
+<li class='renew hidden-sm hidden-xs' style="font-size:18px !important;display:none;"  data-html="true" data-toggle="tooltip" data-placement="right" title="ETHER BALANCE">
+<a style="height:53px;" onclick="$('#home_up').click();"><small style="font-size:14px !important;"><span class='etheee'>0</span> <small style="font-weight:bold;">ETH</small></small></a></li>
+</ul>
+</div>
+
+<div class="navbar-collapse ">
+<ul class="nav navbar-nav navbar-right" style='cursor:pointer;'>
+
+<li class='hidden-xs' onclick="window.open('https://coinmarketcap.com/currencies/ethereum/markets/','_blank');" style="font-size:18px !important;"  data-html="true" data-toggle="tooltip" data-placement="left" title="EXCHANGE RATE">
+<a style="height:53px;"><small>14.246 <small>USD/GLOB</small></small></a></li> 
+
+
+<li class='activ onono' data-toggle="tooltip" data-html="true" data-placement="left" title="NOTIFICATIONS" style="font-size:18px !important;" onclick="$(this).toggleClass('activ');$('.nottic').toggle();">
+<a style="height:53px;"><img border="0" src="pics/notification.png" style="width:20px;margin-top:-4px;" /></a></li>
+
+<li class='renew metam' data-toggle="tooltip" data-html="true" data-placement="left" title="REFRESH"   style="display:none;font-size:18px !important;">
+<a style="height:53px;"><img border="0" src="pics/refresh.png" style="width:20px;margin-top:-4px;" /></a></li>
+
+<li class='metam msec' style="font-size:18px !important;"  data-html="true" data-toggle="tooltip" data-placement="left" title="LOGIN">
+<a style="height:53px;"><img border="0" src="pics/metamask__.png" style="width:22px;margin-top:-4px;" /></a></li>
+
+<li class='renew' style="display:none;font-size:18px !important;" data-html="true" data-toggle="tooltip" data-placement="left" title="EXIT">
+<a style="height:53px;" onclick="location.reload();"><img border="0" src="pics/exit.png" style="width:22px;margin-top:-4px;" /></a></li></ul></div>
+</div>
+</header>
+
+<div  class="tabs"  style="min-width:1270px !important;"><div  class="row"> 
+
+    <div class="pull-left tabl " style="width:270px;max-width:270px;min-width:270px;clear:none;">
+    <ul class="nav nav-tabs tabs-left">
+	<li class='deal ppgg hida'><a id='deal_up' href="#deal" data-toggle="tab">D<span class='be_num'>0</span> <span class="pull-right btn btn-default btn-sm puppa" style="margin-right:10px;" data-html="true" data-toggle="tooltip" data-placement="left" title="CLOSE">&#x2716;</span></a></li>		
+	
+	<!--li class="hidaq loloq"><a id='action_up' href="#action" data-toggle="tab"><img border="0" src="pics/airdrop2020.png" style='margin-right:10px;margin-top:-4px;height:13px;'></span>AIRDROP 2020</a></li-->
+	<li class="hidaq loloq"><a id='home_up' href="#home" data-toggle="tab"><img border="0" src="pics/reserve.png" style='margin-right:10px;margin-top:-4px;height:13px;'></span>MY RESERVE</a></li>
+	<li class='wal hidaq'><a id='senn' href="#transfer" data-toggle="tab"><img border="0" src="pics/send.png" style='margin-right:10px;margin-top:-4px;height:13px;'>SEND GLOB</a></li>
+	<li class='wal hidaq'><a id='blnk' href="#blink" data-toggle="tab"><img border="0" src="pics/bill.png" style='margin-right:10px;margin-top:-4px;height:13px;'>CREATE A BILL</a></li>				
+	<li class='wal hidaq'><a id='minnn' href="#mining" data-toggle="tab"><img border="0" src="pics/mining.png" style='margin-right:10px;margin-top:-4px;height:13px;'>TOTAL MINING</a></li>
+	<li class='wal hidaq'><a id='netww' href="#affiliate" data-toggle="tab"><img border="0" src="pics/sponsors.png" style='margin-right:10px;margin-top:-4px;height:13px;'>SPONSORS</a></li>
+	<li class='wal hidaq'><a id='aaiirr' href="#airdrop" data-toggle="tab"><img border="0" src="pics/airdrops.png" style='margin-right:10px;margin-top:-4px;height:13px;'>AIRDROP</a></li>
+	<li class='lolo hidaq'><a id='suup' href="#introz" data-toggle="tab"><img border="0" src="pics/support.png" style='margin-right:10px;margin-top:-4px;height:13px;'>SUPPORT</a></li>	
+	<li class='logq active hidden'><a id='intro_up' href="#intro" data-toggle="tab"><span style='margin-right:15px;'>&#128213;</span>ABOUT</a></li>				
+	</ul>
+	<div class="consoley" style=""></div>	
+    </div>
+        
+<div class="pull-left tabr" style="width:1000px;max-width:1000px;min-width:1000px;clear:none;">
+
+        <div class="tab-content">
+		
+		<div class="tab-pane col-sm-12 active" id="intro">
+			<div class="col-sm-12">
+				<div style="text-align:center;width:100%;">
+				<div style='margin:0 auto;padding:20px 0 0 0;'><img border="0" src="pics/glob.png" width="102" height="80"></div>
+				</div>
+				<p style="margin:15px auto 0 auto;font-size:18px;text-transform:uppercase;letter-spacing:1pt;color:#C0C0C0;text-align:center;font-weight:bold;">ALTERNATIVE ECONOMY</p>
+				<p style="margin:0 auto;font-size:48px;text-align:center;font-weight:bold;color:white;">Global Reserve System</p>
+				<p style="margin:12px auto 23px auto;text-align:center;">
+				
+				<button class="btn btn-default btn-sm active" onclick="$('.btn').removeClass('active');$(this).addClass('active');$('.bnn').hide();$('.sttt').show();">STATISTICS</button>
+				<button class="btn btn-default btn-sm" onclick="$('.btn').removeClass('active');$(this).addClass('active');$('.bnn').hide();$('.exxx').show();">EXCHANGES</button>
+				<button class="btn btn-default btn-sm " onclick="$('.btn').removeClass('active');$(this).addClass('active');$('.bnn').hide();$('.dttt').show();">DOCUMENTATION</button>
+				<button class="btn btn-default btn-sm" onclick="$('.btn').removeClass('active');$(this).addClass('active');$('.bnn').hide();$('.nttt').show();">COMMUNITY</button>
+
+
+				</p>
+			<div class="row">
+			<div class="col-sm-12 bnn cppp" style="display:none;"><div class="row">
+			<div class="col-sm-3" style="padding-right:8px;padding-left:4px;"><div class="soy"><p class="rattss gg">1.4075</p>GLOB/USD</div></div>
+			<div class="col-sm-3" style="padding-right:4px;padding-left:4px;"><div class="soy"><p class="rattss gg">10284k</p>VOLUME 24H</div></div>
+			<div class="col-sm-3" style="padding-right:4px;padding-left:4px;"><div class="soy"><p class="rattss gg">&uarr; 0.42</p>CHANGE 24H</div></div>
+			<div class="col-sm-3" style="padding-left:8px;"><div class="soy"><p class="rattss gg">82058k</p>MARKET CUP</div></div>
+			</div></div>	
+			
+			<div class="col-sm-12 bnn sttt" style="display:;"><div class="row">
+			<div class="col-sm-3" style="padding-right:8px;"><div class="soy"><p class="rattss gg"><span class="supply">-</span></p><small>GLOB TOTAL SUPPLY</small></div></div>
+			<div class="col-sm-3" style="padding-right:8px;padding-left:8px;"><div class="soy"><p class="rattss gg"><span class="funds">-</span></p><small>G.R.S GLOB RAISED</small></div></div>
+			<div class="col-sm-3" style="padding-right:8px;padding-left:8px;"><div class="soy"><p class="rattss gg"><span class="users">-</span></p><small>TOTAL FUNDS</small></div></div>
+			<div class="col-sm-3" style="padding-left:8px;"><div class="soy"><p class="rattss gg"><span class="deals">-</span></p><small>TOTAL TRANSACTIONS</small></div></div>
+			</div></div>
+
+			<div class="col-sm-12 bnn dttt" style="display:none;"><div class="row">
+			<div class="col-sm-4" style="padding-right:8px;"><div class="soy"><p class="rattss gg">SMART CONTRACT</p><small>VIEW ON ETHERSCAN <small class="glyphicon glyphicon-log-out"></small></small></div></div>
+			<div class="col-sm-4" style="padding-right:8px;padding-left:8px;"><div class="soy"><p class="rattss gg">WALLET CODE</p><small>VIEW ON GITHUB <small class="glyphicon glyphicon-log-out"></small></small></div></div>
+			<div class="col-sm-4"style="padding-left:8px;"><div class="soy"><p class="rattss gg">WHITE PAPER</p><small>DOWNLOAD PDF <small class="glyphicon glyphicon-log-out"></small></small></div></div>
+			</div></div>
+
+			<div class="col-sm-12 bnn nttt" style="display:none;">
+			<div class="row">
+			<div class="col-sm-4" style="padding-right:8px;cursor:pointer;"><div class="soy"  onclick="window.open('https://t.me/globreserve','_blank');"><p class="rattss gg">NEWS CHANNEL</p><small>TELEGRAM <small class="glyphicon glyphicon-log-out"></small></small></div></div>
+			<div class="col-sm-4" style="padding-right:8px;padding-left:8px;cursor:pointer;"><div class="soy"  onclick="window.open('https://t.me/grschat','_blank');"><p class="rattss gg">COMMUNCATION</p><small>TELEGRAM <small class="glyphicon glyphicon-log-out"></small></small></div></div>
+			<div class="col-sm-4" style="padding-left:8px;cursor:pointer;"><div class="soy"  onclick="window.open('https://t.me/globmarketplace','_blank');"><p class="rattss gg">MARKETPLACE P2P</p><small>TELEGRAM <small class="glyphicon glyphicon-log-out"></small></small></div></div>
+			</div></div>
+						
+			<div class="col-sm-12 bnn exxx" style="display:none;">
+			<div class="row">
+			<div class="col-sm-4" style="padding-right:8px;"><div class="soy"><p class="rattss gg">1.4075 <small>USD</small></p><small>GLOB VINDAX <small class="glyphicon glyphicon-log-out"></small></small></div></div>
+			<div class="col-sm-4" style="padding-right:8px;padding-left:8px;"><div class="soy"><p class="rattss gg">1.4526 <small>USD</small></p><small>GLOB IDEX <small class="glyphicon glyphicon-log-out"></small></small></div></div>
+			<div class="col-sm-4"  style="padding-left:8px;"><div class="soy"><p class="rattss gg">. . .</p><small>COMING SOON <!--small class="glyphicon glyphicon-log-out"></small--></small></div></div>
+			
+			</div></div>
+			
+			<div class="col-sm-12">
+			<div class="help">
+			
+			
+			
+			
+			<div class='connsi' style="margin-top:10px;">
+				<table class="table table-hover">
+				
+				<tr class='sst hover'>
+				<td style=''>
+				<div style="max-width:60px;min-width:60px;float:left;clear:none;margin-top:4px;margin-left:5px;">
+				<img border="0" src="pics/airdrop2020.png" height="38">
+				</div>
+				<div style="float:left;clear:none;margin: 0 0 0 8px;">
+				<p  style="margin:-2px 0 5px 0;padding:0"><small>VALID 2020-01-31 23:59:59</small></p>
+				<h4><strong>GLOB AIRDROP PROGRAM 2020</strong></h4></div>
+				</td>
+				<td style='font-size:30px;padding:22px 25px 0 0;'><span class="pull-right">+</span></td></tr>
+				<tr class='ura hover hidden'>
+			
+				<td colspan='2' style="padding:10px 30px 20px 30px;">
+				
+				
+			<div class="row" style="margin:14px -15px 5px -15px;">
+			<div class="col-sm-6">
+			<div class="soy">
+			<p class="rattss "><span class="gog"><span class="bgg">+ 160</span>%</span></p>
+			<small>YOUR GLOB BALANCE</small>
+			
+			<div style="text-align:center;width:100%;"><div style='margin:15px auto;'>
+			<button class="btn btn-default btn-md" style="margin:10px 0 0 0;" onclick="$('#senn').click();">REFILL GLOB BALANCE</button>
+			</div></div>
+			
+			</div>
+			</div>
+			<div class="col-sm-6">
+			<div class="soy">
+			<p class="rattss "><span class="gog"><span class="bgg">+ 160</span>%</span></p>
+			<small>ALL SPONSORS GLOB BALANCE</small>
+			
+			<div style="text-align:center;width:100%;"><div style='margin:15px auto;'>
+			<button class="btn btn-default btn-md" style="margin:10px 0 0 0;" onclick="$('#blnk').click();">INVITE SPONSORS</button>
+			</div></div>
+			
+			</div>
+			</div>
+			</div>			
+
+	
+				</td>
+				</tr>
+				</table>	
+				</div>
+			
+			
+			
+			
+			
+			
+			
+			    
+			<div class='connsi'>
+				<table class="table table-hover">
+				
+				<tr class='sst hover'>
+				<td style=''>
+				<div style="max-width:60px;min-width:60px;float:left;clear:none;margin-top:4px;margin-left:5px;">
+				<img border="0" src="pics/0/glob.png" height="38">
+				</div>
+				<div style="float:left;clear:none;margin: 0 0 0 8px;">
+				<p  style="margin:-2px 0 5px 0;padding:0"><small>SUSTAINABLE MONEY</small></p>
+				<h4><strong>GLOB CRYPTOCURRENCY</strong></h4></div>
+				</td>
+				<td style='font-size:30px;padding:22px 25px 0 0;'><span class="pull-right">+</span></td></tr>
+				<tr class='ura hover hidden'>
+			
+				<td colspan='2' style="padding:10px 30px 20px 30px;">
+				
+				
+			<div class="row" style="margin:14px -15px 5px -15px;">
+			<div class="col-sm-6">
+			<div class="soy">
+			<p class="rattss ">CASHBACK <span class="gog"><span class="bgg">100</span>%</span></p>
+			<small>FOR THOSE WHO SEND GLOB (BUYERS)</small>
+			
+			<div style="text-align:center;width:100%;"><div style='margin:15px auto;'>
+			<button class="btn btn-default btn-md" style="margin:10px 0 0 0;" onclick="$('#senn').click();">SEND GLOB</button>
+			</div></div>
+			
+			</div>
+			</div>
+			<div class="col-sm-6">
+			<div class="soy">
+			<p class="rattss ">REWARD <span class="gog"><span class="bgg">100</span>%</span></p>
+			<small>FOR THOSE WHO RECEIVE GLOB (SELLERS)</small>
+			
+			<div style="text-align:center;width:100%;"><div style='margin:15px auto;'>
+			<button class="btn btn-default btn-md" style="margin:10px 0 0 0;" onclick="$('#blnk').click();">CREATE A BILL</button>
+			</div></div>
+			
+			</div>
+			</div>
+			</div>			
+
+	
+				</td>
+				</tr>
+				</table>	
+				</div>
+			  
+			<div class='connsi'>
+				<table class="table table-hover">
+				<tr class='sst hover'>
+				<td>
+				<div style="max-width:60px;min-width:60px;float:left;clear:none;margin-top:4px;margin-left:4px;">
+				<img border="0" src="pics/0/system.png" height="38">
+				</div>
+				<div style="float:left;clear:none;margin: 0 0 0 8px;">
+				<p  style="margin:-2px 0 5px 0;padding:0"><small>SYSTEM OVERVIEW</small></p>
+				<h4><strong>GLOBAL RESERVE</strong></h4></div>
+				</td>
+				<td style='font-size:30px;padding:22px 25px 0 0;'><span class="pull-right">+</span></td></tr>
+				<tr class='ura hover hidden'>
+				<td colspan='2' style="padding:10px 30px 20px 30px;">
+				
+	
+	
+	
+	
+		
+			<div class="row" style="margin:14px -15px -1px -15px;text-transform:uppercase;">
+			<div class="col-sm-6">
+			<div class="soy" style="min-height:200px;padding:35px;margin-bottom:25px;">
+			<div style="text-align:center;">
+			<div style='margin:0 auto 20px auto;'><img border="0" src="pics/00/grs.png" height="30"></div></div>
+			<p class="">GLOBAL RESERVE SYSTEM</p>
+			<small>DECENTRALIZED NETWORK<br>OF PRIVATE RESERVE FUNDS<br>THAT INTERACT UNDER<br>ALTERNATIVE ECONOMY<br>CONDITIONS</small>
+			</div></div>
+			<div class="col-sm-6">
+			<div class="soy" style="min-height:200px;padding:35px;margin-bottom:25px;">
+
+			<div style="text-align:center;">
+			<div style='margin:0 auto 20px auto;'><img border="0" src="pics/00/economy.png" height="30"></div></div>
+			<p class="rattss">ALTERNATIVE ECONOMY</p>
+						
+			<small>ECONOMIC MODEL<br>THAT IMPLEMENTS THE<br>PRINCIPLE OF RENEWABLE<br>ASSETS BASED ON<br>DECENTRALIZED EMISSION</small>
+			</div></div>
+			
+		
+			<div class="col-sm-6">
+			<div class="soy" style="min-height:200px;padding:35px;margin-bottom:25px;">
+
+			<div style="text-align:center;">
+			<div style='margin:0 auto 20px auto;'><img border="0" src="pics/00/fund.png" height="30"></div></div>
+			<p class="rattss ">RESERVE FUNDS</p>
+			<small>ETHEREUM ACCOUNTS<br>REGISTERED IN THE SYSTEM FOR<br>THE PURPOSES OF MUTUAL<br>SETTLEMENTS IN GLOB AND CREATION<br>OF CRYPTOCURRENCY ASSETS
+			</small>
+			</div></div>
+
+			<div class="col-sm-6">
+			<div class="soy" style="min-height:200px;padding:35px;margin-bottom:25px;"> 
+
+			<div style="text-align:center;">
+			<div style='margin:0 auto 20px auto;'><img border="0" src="pics/00/coins.png" height="30"></div></div>
+			<p class="rattss">GLOB CRYPTOCURRENCY</p>
+			<small>ERC20 TOKEN, USED AS THE BASIC<br>MEANS OF MUTUAL SETTLEMENTS<br>BETWEEN RESERVE FUNDS<br>UNDER THE PROOF OF<br>TRANSACTION (POT) PROTOCOL</small>
+			</div></div>
+			<div class="col-sm-6">
+			<div class="soy" style="min-height:200px;padding:35px;margin-bottom:25px;">
+
+			<div style="text-align:center;">
+			<div style='margin:0 auto 20px auto;'><img border="0" src="pics/00/deal.png" height="30"></div></div>
+			<p class="rattss ">RESERVE TRANSACTIONS</p>
+			<small>DIGITAL ASSETS<br>CREATED BY TRANSACTIONS<br>CONDUCTED THE SYSTEM’S<br>RESERVE, WHICH MINE<br>GLOB CRYPTOCURRENCY</small>
+			
+			</div></div>
+			
+			<div class="col-sm-6">
+			<div class="soy" style="min-height:200px;padding:35px;margin-bottom:25px;">
+
+			<div style="text-align:center;">
+			<div style='margin:0 auto 20px auto;'><img border="0" src="pics/00/transaction.png" height="30"></div></div>
+			<p class="">GLOB TRANSACTIONS</p>
+			<small>GLOB CRYPTOCURRENCY<br>TRANSFERS BETWEEN RESERVE<br>FUNDS UNDER THE POT PROTOCOL<br>WITH CASHBACK AND REWARDS<br>FOR PARTICIPANTS</small>
+			</div></div>
+			
+			
+			<div class="col-sm-6">
+			<div class="soy" style="min-height:200px;padding:35px;margin-bottom:25px;">
+
+			<div style="text-align:center;">
+			<div style='margin:0 auto 20px auto;'><img border="0" src="pics/00/wallet.png" height="30"></div></div>
+			<p class="rattss ">GLOB WALLET</p>
+			<small>A WEB APPLICATION, AN<br>ONLINE WALLET FOR MINING<br>AND MUTUAL SETTLEMENTS<br>IN GLOB CRYPTOCURRENCY<br>UNDER THE POT PROTOCOL</small>
+			</div></div>
+			
+			<div class="col-sm-6">
+			<div class="soy" style="min-height:200px;padding:35px;margin-bottom:25px;">
+
+			<div style="text-align:center;">
+			<div style='margin:0 auto 20px auto;'><img border="0" src="pics/00/pot.png" height="30"></div></div>
+			<p class="rattss">POT PROTOCOL</p>
+			<small>THE ALGORITHM USED WHEN A<br>TRANSACTION CONDUCTED IN THE<br>SYSTEM MINES GLOB CRYPTOCURRENCY<br>FOR 365 DAYS IN AN INCREASINGLY<br>ACCELERATED MODE</small>
+			</div></div>
+
+			
+			
+
+			
+			
+			<div class="col-sm-6">
+			<div class="soy" style="min-height:200px;padding:35px;margin-bottom:25px;">
+
+			<div style="text-align:center;">
+			<div style='margin:0 auto 20px auto;'><img border="0" src="pics/00/fee.png" height="30"></div></div>
+			<p class="">PAYMENT FOR POT MINING</p>
+			<small>IN ORDER TO LIMIT EMISSIONS, 20%<br>OF THE TRANSACTION AMOUNT WILL BE<br>CHARGED, WHICH MAY BE SENT TO CHARITY, TO<br>THE DEVELOPERS OR DESTROYED AT THE<br>DISCRETION OF THE TRANSACTION INITIATOR</small>
+			</div></div>
+			
+			
+			
+			
+			<div class="col-sm-6">
+			<div class="soy" style="min-height:200px;padding:35px;margin-bottom:25px;">
+
+			<div style="text-align:center;">
+			<div style='margin:0 auto 20px auto;'><img border="0" src="pics/00/foundation.png" height="30"></div></div>
+			<p class="rattss">G.R.S. FOUNDATION</p>
+			<small>THE GLOBAL RESERVE SYSTEM<br>CHARITY FUND IS FORMED<br>BY POT MINING PAYMENTS<br>AND MANAGED BY<br>COMMUNITY VOTING</small>
+			</div></div>
+			
+			
+			<div class="col-sm-6">
+			<div class="soy" style="min-height:200px;padding:35px;margin-bottom:25px;">
+
+			<div style="text-align:center;">
+			<div style='margin:0 auto 20px auto;'><img border="0" src="pics/00/partnership.png" height="30"></div></div>
+			<p class="rattss">PARTNERSHIPS</p>
+			<small>REGISTRATION OF A RESERVE<br>FUND IS CONDUCTED BY<br>INVITATION, A REGISTERED FUND<br>BECOMES THE SPONSOR<br>OF THE INVITING FUND
+			</small>
+			
+			</div></div>
+			
+			
+			
+			
+	
+			<div class="col-sm-6">
+			<div class="soy" style="min-height:200px;padding:35px;margin-bottom:25px;">
+
+			<div style="text-align:center;">
+			<div style='margin:0 auto 20px auto;'><img border="0" src="pics/00/invite.png" height="30"></div></div>
+			<p class="rattss">INVITATION</p>
+			<small>THE ETHEREUM WALLET ADDRESS,<br>AFFILIATE LINK, RESERVE FUND ID OR<br>AIRDROP MAY ACT AS THE INVITATION<br>FOR THE REGISTRATION OF A<br>SPONSOR FUND IN THE SYSTEM
+			</small>
+			
+			</div></div>
+	
+			
+			<div class="col-sm-6">
+			<div class="soy" style="min-height:200px;padding:35px;margin-bottom:25px;">
+
+			<div style="text-align:center;">
+			<div style='margin:0 auto 20px auto;'><img border="0" src="pics/00/sponsors.png" height="30"></div></div>
+			<p class="">SPONSORSHIP NETWORK</p>
+			<small>A NETWORK OF FIRST<br>AND SECOND-LEVEL SPONSORS<br>CREATED BY THE RESERVE FUND, WHICH<br>RECEIVES 10% FROM ALL<br>SPONSORS’ TRANSACTIONS 
+			
+			</small>
+	
+			
+			
+			</div></div>
+			
+			<div class="col-sm-6">
+			<div class="soy" style="min-height:200px;padding:35px;margin-bottom:25px;">
+
+			<div style="text-align:center;">
+			<div style='margin:0 auto 20px auto;'><img border="0" src="pics/00/airdrop.png" height="30"></div></div>
+			<p class="rattss ">AIRDROPS</p>
+			<small>
+			FREE CRYPTOCURRENCY<br>ASSETS DISTRIBUTED IN EXCHANGE<br>FOR REGISTRATION AS<br>TOTAL MINING SPONSORS<br>IN THE NEW FUND SYSTEM 
+			</small>
+			</div></div>
+			
+				<div class="col-sm-6">
+			<div class="soy" style="min-height:200px;padding:35px;margin-bottom:10px;">
+
+			<div style="text-align:center;">
+			<div style='margin:0 auto 20px auto;'><img border="0" src="pics/00/mining.png" height="30"></div></div>
+			<p class="">TOTAL MINING</p>
+			<small>CREATION OF RESERVE TRANSACTIONS<br>OF COMBINED TRANSACTIONS<br>WITH A MAXIMUM MINING<br>REWARD OF 900% FOR FUND<br>AND 50% FOR EACH PARTNER FUND</small>
+			
+			
+			
+			</div></div>
+			
+			<div class="col-sm-6">
+			<div class="soy" style="min-height:200px;padding:35px;margin-bottom:10px;">
+
+			<div style="text-align:center;">
+			<div style='margin:0 auto 20px auto;'><img border="0" src="pics/00/bonus.png" height="30"></div></div>
+			<p class="">INSTANT BONUS</p>
+			<small>INSTANT AWARDING OF 20% AND 5%<br>OF THE AMOUNT OF THE TRANSACTION<br>TO PARTNERS WHEN THEIR<br>FIRST- AND SECOND-LEVEL<br>SPONSORS ENGAGE IN TOTAL MINING </small>
+			
+			
+			
+			</div></div>
+			
+			</div>
+
+	
+				</td>
+				</tr>
+				</table>	
+				</div>
+
+			<div class='connsi'>					
+				<table class="table table-hover">
+				<tr class='sst hover'>
+				<td>
+				<div style="max-width:60px;min-width:60px;float:left;clear:none;margin-top:4px;margin-left:5px;">
+				<img border="0" src="pics/0/potmining.png" height="38">
+				</div>
+				<div style="float:left;clear:none;margin: 0 0 0 8px;">
+				<p  style="margin:-2px 0 5px 0;padding:0"><small>ASSET CREATION</small></p>
+				<h4><strong>PROOF OF TRANSACTION</strong></h4></div>
+				</td>
+				<td style='font-size:30px;padding:22px 25px 0 0;'><span class="pull-right">+</span></td></tr>
+				<tr class='ura hover hidden'>
+				<td colspan='2' style="padding:10px 30px 20px 30px;">
+				
+			
+			<div class="row" style="margin:14px -15px 19px -15px;">
+			<div class="col-sm-12">
+			<div class="soy" style="min-height:600px;padding:30px;">
+			
+			
+			<p class="rattss ">TRANSFER POT MINING <span class="gog"><span class="bgg">200</span>%</span></p>
+			
+								<div style="text-align:center;width:100%;">
+								
+								<div style='margin:0 auto;max-width:700px;'>
+								<small>DURING TRANSACTIONS CONDUCTED UNDER PROOF OF TRANSACTION PROTOCOL, THERE IS AN EMISSION OF GLOB CRYPTOCURRENCY TO THE PARTIES TO THE TRANSACTIONS, DUE TO WHICH ASSETS ARE RESTORED AND FUNDS ARE FAIRLY DISTRIBUTED</small>
+								
+																
+								</div>
+								
+								<div style='margin:15px auto;'>
+			<button class="btn btn-default btn-md" style="margin:10px 0 0 0;" onclick="$('#senn').click();">WHITE PAPER</button>
+			</div>
+								
+								
+								<div style='margin:0px auto 10px auto;'>
+								<img border="0" style='margin:0;width:100%' 
+				title="" src="pics/pot.png"></div></div>
+			
+			</div>
+			</div>
+			
+			</div>		
+			
+			<div class="row" style="margin:15px -15px;">
+			<div class="col-sm-12">
+			<div class="soy" style="min-height:350px;padding:30px;">
+			
+			
+			<p class="rattss ">SPONSOR NETWORK <span class="gog"><span class="bgg">2</span> Levels</span></p>
+			<div style='margin:0 auto;max-width:900px;margin-bottom:23px;'>
+			<div style='margin:0 auto;max-width:800px;'>
+			<small>NETWORK OF SPONSORS’ FUNDS ALLOWS TO INCREASE RESERVE FUND ASSETS WITHOUT INVESTMENTS BY  USING GLOB POT MINING IN EVERY TRANSACTION CONDUCTED BY THE SPONSORS</small></div>		
+			
+			</div>
+			
+			
+			<div style='margin:0 auto;max-width:1000px;margin-bottom:150px;'>
+			<div class="col-sm-6">
+			<div class="soyt" style="padding:10px;">
+			<p class="rattss gog"><span class="gog">LEVEL 1</span></p>
+			
+				<p class="rattss ">POT TRANSFER <span class="gog"><span class="bgg">10</span>%</span></p>
+				<p class="rattss ">TOTAL MINING <span class="gog"><span class="bgg">50</span>%</span></p>
+				<p style="margin:-30px 0 0 0;font-weight:normal;"><small><small><small>( + INSTANT BONUS <span class="gog"><span class="bgg"><small><small><small>20</small></small></small></span>%</span> )</small></small></small></p>
+			
+			</div>
+			</div>
+			
+			<div class="col-sm-6">
+			<div class="soyt" style="padding:10px;">
+			<p class="rattss gog"><span class="gog">LEVEL 2</span></p>
+			
+				<p class="rattss ">POT TRANSFER <span class="gog"><span class="bgg">10</span>%</span></p>
+				<p class="rattss ">TOTAL MINING <span class="gog"><span class="bgg">50</span>%</span></p>
+				<p style="margin:-30px 0 0 0;font-weight:normal;"><small><small><small>( + INSTANT BONUS <span class="gog"><span class="bgg"><small><small><small>5</small></small></small></span>%</span> )</small></small></small></p>
+			</div>
+			</div>
+			</div>
+			
+			
+			<div style='margin:15px auto;'>
+			<button class="btn btn-default btn-md" style="margin:30px 0 0 0;" onclick="$('#netww').click();">CREATE A SPONSOR NETWORK</button>
+			</div>
+			
+			
+			
+			</div>
+			</div>
+			
+			</div>	
+			
+			<div class="row" style="margin:20px -15px 5px -15px;">
+			<div class="col-sm-6">
+			<div class="soy" style="min-height:250px;padding:30px 10px;">
+			<p class="rattss ">TOTAL MINING <span class="gog"><span class="bgg">900</span>%</span></p>
+			<div style='margin:0 auto;max-width:380px;'>
+			<small>TOTAL MINING ENSURES THE MAXIMUM REPLENISHMENT OF THE RESERVE FUND</small></div>		
+	
+			<div style='margin:15px auto;'>
+			<button class="btn btn-default btn-md" style="margin:10px 0 0 0;" onclick="$('#minnn').click();">TOTAL MINING</button>
+			</div>
+			</div>
+			</div>
+			<div class="col-sm-6">
+			<div class="soy" style="min-height:250px;padding:30px 10px;">
+			<p class="rattss ">AIRDROP <span class="gog"><span class="bgg">396</span>%</span></p>
+			<div style='margin:0 auto;max-width:380px;'>
+			<small>PROFITABLE FREE AIRDROP GIVEAWAY ACCELERATES THE ESTABLISHMENT OF A SPONSOR NETWORK</small></div>		
+			<div style='margin:15px auto;'>
+			<button class="btn btn-default btn-md" style="margin:10px 0 0 0;" onclick="$('#aaiirr').click();">SEND AIRDROP</button>
+			</div>
+			</div> 
+			</div>
+			</div>		
+				
+				
+		
+				
+
+				</td>
+				</tr>
+				</table>
+				</div>
+
+		    <div class='connsi' style="margin-bottom:10px">	
+				
+				<table class="table table-hover">				
+				<tr class='sst hover'>
+				<td>
+				<div style="max-width:60px;min-width:60px;float:left;clear:none;margin-top:4px;margin-left:5px;">
+				<img border="0" src="pics/0/start.png" height="38">
+				</div>
+				<div style="float:left;clear:none;margin: 0 0 0 8px;">
+				<p  style="margin:-2px 0 5px 0;padding:0"><small>BEGIN WORK</small></p>
+				<h4><strong>DISCOVER ALTECONOMY</strong></h4></div>
+				</td>
+				<td style='font-size:30px;padding:22px 25px 0 0;'><span class="pull-right">+</span></td></tr>
+				<tr class='ura hover hidden'><td colspan='2' style="padding:10px 30px 20px 30px;">
+				
+			<div class="row" style="margin:14px -15px 6px -15px;text-transform:uppercase;">
+			<div class="col-sm-4">
+			<div class="soy" style="padding:30px 10px;">
+			
+			<p class="rattss ">STEP <span class="gog"><span class="bgg">1</span></span></p>
+			<small>SET UP METAMASK AND LINK AN ETHEREUM ACCOUNT</small>
+				<div style='margin:15px auto;'>
+			<a class="btn btn-default btn-md" style="margin:10px 0 0 0;" target="_blank" href="https://metamask.io/" onclick="">DOWNLOAD METAMASK</a>
+			</div>
+			</div></div>
+			<div class="col-sm-4">
+			<div class="soy" style="padding:30px 10px;">
+			
+			<p class="rattss ">STEP <span class="gog"><span class="bgg">2</span></span></p>
+			<small>LOGIN TO GLOB WALLET AND CREATE A RESERVE FUND</small>
+				<div style='margin:15px auto;'>
+			<button class="btn btn-default btn-md metam" style="margin:10px 0 0 0;" onclick="">CONNECT WALLET</button>
+			</div>
+			</div></div>
+			<div class="col-sm-4">
+			<div class="soy" style="padding:30px 10px;">
+			
+			<p class="rattss ">STEP <span class="gog"><span class="bgg">3</span></span></p>
+			<small>REFILL GLOB BALANCE AND<br>START WORKING</small>
+				<div style='margin:15px auto;'>
+			<button class="btn btn-default btn-md" style="margin:10px 0 0 0;" onclick="$('#exexe').click();">GLOB EXCHANGE</button>
+			</div>
+			</div></div>
+			</div>
+				
+				
+				
+				</td>
+				</tr>
+				</table>
+				</div>
+			</div>		
+			</div>
+			</div>
+			</div>
+		</div>					
+			
+		<div class="tab-pane col-sm-12" id="home">
+				
+		<div class="col-md-12">
+				<div style='padding:17px 0 4px 0;margin:0;'>
+				<p class='help-block'><span class='usrid' data-toggle="tooltip" data-html="true" data-placement="left" title="FUND ID"  >UNCONNECTED</span>
+				<button class="btn btn-default btn-sm pull-right ethadr" data-toggle="tooltip" data-html="true" data-placement="left"
+				title="<nobr>ETHEREUM ADDRESS</nobr>"	style="margin-top:-9px;">NO ADDRESS</button></p>
+				<div class="row" style='margin:-5px -15px 7px -15px;'>
+				
+				<div class="col-sm-6" style="margin-bottom:6px;padding-right:8px;"><div class="soy" style="padding-top:21px;padding-bottom:31px;"><p style="font-size:32px;margin-bottom:16px;">
+				<span class="geth">0</span><small><small> GLOB</small></small></p>
+				<span class="btn btn-default btn-sm" onclick="window.open('https://coinmarketcap.com/currencies/ethereum/markets/','_blank');">
+				REFILL BALANCE</span></div></div>
+				<div class="col-sm-6" style="margin-bottom:6px;padding-left:8px;"><div class="soy" style="padding-top:21px;padding-bottom:31px;"><p style="font-size:32px;margin-bottom:16px;">
+				<span class="eth">0</span><small><small> ETH</small></small></p>
+				<span class="btn btn-default btn-sm" onclick="window.open('https://coinmarketcap.com/currencies/ethereum/markets/','_blank');">
+				REFILL BALANCE</span></div></div>
+	
+		<div class="col-sm-4" style="margin-bottom:5px;padding-right:8px;"><div class="soy" style="padding:19px 0 23px 0;min-height:0;">
+		<p style="margin-bottom:5px;"><span class="dealscb">0</span></p><small>RESERVE TRANSACTIONS</small></div></div>
+					
+		<div class="col-sm-4" style="margin-bottom:5px;padding-left:8px;padding-right:8px;cursor:pointer;"><div class="soy" style="padding:19px 0 23px 0;min-height:0;" onclick="$('#netww').click();">
+		<p style="margin-bottom:5px;"><span class="t_rft">0</span></p><small>SPONSOR FUNDS</small></div></div>
+		
+		<div class="col-sm-4" style="margin-bottom:5px;padding-left:8px;cursor:pointer;"><div class="soy"  style="padding:19px 0 23px 0;min-height:0;" onclick="$('.seair').click();$('#aaiirr').click();">
+		<p style="margin-bottom:5px;"><span class="aircon">0</span></p><small>AIRDROP POOL</small></div></div>
+				
+		<div class="col-sm-4" style="margin-bottom:5px;padding-right:8px;"><div class="soy" style="padding:19px 0 23px 0;min-height:0;">
+		<p style="margin-bottom:5px;"><span class="dlscb">0</span> <small style="font-size:18px;">GLOB</small></p><small>EXPECTED INCOME</small></div></div>
+		
+		<div class="col-sm-4" style="margin-bottom:5px;padding-left:8px;padding-right:8px;"><div class="soy" style="padding:19px 0 23px 0;min-height:0;">
+		<p style="margin-bottom:5px;"><span class="gmined">0</span> <small style="font-size:18px;">GLOB</small></p><small>TOTAL MINED</small></div></div>
+		
+		<div class="col-sm-4" style="margin-bottom:5px;padding-left:8px;"><div class="soy" style="padding:19px 0 23px 0;min-height:0;">
+		<p style="margin-bottom:5px;"><span class="gbonus">0</span>  <small style="font-size:18px;">GLOB</small></p><small>RECEIVED BONUS</small></div></div>
+		
+		</div>
+				<div class="col-md-12 dealistt">
+				<div class="row">
+				<div class='cashbacks_list' style='padding:0; margin:0;'>
+				<label class='help-block' style='margin-bottom:10px;'>RESERVE TRANSACTIONS</label>
+				<table class="table table-hover table-striped">
+				<tr class='toto'><th style='text-align:left;width:115px;'><small>DATE</small></th><th style='width:90px;'><small>ID</small></th>
+				<th style='width:90px;'><small>OWNER</small></th><th style='width:90px;'><small>TYPE</small></th><th style='width:90px;'><small>AMOUNT</small></th><th style='width:90px;'><small>RESERVE</small></th><th style='width:90px;'><small>DAYS</small></th><th style='text-align:right;'><small>MINED</small></th></tr>
+				<tbody id='cbks'>
+				<tr><td colspan='10' style='text-align:center'><small>TRANSACTIONS NOT FOUND</small></td></tr>
+				</tbody>
+				</table>
+				<div class="form-group" style="text-align:center;margin-top:10px;">
+				<span class='pull-left'>TOTAL: <span class='dealscb' style='color:#fff;'>0</span></span>
+				<span>PAGE  <span class='p_dl'>0</span> OF <span class='p_dls'>0</span></span>
+				
+				<button class="btn btn-default btn-sm pull-right disabled" id='dl_p'>NEXT <i class="glyphicon glyphicon-triangle-right"></i></button>
+				<button class="btn btn-default btn-sm pull-right disabled" id='dl_n' style="margin-right:5px;"><i class="glyphicon glyphicon-triangle-left"></i> PREV</button>
+				<!--span class="pull-right lddlk">LOADING...</span-->
+				</div>
+				
+				</div>
+				</div>
+				</div>
+				
+				</div>
+				</div>
+				
+							
+		</div>
+ 
+		<div class="tab-pane col-sm-12" id="mining">
+				<div class="col-md-12">
+				<div style='padding:17px 0 4px 0; margin:0;'>
+				<p class='help-block' style='margin-bottom:10px;'>GLOB AMOUNT</p>
+				
+				<input class="form-control input-lg" type='number' id="qb_amount" value='' min="1" max="100000" step="0.01"  placeholder='Minimum 1 Glob'/>
+				<div class="form-group" style='margin:22px 0 16px 0;'>
+				<label class='help-block'>YOU WILL GET<small class="pull-right" style="color:#c0c0c0;">PROFIT 900%</small></label>
+				<div class="soy" style="padding-top:20px;color:#EDC240;font-family: Verdana;cursor:default;">
+				<p style="font-size:45px;color:white;margin-bottom:10px;"><span class="qb_sum">0</span> <small style='font-size:30px;'>GLOB</small></p>
+				<span class="" style='font-size:18px;color:white;'>0</span> instantly and <span class="qb_sum" style='font-size:18px;color:white;'>0</span> over 365 days
+				</div>
+				</div>
+				
+				<div class="row" style="margin-bottom:21px;">
+				<div class="col-sm-6"> 
+				<label class='help-block'>PARTNER 1<small class="pull-right " style="color:#c0c0c0;">PROFIT 70%</small></label>
+				<div class="soy" style="padding-top:20px;color:#EDC240;font-family: Verdana;cursor:default;">
+				<p style="font-size:38px;color:white;margin-bottom:10px;"><span class="qb_sum1">0</span><small style='font-size:24px;'> GLOB</small></p>
+				<span class="qb_sum1i" style='font-size:16px;color:white;'>0</span> instantly and <span class="qb_sum1p" style='font-size:16px;color:white;'>0</span> over 365 days
+				</div>
+				</div>
+				<div class="col-sm-6"> 
+				<label class='help-block'>PARTNER 2<small class="pull-right " style="color:#c0c0c0;">PROFIT 55%</small></label>
+				<div class="soy" style="padding-top:20px;color:#EDC240;font-family: Verdana;cursor:default;">
+				<p style="font-size:38px;color:white;margin-bottom:10px;"><span class="qb_sum2">0</span><small style='font-size:24px;'> GLOB</small></p>
+				<span class="qb_sum2i" style='font-size:16px;color:white;'>0</span> instantly and <span class="qb_sum2p" style='font-size:16px;color:white;'>0</span> over 365 days
+				</div>
+				</div>				
+				</div>
+				<div class="form-group" style="margin:0">
+				<button class="btn btn-default btn-md pull-left" id="qb_res">CLEAR</button>
+				<button class="btn btn-default btn-md pull-right" id="qnew_bill">START TOTAL MINING</button>
+				</div>
+			
+				</div>
+				</div>
+				
+				<div class="col-md-12">
+				
+				</div>
+
+		</div>
+			 
+		<div class="tab-pane col-sm-12" id="affiliate">
+				
+				<div class="col-md-12">
+				<div class='toww' style='padding:17px 0 0 0; margin:0 auto;'>
+				<div class="form-group">
+				<p class='help-block' style='margin-bottom:10px;'><span class='linaz'>DIRECT LINK</span>
+				<button class="btn btn-default btn-sm pull-right sasa" style="margin-top:-9px;margin-right:6px;" onclick="$('.sasa').removeClass('active'); $(this).addClass('active');setfirl();$('.linaz').text($(this).text());">TOTAL MINING LINK</button>
+				<button class="btn btn-default btn-sm pull-right active sasa" style="margin-top:-9px;margin-right:6px;" onclick="$('.sasa').removeClass('active'); $(this).addClass('active');setdirl();$('.linaz').text($(this).text());">DIRECT LINK</button>
+				</p>
+				<input class="form-control input-lg" type='text' id="reflin" spellcheck='false' value='' placeholder='Unregistered Fund'
+				style='color:#fff;' readonly='readonly'/>
+								
+				<div class="row" style="margin-top:17px;">
+				<div class="col-sm-6"> 
+				<label class='help-block'>1 LEVEL <small class="pull-right" style="color:#c0c0c0;">10% OF TURNOVER</small></label>
+				<div class="soy" style="min-height:0;cursor:pointer;padding:32px 0 36px 0;line-height:1;" onclick="$('.seff_list').hide();$('.reff_list').show();">
+				<p style="font-size:38px;color:white;margin-bottom:19px;line-height:1;"><span class="t_rff">0</span></p>SPONSORS
+				</div>
+				</div>
+				<div class="col-sm-6"> 
+				<label class='help-block'>2 LEVEL <small class="pull-right" style="color:#c0c0c0;">10% OF TURNOVER</small></label>
+				<div class="soy" style="min-height:0;cursor:pointer;padding:32px 0 36px 0;line-height:1;" onclick="$('.reff_list').hide();$('.seff_list').show();">
+				<p style="font-size:38px;color:white;margin-bottom:19px;line-height:1;"><span class="t_rfs">0</span></p>SPONSORS
+				</div>
+				</div>				
+				</div>
+											
+				<div class='reff_list' style='padding:10px 0; margin:2px 0 0 0;'>
+				<p class='help-block' style='margin-bottom:10px;'>1 LEVEL SPONSORS 
+				<button class="btn btn-default btn-sm pull-right sasa" style="margin-top:-9px;" onclick="$('.reff_list').hide();$('.seff_list').show();">2 LEVEL</button>
+				</p>
+				<table class="table table-hover table-striped">
+				<tr class='toto'><th style='text-align:left;width:130px;'><small>DATE</small></th><th style='text-align:left;width:130px;'><small>FUND ID</small></th><th style='text-align:left;width:330px;'><small>ADDRESS</small></th><th style='text-align:left'><small>TRANSACTIONS</small></th></tr>
+				<tbody id='refln'><tr><td colspan='4' style='text-align:center'><small>SPONSORS NOT FOUND</small></td></tr></tbody>
+				</table>
+				<div class="form-group" style="text-align:center;margin-top:10px;">
+				<span class='pull-left'>TOTAL: <span class='t_rff' style='color:#fff;'>0</span></span>
+				<span>PAGE  <span class='p_rfr'>0</span> OF <span class='p_rfrs'>0</span></span>
+				<button class="btn btn-default btn-sm pull-right disabled" id='rfr_p'>NEXT <i class="glyphicon glyphicon-triangle-right"></i></button>
+				<button class="btn btn-default btn-sm pull-right disabled" id='rfr_n' style="margin-right:5px;"><i class="glyphicon glyphicon-triangle-left"></i> PREV</button></div>
+				</div>
+				
+				<div class='seff_list' style='padding:10px 0; margin:2px 0 0 0;display:none;'>
+				<p class='help-block' style='margin-bottom:10px;'>2 LEVEL SPONSORS
+				<button class="btn btn-default btn-sm pull-right sasa" style="margin-top:-9px;" onclick="$('.seff_list').hide();$('.reff_list').show();">1 LEVEL</button>
+				</p>
+				<table class="table table-hover table-striped">
+				<tr class='toto'><th style='text-align:left;width:130px;'><small>DATE</small></th><th style='text-align:left;width:130px;'><small>FUND ID</small></th><th style='text-align:left;width:330px;'><small>ADDRESS</small></th><th style='text-align:left'><small>TRANSACTIONS</small></th></tr>
+				<tbody id='srefln'><tr><td colspan='4' style='text-align:center'><small>SPONSORS NOT FOUND</small></td></tr></tbody>
+				</table>
+				
+				<div class="form-group" style="text-align:center;margin-top:10px;">
+				<span class='pull-left'>TOTAL: <span class='t_rfs' style='color:#fff;'>0</span></span>
+				<span>PAGE  <span class='sp_rfr'>0</span> OF <span class='sp_rfrs'>0</span></span>
+				<button class="btn btn-default btn-sm pull-right disabled" id='srfr_p'>NEXT <i class="glyphicon glyphicon-triangle-right"></i></button>
+				<button class="btn btn-default btn-sm pull-right disabled" id='srfr_n' style="margin-right:5px;"><i class="glyphicon glyphicon-triangle-left"></i> PREV</button></div>
+				</div>
+				
+				
+				
+				
+				</div>
+				</div>
+				</div>
+				
+		</div>
+		
+		<div class="tab-pane col-sm-12" id="airdrop">
+				<div class="col-md-12">
+				<div class='toww' style='padding:17px 0 0 0; margin:0 auto;'>
+				<div class='air_list list2' style='display:none;'>
+				<p class='help-block' style='margin-bottom:10px;'>DEPOSIT AMOUNT
+				<button class="btn btn-default btn-sm pull-right seair active" style="margin-top:-9px;">AIRDROP POOL</button>
+				<button class="btn btn-default btn-sm pull-right senair" style="margin-top:-9px;margin-right:6px;">SEND AIRDROP</button></p>
+				<input class="form-control input-lg" type='number' id="am_air" value='' min="10" max="100000" step="0.01" style='margin-bottom:22px;' placeholder='Minimum 10 Glob'/>
+				<p class='help-block' style='margin-bottom:10px;'>AIRDROP VALUE <small class="pull-right" style="color:#c0c0c0;"><span class="eeww_s">0</span> AIRDROP</small></p>
+				<input class="form-control input-lg" type='number' id="am_drop" value='' min="1" max="100000" step="0.01" style='margin-bottom:17px;' placeholder='Minimum 1 Glob'/>
+				<div class="row" style="margin-bottom:10px;"><div class="col-sm-6"> 
+				<label class='help-block'>YOU WILL GET <small class="pull-right" style="color:#c0c0c0;">CASHBACK 236%</small></label>
+				<div class="soy" style="padding-top:20px;color:#EDC240;font-family: Verdana;cursor:default;">
+				<p style="font-size:38px;color:white;margin-bottom:10px;"><span class="eew_sum">0</span><small style='font-size:24px;'> GLOB</small></p>
+				<span class="eewn_sum" style='font-size:16px;color:white;'>0</span> instantly and <span class="eewp_sum" style='font-size:16px;color:white;'>0</span> over 365 days
+				</div></div>
+				<div class="col-sm-6"> 
+				<label class='help-block'>RECEIVER WILL GET <small class="pull-right" style="color:#c0c0c0;">AIRDROP 160%</small></label>
+				<div class="soy" style="padding-top:20px;color:#EDC240;font-family: Verdana;cursor:default;">
+				<p style="font-size:38px;color:white;margin-bottom:10px;"><span class="eew1_sum">0</span><small style='font-size:24px;'> GLOB</small></p>
+				<span class="eew1n_sum" style='font-size:16px;color:white;'>0</span> instantly and <span class="eew1p_sum" style='font-size:16px;color:white;'>0</span> over 365 days
+				</div></div></div>
+				<div class="form-group uncharged" style="margin:21px 0 10px 0;">
+				<button class="btn btn-default btn-md pull-left" id="air_res">CLEAR</button>
+				<button class="btn btn-default btn-md pull-right" id="air_set">CREATE POOL</button></div>
+				<div class="form-group charged hidden" style="margin:16px 0 10px 0;">
+				<p class='help-block' style='margin-bottom:10px;'>AIRDROP POOL LINK</p>
+				<input class="form-control input-lg" type='text' id="airlinn" spellcheck='false' style='margin-bottom:26px;' value='' placeholder='Unregistered Fund'
+				style='color:#fff;' readonly='readonly'/>
+				<button class="btn btn-default btn-md pull-right" id="air_stop">STOP POOL</button></div></div>
+				
+							
+				<div class="hidden" style="margin:25px 0;">
+				<span class="gairlot">0</span><span class="gairlot1" style='font-size:18px;color:white;'>0</span>
+				<button class="btn btn-default btn-md pull-right gairdrop" id="gairgett">GET AIRDROP</button>
+				
+				</div>
+				
+				
+				
+				<div class='airs_list list2' style=''>
+				<p class='help-block' style='margin-bottom:10px;'>AIRDROP AMOUNT
+				<button class="btn btn-default btn-sm pull-right seair" style="margin-top:-9px;">AIRDROP POOL</button>
+				<button class="btn btn-default btn-sm pull-right senair active" style="margin-top:-9px;margin-right:6px;">SEND AIRDROP</button></p>
+				<input class="form-control input-lg" type='number' id="am_sair" value='' min="1" max="100000" step="0.01" style='margin-bottom:22px;' placeholder='Minimum 1 Glob'/>
+				<p class='help-block' style='margin-bottom:10px;'>RECEIVER ADDRESS</p>
+				<input class="form-control input-lg" type='text' id="refnew" spellcheck='false' autocomplete="off" style='margin-bottom:17px;' value='' placeholder='Recipient Ethereum address (unregistered at the system) '/>
+				<div class="row" style="margin-bottom:10px;"><div class="col-sm-6"> 
+				<label class='help-block'>YOU WILL GET <small class="pull-right" style="color:#c0c0c0;">CASHBACK 236%</small></label>
+				<div class="soy" style="padding-top:20px;color:#EDC240;font-family: Verdana;cursor:default;">
+				<p style="font-size:38px;color:white;margin-bottom:10px;"><span class="zxqbw_sum">0</span><small style='font-size:24px;'> GLOB</small></p>
+				<span class="zxqbr_sum" style='font-size:16px;color:white;'>0</span> instantly and <span class="zxqb_sum" style='font-size:16px;color:white;'>0</span> over 365 days
+				</div></div><div class="col-sm-6"> 
+				<label class='help-block'>RECEIVER WILL GET <small class="pull-right" style="color:#c0c0c0;">AIRDROP 160%</small></label>
+				<div class="soy" style="padding-top:20px;color:#EDC240;font-family: Verdana;cursor:default;">
+				<p style="font-size:38px;color:white;margin-bottom:10px;"><span class="zyqbw_sum">0</span><small style='font-size:24px;'> GLOB</small></p>
+				<span class="zyqbr_sum" style='font-size:16px;color:white;'>0</span> instantly and <span class="zyqb_sum" style='font-size:16px;color:white;'>0</span> over 365 days
+				</div></div></div>
+				<div class="form-group" style="margin:21px 0 15px 0;">
+				<button class="btn btn-default btn-md pull-left" id="airs_res">CLEAR</button>
+				<button class="btn btn-default btn-md pull-right" id="airs_send">SEND AIRDROP</button></div></div>
+				</div>
+				</div>
+		</div>		
+		
+		<div class="tab-pane col-sm-12" id="transfer">
+				
+				<div class="col-md-12">
+				<div class='toww' style='padding:17px 0 4px 0; margin:0 auto;'>
+				
+				<div class='pod_'>
+				<p class='help-block' style='margin-bottom:10px;'>TRANSFER AMOUNT
+				<button class="btn btn-default btn-sm pull-right" style="margin-top:-9px;" onclick="$('.erc_').show();$('.pod_').hide();">ERC20 TRANSFER</button>
+				<button class="btn btn-default btn-sm pull-right active" style="margin-top:-9px;margin-right:6px;" onclick="$('.erc_').hide();$('.pod_').show();">POT TRANSFER</button>
+				</p>
+				<input class="form-control input-lg" type='number' id="s_amount" value='' min="1" max="100000" step="0.01" style='margin-bottom:22px;' placeholder='Minimum 1 Glob'/>
+				<p  class='help-block'  style='margin-bottom:10px;'>RECEIVER ADDRESS</p>
+				<input class="form-control input-lg" type='text' spellcheck='false' autocomplete="off" id="rcvv" name='rcvv' style='margin-bottom:17px;' value='' placeholder='Receiver Ethereum addrеss'/>
+				
+				<div class="row" style="margin-bottom:10px;">
+				<div class="col-sm-6"> 
+				<label class='help-block'>YOU WILL GET <small class="pull-right" style="color:#c0c0c0;">CASHBACK 100%</small></label>
+				<div class="soy" style="padding-top:20px;color:#EDC240;font-family: Verdana;cursor:default;">
+				<p style="font-size:38px;color:white;margin-bottom:10px;"><span class="axqbw_sum">0</span><small style='font-size:24px;'> GLOB</small></p>
+				<span class="axqbr_sum" style='font-size:16px;color:white;'>0</span> instantly and <span class="axqb_sum" style='font-size:16px;color:white;'>0</span> over 365 days
+				</div>
+				</div>
+				<div class="col-sm-6"> 
+				<label class='help-block'>RECEIVER WILL GET <small class="pull-right" style="color:#c0c0c0;">TOTAL 160%</small></label>
+				<div class="soy" style="padding-top:20px;color:#EDC240;font-family: Verdana;cursor:default;">
+				<p style="font-size:38px;color:white;margin-bottom:10px;"><span class="ayqbw_sum">0</span><small style='font-size:24px;'> GLOB</small></p>
+				<span class="ayqbr_sum" style='font-size:16px;color:white;'>0</span> instantly and <span class="ayqb_sum" style='font-size:16px;color:white;'>0</span> over 365 days
+				</div>
+				</div>				
+				</div>
+				<div class="form-group" style="margin:21px 0 15px 0;">
+				<button class="btn btn-default btn-md pull-left" id="s_res">CLEAR</button>
+				<button class="btn btn-default btn-md pull-right" id="increment">SEND GLOB</button>
+				</div>
+				</div>
+				
+				
+				<div class='erc_' style='display:none;'>
+				<div class="form-group">
+				<p class='help-block' style='margin-bottom:10px;'>TRANSFER AMOUNT
+				<button class="btn btn-default btn-sm pull-right active" style="margin-top:-9px;" onclick="$('.erc_').show();$('.pod_').hide();">ERC20 TRANSFER</button>
+				<button class="btn btn-default btn-sm pull-right" style="margin-top:-9px;margin-right:6px;" onclick="$('.erc_').hide();$('.pod_').show();">POT TRANSFER</button>
+				</p>
+				<input class="form-control input-lg" type='number' id="gl_amt" value='' min="0.001" max="100000" step="0.001" style='margin-bottom:22px;' placeholder='Glob amount'/>
+				<p class='help-block' style='margin-bottom:10px;' >RECEIVER ADDRESS</p>
+				<input class="form-control input-lg" type='text' spellcheck='false' autocomplete="off" id="rcvvg" name='rcvvg' style='margin-bottom:17px;' value='' placeholder='Receiver Ethereum addrеss'/>
+				
+				<div class="row" style="margin-bottom:10px;">
+				<div class="col-sm-6"> 
+				<label class='help-block'>YOU WILL GET <small class="pull-right" style="color:#c0c0c0;">CASHBACK 0%</small></label>
+				<div class="soy" style="padding-top:20px;color:#EDC240;font-family: Verdana;cursor:default;">
+				<p style="font-size:38px;color:white;margin-bottom:10px;"><span class="">0</span><small style='font-size:24px;'> GLOB</small></p>
+				<span class="" style='font-size:16px;color:white;'>0</span> instantly and <span class="" style='font-size:16px;color:white;'>0</span> over 365 days
+				</div>
+				</div>
+				<div class="col-sm-6"> 
+				<label class='help-block'>RECEIVER WILL GET <small class="pull-right" style="color:#c0c0c0;">TOTAL 100%</small></label>
+				<div class="soy" style="padding-top:20px;color:#EDC240;font-family: Verdana;cursor:default;">
+				<p style="font-size:38px;color:white;margin-bottom:10px;"><span class="erc_sum">0</span><small style='font-size:24px;'> GLOB</small></p>
+				<span class="erc_sum" style='font-size:16px;color:white;'>0</span> instantly and <span class="" style='font-size:16px;color:white;'>0</span> over 365 days
+				</div>
+				</div>				
+				</div>
+				
+				<div class="form-group" style="margin:21px 0 15px 0;">
+				<button class="btn btn-default btn-md pull-left" id="dgscl">CLEAR</button>
+				<button class="btn btn-default btn-md pull-right" id="send_glhh">SEND GLOB</button>
+				</div></div>	
+				</div>	
+				
+				</div>
+				</div>
+				
+		</div>
+		
+		<div class="tab-pane col-sm-12" id="blink">
+				
+				<div class="col-md-12">
+				<div class='toww' style='padding:17px 0 4px 0; margin:0 auto;'>
+				
+				
+			
+				<p class='help-block' style='margin-bottom:10px;'>PAYMENT AMOUNT</p>
+				<input class="form-control input-lg" type='number' id="b_amount" value='' min="1" max="100000" step="0.01" style="margin-bottom:17px;" placeholder="Minimum 1 Glob or leave blank for any amount"/>
+							
+				<div class="row" style="margin-bottom:0;">
+
+				<div class="col-sm-6"> 
+				<label class='help-block'>YOU WILL GET <small class="pull-right" style="color:#c0c0c0;">TOTAL 160%</small></label>
+				<div class="soy" style="padding-top:20px;color:#EDC240;font-family: Verdana;cursor:default;">
+				<p style="font-size:38px;color:white;margin-bottom:10px;"><span class="ll_sum">0</span><small style='font-size:24px;'> GLOB</small></p>
+				<span class="llss_sum" style='font-size:16px;color:white;'>0</span> instantly and <span class="lls_sum" style='font-size:16px;color:white;'>0</span> over 365 days
+				</div>
+				</div>	
+
+				<div class="col-sm-6"> 
+				<label class='help-block'>RECEIVER WILL GET <small class="pull-right" style="color:#c0c0c0;">CASHBACK 100%</small></label>
+				<div class="soy" style="padding-top:20px;color:#EDC240;font-family: Verdana;cursor:default;">
+				<p style="font-size:38px;color:white;margin-bottom:10px;"><span class="l_sum">0</span><small style='font-size:24px;'> GLOB</small></p>
+				<span class="lss_sum" style='font-size:16px;color:white;'>0</span> instantly and <span class="ls_sum" style='font-size:16px;color:white;'>0</span> over 365 days
+				</div>
+				</div>
+				
+				</div>
+				
+				
+			
+				<div class="form-group" style="margin:16px 0 15px 0;">
+				<p class='help-block pay_link' style='margin-bottom:10px;display:none;'>PAYMENT LINK</p>
+				<input class="form-control input-lg pay_link" type='text' id="pay_link" readonly='readonly' value='' style="margin-bottom:20px;display:none;color:#fff;" placeholder=''/>
+							
+				
+				<button class="btn btn-default btn-md pull-left" id="bllcl">CLEAR</button>
+				<button class="btn btn-default btn-md pull-right" id="bllcr">CREATE PAYMENT LINK</button>
+				</div>
+				
+
+				
+				</div>
+				</div>
+				
+				<div class="col-md-12">
+				
+				</div>
+				
+				
+		</div>		
+		
+		
+		
+		<!--div class="tab-pane col-sm-12" id="action">
+				
+				<div class="col-md-12">
+				<div class='toww' style='padding:17px 0 4px 0; margin:0 auto;'>
+				
+				
+			
+				<div class="row"> 
+				<div class="col-sm-6"> 
+				<label class='help-block'>AIRDROP FROM YOUR GLOB BALANCE<small class="pull-right" style="color:#c0c0c0;">160%</small></label>
+				<div class="soy" style="padding-top:20px;color:#EDC240;font-family: Verdana;cursor:default;">
+				<p style="font-size:38px;color:white;margin-bottom:10px;"><span class="ll_sum">0</span><small style='font-size:24px;'> GLOB</small></p>
+				<span class="llss_sum" style='font-size:16px;color:white;'>0</span> instantly and <span class="lls_sum" style='font-size:16px;color:white;'>0</span> over 365 days
+				</div>
+				</div>	
+
+				<div class="col-sm-6"> 
+				<label class='help-block'>AIRDROP FROM SPONSORS GLOB BALANCE <small class="pull-right" style="color:#c0c0c0;">160%</small></label>
+				<div class="soy" style="padding-top:20px;color:#EDC240;font-family: Verdana;cursor:default;">
+				<p style="font-size:38px;color:white;margin-bottom:10px;"><span class="l_sum">0</span><small style='font-size:24px;'> GLOB</small></p>
+				<span class="lss_sum" style='font-size:16px;color:white;'>0</span> instantly and <span class="ls_sum" style='font-size:16px;color:white;'>0</span> over 365 days
+				</div>
+				</div>
+				</div>
+				<div class="form-group" style="margin:16px 0 15px 0;">
+				<button class="btn btn-default btn-md pull-right" id="">SEND A REQUEST FOR AIRDROP</button>
+				</div>
+				
+							
+
+				
+				</div>
+				</div>
+				
+				<div class="col-md-12">
+				
+				</div>
+				
+				
+		</div-->		
+		
+                
+		<div class="tab-pane col-sm-12" id="deal">
+			<div class="col-md-12">
+				<div class='toww' style='padding:17px 0 4px 0; margin:0 auto;'>
+				<p class='help-block' style='margin-bottom:5px;'><span class="dealt"></span><small class="pull-right dsourse" style="color:#c0c0c0;"></small></p>
+								
+				<div class="row">
+				<div class="col-sm-6" style="margin:0 0 12px 0;padding-right:8px;line-height:1.7;"><div class="soy"><p class="dealam" style="line-height:1.3;"></p><span class='delsdr'></span> SENT<br>
+				<small class="asrrs " style='cursor:pointer;'></small>
+				</div></div>
+				<div class="col-sm-6" style="margin:0 0 12px 0;padding-left:8px;line-height:1.7;"><div class="soy" ><p class="dealgot" style="line-height:1.3;"></p><span class='delrsv'></span> RECEIVED<br>
+				<small class="arrrs " style='cursor:pointer;'></small>
+				</div></div>
+									
+				<div class="dllmes">
+				<div class="col-sm-6" style="margin:-6px 0 12px 0;padding-right:8px;" ><div class="soy"><p class=""><span class='mmttmm'>0</span>/<span class='mmttms'>0</span> DAYS</p>
+				<small class='mmttpp'>MINING PROGRESS</small></div></div>
+				<div class="col-sm-6" style="margin:-6px 0 12px 0;padding-left:8px;" ><div class="soy"><p class=""><span class='dealkba'>0</span>/<span class='dealkb'>0</span></p>
+				<small class='kbtx'>GLOB MINED </small></div></div>
+				</div>
+				</div>
+	
+				
+				<p class='help-block' style='margin-bottom:10px;'>TRANSACTION LINK</p>
+				<input class="form-control input-lg" type='text' id="deallink" spellcheck='false' value='' placeholder=''
+				style='margin-bottom:26px;' readonly='readonly'/>
+			
+				<div class="form-group cbbbk dllmes" >
+				<button class="btn btn-default btn-md pull-left" onclick="$('.puppa').click();">EXIT</button>
+				<button class="btn btn-default btn-md pull-right" id='getterr'>GET <span class='dealkba'>0</span> GLOB</button>
+				</div>
+				
+				
+				</div>
+				
+				</div>
+
+				
+		
+		</div>
+	
+		<div class="tab-pane col-sm-12" id="introz">
+			<div class="col-sm-9">
+
+			<div class='help' style='padding:17px 0; margin:0;'>
+			<p class='help-block' style='margin-bottom:11px;'>FREQUENTLY ASKED QUESTIONS<button class="btn btn-default btn-sm pull-right" style="margin-top:-9px;" onclick="$('#intro_up').click();$('.home').addClass('activ');">ABOUT</button></p>
+			
+				
+				<table class="table table-hover table-striped">
+				
+			<tr class='sst'><td>HOW TO START USING A GLOB WALLET?</td><td><span class="pull-right">+</span></td></tr>
+				<tr class='ura hidden'><td colspan='2'>
+				<p>To work with the online GLOB WALLET, you must have the CHROME or FIREFOX browser installed, along with the METAMASK extension linked to an active Ethereum wallet.</p>
+				<p>First of all, you need to log in to METAMASK with a password and select the Ethereum account that you plan to use.</p>
+				<p>You can add an existing Ethereum account or create a new one.</p>
+				<p>Open your GLOB WALLET, connect to Ethereum through METAMASK and create a reserve fund.</p>
+				<p>Please note that in order to register using an Ethereum account there must be a minimum amount of ether for the transaction payment ~ 0.0001ETH.</p>
+				</td></tr>
+					
+			<tr class='sst'><td>HOW TO REGISTER A RESERVE FUND?</td><td><span class="pull-right">+</span></td></tr>
+				<tr class='ura hidden'><td colspan='2'>
+				<p>In order to register a reserve fund, you need to log in to GLOB WALLET using METAMASK and click on the CREATE NEW RESERVE FUND button in the pop-up notification or in the MY RESERVE tab.</p>
+				<p>If you have an invite, fill it in instead of the address (default invitation) in the field above the button. After clicking the button, confirm the transaction in the wallet and METAMASK pop-up windows.</p>
+				</td></tr>
+
+			<tr class='sst'><td>WHERE CAN I GET GLOB?</td><td><span class="pull-right">+</span></td></tr>
+				<tr class='ura hidden'><td colspan='2'><p>You can buy or sell GLOB on cryptocurrency exchanges:
+				<p><a href="https://vindax.net" target="_blank">VINDAX.NET >></a></p>
+				<p><a href="https://vindax.net" target="_blank">VINDAX.NET >></a></p>
+			
+			</td></tr>
+	
+							
+			<tr class='sst'><td>HOW TO SEND GLOB TO ANOTHER WALLET?</td><td><span class="pull-right">+</span></td></tr>
+				<tr class='ura hidden'><td colspan='2'><p>To send GLOB via the PoT protocol, go to the SEND GLOB tab, enter the required amount and the Ethereum address of the recipient's account, then click on the SEND GLOB button and confirm the transaction in the wallet and METAMASK pop-up windows. After 365 days, you will receive a 100% cashback, and the recipient will receive a 100% reward.</p>
+				<p>To send GLOB to cryptocurrency exchange accounts or smart contracts without paying for mining, use the direct ERC20 transfer by choosing ERC20 TRANSFER in the SEND GLOB tab. Please note that cashbacks and rewards are not awarded for direct ERC20 GLOB transfers.</p>
+				</td></tr>
+
+			<tr class='sst'><td>HOW TO CREATE AN INVOICE TO RECEIVE GLOB?</td><td><span class="pull-right">+</span></td></tr>
+				<tr class='ura hidden'><td colspan='2'><p>To create an invoice, go to the CREATE BILL tab, enter the amount of the invoice in GLOB, taking into account the 20% mining cost, click on the CREATE BILL button, copy the created payment link and send it to the payer.</p>
+				</td></tr>
+
+		<tr class='sst'><td>ARE THERE TRANSACTION COMMISSIONS?</td><td><span class="pull-right">+</span></td></tr>
+				<tr class='ura hidden'>
+				<td colspan='2'><p>When sending GLOB via PoT, the mining cost is 20% of the amount. This is embedded in the system's economic model to limit uncontrolled emissions and stabilize GLOB cryptocurrency liquidity. The withheld commission is fully offset by the 100% cashback.</p>
+				<p>When sending GLOB directly via the ERC20 protocol, there are no mining costs.</p>
+				<p>Since GLOB cryptocurrency was created on the Ethereum blockchain, any transaction requires a gas payment of ~ 0.0001ETH.</p>
+				</td>
+				</tr>	
+
+			<tr class='sst'><td>WHERE ARE MINING PAYMENTS DIRECTED?</td><td><span class="pull-right">+</span></td></tr>
+				<tr class='ura hidden'><td colspan='2'>
+				<p>When confirming the transaction, you are invited to use the checkboxes to choose how the mining payment will be used. You can send this amount to the system’s charity fund, to the developer support fund, or simply destroy it (default option).</p>
+				</td></tr>
+
+
+			<tr class='sst'><td>WHAT IS A RESERVE TRANSACTION?</td><td><span class="pull-right">+</span></td></tr>
+				<tr class='ura hidden'><td colspan='2'>
+				<p>A digital asset created during a PoT transaction that mines and distributes GLOB cryptocurrency. You can see your reserve transactions under MY RESERVE tab in the RESERVE TRANSACTIONS table.</p>
+				</td></tr>
+
+
+				
+			<tr class='sst'><td>HOW IS GLOB CRYPTOCURRENCY MINED?</td><td><span class="pull-right">+</span></td></tr>
+				<tr class='ura hidden'>
+				<td colspan='2'>			
+				<p>For mining purposes, it is sufficient to make settlements in GLOB using the PoT protocol, perform Total Mining, distribute airdrops and invite new sponsors.</p>
+				<p>When sending GLOB, you receive 100% of the amount sent as a cashback, and when you receive GLOB, you get 100% of the amount received.</p>
+				<p>When engaging in Total Mining, you obtain 900% of the transaction amount in GLOB.</p>
+				<p>When sending airdrops, you get 172% and get an instant return of 64% of the airdrop cost.</p>
+				<p>When transfers are made by sponsor funds, you get 10% of the amount of their transactions, and when sponsors engage in Total Mining, you get 50% along with instant 20% bonuses from the first and 5% from the second level.</p>
+				<p>GLOB cryptocurrency mining is carried out continuously for 365 days from the date of transaction. In the beginning, the coin mining rate is minimal, then it increases exponentially, reaching its maximum value on day 365, after which the mining ends.</p>
+				</td>
+				</tr>
+
+			<tr class='sst'><td>WHAT IS TOTAL MINING?</td><td><span class="pull-right">+</span></td></tr>
+				<tr class='ura hidden'><td colspan='2'><p>A transaction with a maximum mining income of 900% of the transaction amount within 365 days for your fund.</p>
+				<p>When your 1st and 2nd-level sponsors engage in Total Mining, you get 50% of the transaction amount along with instant bonuses of 20% and 5% from each level.</p>
+				</td></tr>
+				
+			<tr class='sst'><td>HOW TO GET A CASHBACK AND MINING REWARDS?</td><td><span class="pull-right">+</span></td></tr>
+				<tr class='ura hidden'><td colspan='2'><p>Go to MY RESERVE tab, select the desired transaction in the RESERVE TRANSACTIONS table, go to the transaction page, click on the GET REWARD button and confirm the transaction in the wallet and METAMASK pop-up windows.</p>
+				<p>Please note that if mining has not been completed, you will receive only that part of the amount that the transaction managed to mine, and transaction mining will be completed.</p>
+				</td></tr>
+			
+				
+			<tr class='sst'><td>HOW TO VERIFY AND CONFIRM THE TRANSACTION?</td><td><span class="pull-right">+</span></td></tr>
+				<tr class='ura hidden'>
+				<td colspan='2'><p>All transactions are stored in the Ethereum blockchain smart contract database and are accessible online via direct links. To get the link, go to the MY RESERVE tab, select the transaction in the RESERVE TRANSACTIONS table, and go to its page.</p></td></tr>	
+
+			<tr class='sst'><td>WHY HASN’T THE TRANSACTION APPEARED AFTER GLOB TRANSFER?</td><td><span class="pull-right">+</span></td></tr>
+				<tr class='ura hidden'><td colspan='2'><p>Perhaps the transaction has not yet been completed in the Ethereum network, please wait several minutes and update the information using the REFRESH button. If the transaction still has not been completed, refresh the data again a few minutes later.	</p>	
+				<p>The transaction speed in the Ethereum network depends on the price of gas: the more gas is used, the faster the transaction is completed. If your transactions take too long, increase the amount of gas through Metamask.</p>
+				</td></tr>
+			
+	
+			<tr class='sst'><td>HOW TO INVITE SPONSORS?</td><td><span class="pull-right">+</span></td></tr>
+				<tr class='ura hidden'><td colspan='2'>
+				<p>The most convincing reason to invite sponsors is the mutually beneficial TOTAL MINING offer, in which your sponsor earns 900% of the transaction amount in 365 days, and you earn 50% and get an instant bonus of 20%.</p>
+				<p>To invite a sponsor, you need to give him an invitation – your fund’s Ethereum account address. The user must register a reserve fund using your invite in order to become your sponsor.</p>
+				<p>To transfer an invitation, you can use the direct link, which is located under the SPONSORS tab. Using cookies, it will automatically fill your invitation in the sponsor fund registration form.</p>
+				<p>The most effective invitation transfer tool is the distribution of free airdrops. Upon receipt of the airdrop, the sponsors’ reserve funds are automatically registered with your invitation, and the use of the airdrop pool allows to fully automate the process of airdrop distribution.</p>
+				</td></tr>
+			
+			
+			<tr class='sst'><td>SENDING AIRDROPS: TO WHOM AND WHY?</td><td><span class="pull-right">+</span></td></tr>
+				<tr class='ura hidden'><td colspan='2'>
+				<p>You can send airdrops only to Ethereum blockchain users who are not registered in the system and automatically create reserve funds for your sponsors.</p>
+				<p>The transaction is automatically created for the airdrop recipient, slated to extract 160% of the airdrop amount in 365 days, and you get an instant return of 64% and 172% within 365 days.</p>
+				</td></tr>
+			
+			<tr class='sst'><td>WHAT IS THE PURPOSE OF THE AIRDROP POOL?</td><td><span class="pull-right">+</span></td></tr>
+				<tr class='ura hidden'><td colspan='2'>
+				<p>AIRDROP POOL is required to automate the distribution of airdrops. If you have an airdrop pool, any user will be able to independently receive your airdrops via a direct link (located in the NETWORK tab).</p>
+				<p>To create an airdrop pool, go to the AIRDROP tab, press CREATE AIRDROP POOL and fill in all the form fields. To stop airdrop distribution and return the GLOB balance to your account, press the STOP AIRDROP POOL button.</p>
+				</td></tr>
+									
+			<tr class='sst'><td>WHAT IS THE G.R.S. FOUNDATION?</td><td><span class="pull-right">+</span></td></tr>
+				<tr class='ura hidden'><td colspan='2'><p>G.R.S. FOUNDATION is a charity fund of the Global Reserve System, which is formed during the work of the PoT mining stream from the funds held during transactions.</p>
+				<p>The fund's resources are allocated to finance socially significant projects in the field of science, culture, education and health care through the Global Reserve Fund community vote.</p>
+				</td></tr>
+				
+			<tr class='sst'><td>WHY CAN’T I LOGIN TO MY GLOB WALLET?</td><td><span class="pull-right">+</span></td></tr>
+				<tr class='ura hidden'><td colspan='2'><p>If you cannot log into your GLOB WALLET, make sure that:</p>
+				<p>1. You are using the CHROME or FIREFOX browser</p>
+				<p>2. The METAMASK extension is installed and the password for the METAMASK wallet is set.</p>
+				<p>3. Main Ethereum Network is selected in the METAMASK extension.</p>
+				<p>4. The METAMASK extension is active, you entered the correct password and selected the relevant Ethereum account.</p>
+				<p>5. There are no third-party extensions or ad blockers in the browser that may interfere with the GLOB WALLET application.</p>
+				<p>6. There are no active antiviruses or firewalls on your computer restricting your Internet connection.</p>
+				<p>7. Your computer is not infected with viruses or malware.</p>
+				<p>You may not be able to login to GLOB WALLET if at least one item from the list has not been completed.</p>
+				</td></tr>			
+	
+	
+			<tr class='sst'><td>WHERE CAN I GET MORE INFORMATION?</td><td><span class="pull-right">+</span></td></tr>
+				<tr class='ura hidden'><td colspan='2'><p>For more additional information please refer to:</p>
+				<p><a href="https://vindax.net" onclick="">System Information >></a></p>
+				<p><a href="https://vindax.net" target="_blank">White Paper >></a></p>
+			    <p><a href="https://vindax.net" target="_blank">Telegram Chat >></a></p>
+				</td></tr>
+
+
+				
+				</table>
+			</div>		
+			
+			</div>
+			
+			
+			<div class="col-sm-3">
+			<div class='help' style='padding:17px 0; margin:0;'>
+			<label class='help-block' style="margin-bottom:5px;">LINKS</label>
+			
+			
+			<div class="row">
+			<div class="col-sm-12" style="margin-bottom:6px;cursor:pointer;"><div class="soy" onclick="window.open('https://t.me/globsupport','_blank');"><p class="rattss gg">SUPPORT</p><small>TELEGRAM <small class="glyphicon glyphicon-log-out"></small></small></div></div>
+			<div class="col-sm-12" style="margin-bottom:6px;cursor:pointer;"><div class="soy" onclick="window.open('https://t.me/grschat','_blank');"><p class="rattss gg">COMMUNITY</p><small>TELEGRAM <small class="glyphicon glyphicon-log-out"></small></small></div></div>
+			<div class="col-sm-12" style="margin-bottom:6px;cursor:pointer;"><div class="soy" onclick="window.open('https://t.me/globmarketplace','_blank');"><p class="rattss gg"><small>MARKETPLACE</p>TELEGRAM <small class="glyphicon glyphicon-log-out"></small></small></div></div>
+			<div class="col-sm-12" style="margin-bottom:6px;cursor:pointer;"><div class="soy"><p class="rattss gg">WHITE PAPER</p><small>DOWNLOAD <small class="glyphicon glyphicon-log-out"></small></small></div></div>
+			<div class="col-sm-12" style="margin-bottom:6px;cursor:pointer;"><div class="soy"><p class="rattss gg">SOURCE CODE</p><small>GITHUB <small class="glyphicon glyphicon-log-out"></small></small></div></div>
+
+
+			</div>
+			</div>
+			</div>
+			
+			
+			
+		</div>
+
+	</div>			
+		
+</div>
+
+</div></div>
+   
+<div class="shad_"></div>
+<div class="shads_"></div>
+<div class="nottic">
+
+<div class="tx_waiting2 xoff" style="height:auto;padding:15px 20px 20px 20px;z-index:1;background-color:#0f141b;color:white;border:solid 1px #35475b;text-align:left;">
+<small>STEP 1 <span class="glyphicon glyphicon-bell" style="margin-left:10px;"></span>
+<span class="pull-right gttmm" style="margin:3px 0 0 0;color:#c8c8c8;font-weight:bold;display:none;">INSTALL AND RELOAD THIS PAGE</span>
+</small>
+<h4 class="help-block" style="color:#efb734;"><b>METAMASK EXTENTION REQUIRED</b></h4>
+<a target="" onclick="if(window.cme!=1){$(this).html('CHECK METAMASK EXTENTION');window.open('https://metamask.io/','_blank');window.cme=1;}else{location.reload();}" class="btn btn-default btn-sm pull-right" style="margin:0;">
+GET METAMASK EXTENTION <small class="glyphicon glyphicon-triangle-right"></small></a>
+<button class="btn btn-default btn-sm pull-left" style="margin:0;" onclick="$('.onono').click();">CLOSE</button>
+<div class='' style="position:absolute;top:123px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="color:#BFBFBF;">STEP 2 <span class="glyphicon glyphicon-ban-circle" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#9C710C;"><b>CHECKING ETHEREUM CONNECTION</b></h4>
+</div>
+<div class='' style="position:absolute;top:285px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="color:#BFBFBF;">STEP 4 <span class="glyphicon glyphicon-ban-circle" style="margin-left:10px;"></span>
+<!--span class="pull-right gairag" style="margin:3px 0 0 0;color:#c8c8c8;font-weight:bold;"></span-->
+</small>
+<h4 class="help-block" style="color:#9C710C;"><b>CHECKING FUND REGISTRATION</b></h4>
+</div>
+<div class='' style="position:absolute;top:204px;right:-1px; padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="color:#BFBFBF;">STEP 3 <span class="glyphicon glyphicon-ban-circle" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#9C710C;"><b>CHECKING ETHEREUM BALANCE</b></h4>
+</div>
+<div class='' style="position:absolute;top:366px;right:-1px; padding:15px 20px 5px 20px; width:405px; color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="color:#BFBFBF;">STEP 5 <span class="glyphicon glyphicon-ban-circle" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#9C710C;"><b>CHECKING GLOB BALANCE</b></h4>
+</div>
+</div>
+
+<div class="tx_waiting4 xoff" style="height:auto;padding:15px 20px 5px 20px;z-index:1;color:white;border:solid 1px #35475b;text-align:left;background-color:#151d2a;">
+<small>STEP 1 <span class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>METAMASK EXTENTION ACTIVE</b></h4>
+<div class='' style="position:absolute;top:80px;right:-1px;padding:15px 20px 20px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#0f141b;">
+<small>STEP 2 <span class="glyphicon glyphicon-bell" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>CONNECT TO ETHEREUM NETWORK</b></h4>
+<a target="_blank" class="btn btn-default btn-sm pull-right metam" style="margin:0;">
+CONNECT WITH METAMASK</a>
+<button class="btn btn-default btn-sm pull-left" style="margin:0;" onclick="$('.onono').click();">CLOSE</button>
+</div>
+<div class='' style="position:absolute;top:285px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="color:#BFBFBF;">STEP 4 <span class="glyphicon glyphicon-ban-circle" style="margin-left:10px;"></span>
+<!--span class="pull-right gairag" style="margin:3px 0 0 0;color:#c8c8c8;font-weight:bold;"></span-->
+</small>
+<h4 class="help-block" style="color:#9C710C;"><b>CHECKING FUND REGISTRATION</b></h4>
+</div>
+<div class='' style="position:absolute;top:204px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="color:#BFBFBF;">STEP 3 <span class="glyphicon glyphicon-ban-circle" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#9C710C;"><b>CHECKING ETHEREUM BALANCE</b></h4>
+</div>
+<div class='' style="position:absolute;top:366px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="color:#BFBFBF;">STEP 5 <span class="glyphicon glyphicon-ban-circle" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#9C710C;"><b>CHECKING GLOB BALANCE</b></h4>
+</div>
+</div>
+
+<div class="tx_waiting3 xoff" style="height:auto;padding:15px 20px 5px 20px;z-index:1;color:white;border:solid 1px #35475b;text-align:left;background-color:#151d2a;">
+<small style="">STEP 1 <span class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>METAMASK EXTENTION FOUND</b></h4>
+<div class='' style="position:absolute;top:80px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="">STEP 2 <span class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>CONNECTED TO ETHEREUM</b></h4>
+</div>
+<div class='' style="position:absolute;top:161px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small>STEP 3 <span class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>ETHEREUM BALANCE IS SUFFICIENT</b></h4>
+</div>
+<div class='' style="position:absolute;top:242px;right:-1px;padding:15px 20px 20px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#0f141b;">
+<small>STEP 4 <span class="glyphicon glyphicon-bell" style="margin-left:10px;"></span> 
+<span class="pull-right gairag" style="margin:3px 0 0 0;color:#c8c8c8;font-weight:bold;"></span>
+</small>
+<h4 class="help-block" style="color:#efb734;margin-bottom:10px;"><b>FUND REGISTRATION REQUIRED</b></h4>
+
+	
+<div class='input-group' style="margin:0 0 20px 0;padding:0;"  data-html="true" data-toggle="tooltip" data-placement="left" title="ENTER INVITATION ADDRESS"><span class='input-group-addon inininv' style='background-color:#151d2a !important; border:solid 1px #35475b;padding:0 7px;height:30px  !important;font-size:10px;'>INVITE</span>
+<input class="form-control input-sm" type='text' id="f_ref" style='margin:0;background-color:#000;color:#fff;border:solid 1px #35475b;border-left:solid 0px #35475b;height:30px  !important;' spellcheck='false' placeholder='Enter your invitation address'/></div>
+
+<button target="_blank" id="us_in" class="btn btn-default btn-sm pull-right chekinv" style="margin:0;">CREATE RESERVE FUND</span></button>
+<button class="btn btn-default btn-sm pull-left" style="margin:0;" onclick="$('.onono').click();">CLOSE</button>
+</div>
+<div class='' style="position:absolute;top:416px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="color:#BFBFBF;">STEP 5 <span class="glyphicon glyphicon-ban-circle" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#9C710C;"><b>CHECKING GLOB BALANCE</b></h4>
+</div>
+</div>
+
+
+
+
+<div class="tx_waiting1 xoff" style="height:auto;padding:15px 20px 5px 20px;z-index:1;color:white;border:solid 1px #35475b;text-align:left;background-color:#151d2a;">
+<small style="">STEP 1 <span class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>METAMASK EXTENTION FOUND</b></h4>
+<div class='' style="position:absolute;top:80px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="">STEP 2 <span class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>CONNECTED TO ETHEREUM</b></h4>
+</div>
+<div class='' style="position:absolute;top:161px;right:-1px;padding:15px 20px 20px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#0f141b;">
+<small>STEP 3 <span class="glyphicon glyphicon-bell" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>INSUFFICIENT ETHEREUM BALANCE</b></h4>
+<a target="_blank" onclick="if(window.cmee!=1){$(this).html('CHECK ETHEREUM BALANCE');window.open('https://coinmarketcap.com/currencies/ethereum/markets/','_blank');window.cmee=1;}else{metammst();window.cmee=0;$(this).html('REFILL BALANCE  <small class=\'glyphicon glyphicon-triangle-right\'></small>');}" class="btn btn-default btn-sm pull-right" style="margin:0;">
+REFILL BALANCE <small class="glyphicon glyphicon-triangle-right"></small></a>
+<button class="btn btn-default btn-sm pull-left" style="margin:0;" onclick="$('.onono').click();">CLOSE</button>
+</div>
+<div style="position:absolute;top:285px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small class='fundii' style="color:#BFBFBF;">STEP 4 <span class="glyphicon glyphicon-ban-circle" style="margin-left:10px;"></span>
+<!--span class="pull-right gairag" style="margin:3px 0 0 0;color:#c8c8c8;font-weight:bold;"></span-->
+</small>
+<h4 class="help-block fundi" style="color:#9C710C;"><b>CHECKING FUND REGISTRATION</b></h4>
+</div>
+<div class='' style="position:absolute;top:366px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="color:#BFBFBF;">STEP 5 <span class="glyphicon glyphicon-ban-circle" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#9C710C;"><b>CHECKING GLOB BALANCE</b></h4>
+</div>
+</div>
+
+
+
+
+<div class="tx_waiting5 xoff" style="height:auto;padding:15px 20px 5px 20px;z-index:1;color:white;border:solid 1px #35475b;text-align:left;background-color:#151d2a;">
+<small style="">STEP 1 <span class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>METAMASK EXTENTION FOUND</b></h4>
+<div class='' style="position:absolute;top:80px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="">STEP 2 <span class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>CONNECTED TO ETHEREUM</b></h4>
+</div>
+<div class='' style="position:absolute;top:161px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small>STEP 3 <span class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>ETHEREUM BALANCE IS SUFFICIENT</b></h4>
+</div>
+<div style="position:absolute;top:240px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small class='fundii'>STEP 4 <span class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></small>
+<h4 class="help-block fundi" style="color:#efb734;"><b>THE FUND <span class='usrid'></span> REGISTERED</b></h4>
+</div>
+<div class='' style="position:absolute;top:321px;right:-1px;padding:15px 20px 20px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#0f141b;">
+<small>STEP 5 <span class="glyphicon glyphicon-bell" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>INSUFFICIENT GLOB BALANCE</b></h4>
+<a target="_blank"  onclick="if(window.cmeg!=1){$(this).html('CHECK GLOB BALANCE');window.open('https://coinmarketcap.com/currencies/ethereum/markets/','_blank');window.cmeg=1;}else{metammst();window.cmeg=0;$(this).html('REFILL BALANCE  <small class=\'glyphicon glyphicon-triangle-right\'></small>');}" class="btn btn-default btn-sm pull-right" style="margin:0;">
+REFILL BALANCE <small class="glyphicon glyphicon-triangle-right"></small></a>
+<button class="btn btn-default btn-sm pull-left" style="margin:0;" onclick="$('.onono').click();">CLOSE</button>
+</div>
+</div>
+
+<div class="tx_waiting6 xoff" style="height:auto;padding:15px 20px 5px 20px;z-index:1;color:white;border:solid 1px #35475b;text-align:left;background-color:#0f141b;">
+<small style="">NOTIFICATION <span class="glyphicon glyphicon-bell" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>NO NOTIFICATIONS</b>
+<button class="btn btn-default btn-sm pull-right" style="margin:-5px 0 0 0;" onclick="$('.onono').click();">CLOSE</button>
+</h4>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+<!--div class="tx_waiting7 xofs" style="height:auto;padding:15px 20px 5px 20px;z-index:1;color:white;border:solid 1px #35475b;text-align:left;background-color:#0f141b;">
+<small style=""><img border="0" src="pics/airdrops.png" style='margin-right:10px;margin-top:-4px;height:13px;'>GET + 160% OF YOUR AND SPONSORS GLOB 
+<span class="pull-right gairag" style="margin:3px 0 0 0;color:#c8c8c8;font-weight:bold;">2020.31.01</span>
+</small>
+<h4 class="help-block" style="color:#efb734;"><b>AIRDROP ACTION 2020</b></h4>
+</div-->
+
+
+
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="jss/bootstrap.min.js"></script>
+<script src="//piyolab.github.io/sushiether/web3.js/libs/web3.js_v1.0.0-beta.34/web3.min.js"></script>
+<script src="jss/kss.js"></script>
+<script src="jss/fn.js"></script>
+<script src="jss/funn.js"></script>
+<script>
+isMobile = false; //initiate as false
+// device detection
+if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
+    || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0,4))) { 
+    isMobile = true;
+}
+console.log('mobile '+isMobile);
+window.start=0;
+
+/*
+if(window.location.href.split('/?')[0]===top.window.location.href.split('/?')[0]){
+top.window.location.replace('https://globreserve.github.io/');
+}
+*/
+
+window.topstring='';
+window.cTime='';
+
+if(typeof ethereum !== 'undefined'){
+ethereum.autoRefreshOnNetworkChange=false;
+ethereum.on('accountsChanged', function (accounts){
+//alert('METAMASK');
+metammst();
+//location.reload();
+})
+$('.tx_waiting2').hide();
+$('.tx_waiting4').show();}else{$('.tx_waiting2').show();}
+
+
+$(function(){$('[data-toggle="tooltip"]').tooltip()})
+
+
+$(window).on('message',function(evt){ 
+if(evt.originalEvent.data=="glob:zero"){
+$('.puppa').click();
+}else{
+if(window.start==0){
+window.start=1;
+if(evt.originalEvent.data.length>6){
+if(evt.originalEvent.data.substr(0,5)=='glob:'){
+window.topp=evt.originalEvent.data.substr(5).split('?')[0];
+window.topstring=evt.originalEvent.data.substr(5).split('?')[1];
+console.log(window.topp);
+console.log(window.topstring);
+
+if(typeof ethereum !== 'undefined'){
+//window.start=1;
+//metammst();
+startre();
+}else{
+startre();
+}
+}}}else{
+if(evt.originalEvent.data.length>6){
+if(evt.originalEvent.data.substr(0,5)=='glob:'){
+window.topstring=evt.originalEvent.data.substr(5);
+ronly();
+}}}}});
+
+async function startre(){
+host = "https://mainnet.infura.io/v3/e0961ac4b5a44ff68c5855369286db88";
+web3 = new Web3(new Web3.providers.HttpProvider(host));	
+counter=new web3.eth.Contract(abi,address);
+conregg=new web3.eth.Contract(regabi,regaddress);
+condeal=new web3.eth.Contract(dealabi,dealaddress);
+consend=new web3.eth.Contract(sendabi,sendaddress);
+conjoin=new web3.eth.Contract(joinabi,joinaddress);
+conair=new web3.eth.Contract(airabi,airaddress);
+conmint=new web3.eth.Contract(mintabi,mintaddress);
+conpull=new web3.eth.Contract(pullabi,pulladdress);
+
+setTimeout(totalStats(1),400);console.log('infura');
+
+window.start=1;
+
+}
+
+$('.metam').on('click',function(e){
+$('.renew').removeClass('metam');
+e.preventDefault();event.stopPropagation();
+metammst();});
+
+async function metammst(){
+if(window.ethereum){window.web3 = new Web3(ethereum);try {await ethereum.enable();
+network=await web3.eth.net.getNetworkType(); console.log(network);
+accounts=await web3.eth.getAccounts();
+counter=new web3.eth.Contract(abi,address);
+conregg=new web3.eth.Contract(regabi,regaddress);
+condeal=new web3.eth.Contract(dealabi,dealaddress);
+consend=new web3.eth.Contract(sendabi,sendaddress);
+conjoin=new web3.eth.Contract(joinabi,joinaddress);
+conair=new web3.eth.Contract(airabi,airaddress);
+conmint=new web3.eth.Contract(mintabi,mintaddress);
+conpull=new web3.eth.Contract(pullabi,pulladdress); unlock();
+}catch(error){console.log('User denied account access');}}else{
+window.open('https://metamask.io/','_blank');
+$('.tx_waiting2').show();}}
+
+function unlock(){web3.eth.getAccounts(function(err, accounts){
+      if(err != null){console.log(err);}
+      else if(accounts.length===0){console.log('MetaMask is locked')}
+      else{$('.shads_').show();$('.consoley').html('');$('.consoley').show();
+	  logg("* WALLET LOADING *</br></br>");logg("# METAMASK UNLOCKED");
+	  totalStats();}});}
+
+window.onerror = function(){$('.shads_').hide();logg('<span onclick="resetter();" style="color:#900;cursor:pointer;"> # ERROR. CLICK TO TRY AGAIN.</span>');}
+function resetter(){$('.consoley').hide();$('.consoley').html('');$('#password').val('');$('#password').focus();};
+
+/*7AE0 7D81 3D73 89D90 3150 39B70 C99F 5F97 65AFF 268AD E793 7520 0D8B 8E89 2439*/
+
+</script>
+</body>
+</html>
