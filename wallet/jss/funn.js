@@ -244,12 +244,13 @@ $('#cbks').html(htm);}}
 
 $('#dl_n').on('click',function(){cashbkss(window.cbnext-1);});
 $('#dl_p').on('click',function(){
+	if(!$(this).hasClass('disabled')){
 	$(this).html('LOADING...');
 	$(this).addClass('disabled');$('#dl_n').addClass('disabled'); 
 	if(window.kosoa[window.cbnext+1]!=1){
 	window.cashLL=window.cashLL-7;cashList(window.cashLL-1);
 	window.koso = window.cbnext+1;window.kosoa[window.cbnext+1]=1;
-	}else{cashbkss(window.cbnext+1);}});
+}else{cashbkss(window.cbnext+1);}}});
 
 function referrers(n){
 $('#rfr_p').html('NEXT <i class="glyphicon glyphicon-triangle-right"></i>');
@@ -261,14 +262,15 @@ let htm = ''; for(let i=cbegin; i > cend; i--){
 htm = htm + "<tr><td><small>"+window.reffs[i][2]+"</small></td><td><small>R"+window.reffs[i][1]+"</small></td><td style='cursor:pointer;'><small onclick=\"window.open(\'https://etherscan.io/address/"+window.reffs[i][0]+"\',\'_blank\')\">"+window.reffs[i][0]+"</small></td><td><small>"+window.reffs[i][3]+"</small></td></tr>";}
 $('#refln').html(htm);}}
 $('#rfr_n').on('click',function(){referrers(window.rffnext-1);});
-$('#rfr_p').on('click',function(){	
-	$(this).html('LOADING...');
-	$(this).addClass('disabled');$('#rfr_n').addClass('disabled');
+$('#rfr_p').on('click',function(){
+	if(!$(this).hasClass('disabled')){
+	$(this).html('LOADING...');	
+	$(this).addClass('disabled');$('#rfr_n').addClass('disabled');	
 	if(window.fosoa[window.rffnext+1]!=1){
 	window.ref1L=window.ref1L-10;
 	fstRef(window.ref1L-1);
 	window.foso = window.rffnext+1;window.fosoa[window.rffnext+1]=1;
-	}else{referrers(window.rffnext+1);}});	
+	}else{referrers(window.rffnext+1);}}});	
 
 function seferrers(n){
 $('#srfr_p').html('NEXT <i class="glyphicon glyphicon-triangle-right"></i>');
@@ -283,7 +285,7 @@ $('#srefln').html(htm);}}
 $('#srfr_n').on('click',function(){seferrers(window.sffnext-1);});
 $('#srfr_p').on('click',function(){
 	$(this).html('LOADING...');
-	$(this).addClass('disabled');$('#srfr_n').addClass('disabled');
+	$(this).addClass('disabled');$('#srfr_n').addClass('disabled');	
 	if(window.sosoa[window.sffnext+1]!=1){
 	window.ref2L=window.ref2L-10;secRef(window.ref2L-1);
 	window.soso = window.sffnext+1;window.sosoa[window.sffnext+1]=1;
