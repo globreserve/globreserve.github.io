@@ -17,6 +17,10 @@ window.seffs=[];window.reffs=[];
 window.refbal=0;
 clearral();
 
+
+//getBlockNumber
+
+	/*undefined,9118508,*/
 	clearInterval(window.cTime);
 	logg("# CONNECT ТО ETHEREUM");
 	counter.methods.totalSupply().call(function(err,tStat0){if(!err){
@@ -54,14 +58,15 @@ clearral();
 		
 function ballance(){	
 	web3.eth.getBalance(accounts[0],function(err,eBallance){if(!err){
+	web3.eth.getBlockNumber(function(err,bNumber){if(!err){
 	counter.methods.balanceOf(accounts[0]).call(function(err,gBallance){if(!err){
 	
 	window.eBallance = eBallance/10**18;
 	window.gBallance = parseInt(gBallance)/10**18;
 	
+	console.log('block '+bNumber);
 	
-	
-	accountStats();}});}});}
+	accountStats();}});}});}});}
 
 function accountStats(){
 	conregg.methods.ref(accounts[0]).call(function(err,refer){if(!err){
@@ -106,7 +111,8 @@ function accountStats(){
 	}else{console.error(err);}});
 	}else{console.error(err);}});}
 				
-function cashList(i){if(i>=0){condeal.methods.d_list(accounts[0],i).call({from:accounts[0]},function(err,result){if(!err){
+function cashList(i){if(i>=0){
+	condeal.methods.d_list(accounts[0],i).call({from:accounts[0]},function(err,result){if(!err){
 	condeal.methods.getone(result).call({from:accounts[0]},function(err,res){if(!err){	
 	conregg.methods.idd(res[0]).call(function(err,sender){if(!err){	
 	conregg.methods.idd(res[1]).call(function(err,reciver){if(!err){	
@@ -128,9 +134,14 @@ function cashList(i){if(i>=0){condeal.methods.d_list(accounts[0],i).call({from:a
 	}else{console.error(err);}});}else{console.error(err);}});
 	}else{console.error(err);}});}else{console.error(err);}});}else{
 	window.rrw1=1;window.rrw0=1; logg("# 0 TRANSACTION");
-	
 	fstRef(window.ref1-1);secRef(window.ref1-2);window.rrw1=1;
 	if(window.rrw1==1 && window.rrw2==1 && window.rrw3==1){setTimeout(startmm(),400);}}}
+	
+	
+	
+	
+	
+	
 
 function fstRef(i){if(i>=0){
 	conregg.methods.fref(accounts[0],i).call(function(err,fref){if(!err){	
@@ -145,26 +156,24 @@ function fstRef(i){if(i>=0){
 		}}});}});}});}});}else{logg("# 0 SPONSORS 1"); window.rrw2=1;
 		if(window.rrw1==1 && window.rrw3==1){setTimeout(startmm(),400);}}}	
 		
-function fstRefss(i){if(i>=0){
-	conregg.methods.fref(accounts[0],i).call(function(err,fref){if(!err){	
-	counter.methods.balanceOf(fref).call(function(err,bal){if(!err){	
-	console.log(fref);
-	window.refbal=window.refbal+bal;
+		/*undefined,9118508, */
+		
+function fstRefss(i){
+	if(i>=0){
+		conregg.methods.fref(accounts[0],i).call(function(err,fref){if(!err){	
+		counter.methods.balanceOf(fref).call(undefined,'latest',function(err,bal){if(!err){	
+		console.log(fref);
+		
+	window.refbal=window.refbal+parseInt(bal);
 	
 	if(i>0){fstRefss(i-1);}else{
 		console.log('RFBALL '+window.refbal);
 	}
 	}else{console.error(err);}});
 	}else{console.error(err);}});
-	
 	}else{
 		console.log('RFBALL '+window.refbal);
-	}
-	}		
-		
-		
-		
-		
+	}}		
 		
 		
 function secRef(i){
@@ -244,13 +253,12 @@ $('#cbks').html(htm);}}
 
 $('#dl_n').on('click',function(){cashbkss(window.cbnext-1);});
 $('#dl_p').on('click',function(){
-	if(!$(this).hasClass('disabled')){
 	$(this).html('LOADING...');
 	$(this).addClass('disabled');$('#dl_n').addClass('disabled'); 
 	if(window.kosoa[window.cbnext+1]!=1){
 	window.cashLL=window.cashLL-7;cashList(window.cashLL-1);
 	window.koso = window.cbnext+1;window.kosoa[window.cbnext+1]=1;
-}else{cashbkss(window.cbnext+1);}}});
+	}else{cashbkss(window.cbnext+1);}});
 
 function referrers(n){
 $('#rfr_p').html('NEXT <i class="glyphicon glyphicon-triangle-right"></i>');
@@ -262,15 +270,13 @@ let htm = ''; for(let i=cbegin; i > cend; i--){
 htm = htm + "<tr><td><small>"+window.reffs[i][2]+"</small></td><td><small>R"+window.reffs[i][1]+"</small></td><td style='cursor:pointer;'><small onclick=\"window.open(\'https://etherscan.io/address/"+window.reffs[i][0]+"\',\'_blank\')\">"+window.reffs[i][0]+"</small></td><td><small>"+window.reffs[i][3]+"</small></td></tr>";}
 $('#refln').html(htm);}}
 $('#rfr_n').on('click',function(){referrers(window.rffnext-1);});
-$('#rfr_p').on('click',function(){
-	if(!$(this).hasClass('disabled')){
+$('#rfr_p').on('click',function(){$(this).addClass('disabled');$('#rfr_n').addClass('disabled');	
 	$(this).html('LOADING...');	
-	$(this).addClass('disabled');$('#rfr_n').addClass('disabled');	
 	if(window.fosoa[window.rffnext+1]!=1){
 	window.ref1L=window.ref1L-10;
 	fstRef(window.ref1L-1);
 	window.foso = window.rffnext+1;window.fosoa[window.rffnext+1]=1;
-	}else{referrers(window.rffnext+1);}}});	
+	}else{referrers(window.rffnext+1);}});	
 
 function seferrers(n){
 $('#srfr_p').html('NEXT <i class="glyphicon glyphicon-triangle-right"></i>');
@@ -283,9 +289,8 @@ htm = htm + "<tr><td><small>"+window.seffs[i][2]+"</small></td><td><small>R"+win
 $('#srefln').html(htm);}}
 
 $('#srfr_n').on('click',function(){seferrers(window.sffnext-1);});
-$('#srfr_p').on('click',function(){
-	$(this).html('LOADING...');
-	$(this).addClass('disabled');$('#srfr_n').addClass('disabled');	
+$('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').addClass('disabled');
+	$(this).html('LOADING...');	
 	if(window.sosoa[window.sffnext+1]!=1){
 	window.ref2L=window.ref2L-10;secRef(window.ref2L-1);
 	window.soso = window.sffnext+1;window.sosoa[window.sffnext+1]=1;
@@ -564,7 +569,7 @@ $('#srfr_p').on('click',function(){
 	if($('#b_amount').val()==''){
 	if(!!window.topp){		
 	$('.pay_link').val(window.topp+"?r="+window.usid);}else{
-	$('.pay_link').val("https://globreserve.github.io/?r="+window.usid);}
+	$('.pay_link').val("http://glob.money/?r="+window.usid);}
 	
 	if(typeof ethereum !=='undefined'){
 	if(typeof accounts !=='undefined'){
@@ -589,7 +594,7 @@ $('#srfr_p').on('click',function(){
 	if(vall<1){alert("WRONG BILL AMOUNT");return;}		
 	if(!!window.topp){		
 	$('.pay_link').val(window.topp+"?r="+window.usid+'l'+vall);}else{
-	$('.pay_link').val("https://globreserve.github.io/?r="+window.usid+'l'+vall);}
+	$('.pay_link').val("http://glob.money/?r="+window.usid+'l'+vall);}
 	if(typeof ethereum !== 'undefined'){
 	if(typeof accounts !== 'undefined'){
 	if(window.usid>0){	
@@ -608,7 +613,7 @@ $('#srfr_p').on('click',function(){
 	$('#am_drop').attr('disabled','disabled').prop('disabled',true);
 	if(!!window.topp){
 		$('#airlinn').val(window.topp+"?g="+window.usid);}else{
-		$('#airlinn').val("https://globreserve.github.io/?g="+window.usid);}
+		$('#airlinn').val("http://glob.money/?g="+window.usid);}
 		$('.uncharged').addClass('hidden');
 		$('.charged').removeClass('hidden');
 		$('.charged').show();
@@ -632,7 +637,7 @@ $('#srfr_p').on('click',function(){
 	let whtm; let hddt;
 	if(typeof ethereum!=='undefined'){
 	if(typeof accounts!=='undefined'){
-	if(lot>air){alert("AIRDROP VALUE MUST BE LESSER THE DEPOSIT");return;}
+	if(lot>air){alert("AIRDROP VALUE MUST BE SMALLER THAN THE DEPOSIT");return;}
 	if(air>=10){air=BigInt(air*(10**6))*BigInt(10**12);air=air.toString(16);}else{alert("WRONG DEPOSIT AMOUNT");return;} 
 	if(lot>= 1){lot=BigInt(lot*(10**6))*BigInt(10**12);lot=lot.toString(16);}else{alert("WRONG AIRDROP VALUE");return;} 	
 	if(window.usid>0){hddt = 'DEPOSIT AIRDROP POOL';
