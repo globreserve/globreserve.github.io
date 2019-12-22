@@ -177,6 +177,7 @@ function cashListfff(i){if(i>=0){
 		$('.pair11').html(window.actionse*0.8);
 		$('.pair2').html(window.actionto*1.6);
 		$('.pair21').html(window.actionto*0.8);
+		$('.ar2020').html((window.actionto+window.actionse)*1.6);		
 	}else{window.actionf=1;} }
 	}else{console.error(err);}});
 	}else{console.error(err);}});
@@ -190,7 +191,7 @@ function cashListfff(i){if(i>=0){
 		$('.pair11').html(window.actionse*0.8);
 		$('.pair2').html(window.actionto*1.6);
 		$('.pair21').html(window.actionto*0.8);
-		
+		$('.ar2020').html((window.actionto+window.actionse)*1.6);		
 		}else{window.actionf=1;}
 	}}	
 	
@@ -235,6 +236,7 @@ function fstRefss(i){
 		$('.pair11').html(window.actionse*0.8);
 		$('.pair2').html(window.actionto*1.6);
 		$('.pair21').html(window.actionto*0.8);
+		$('.ar2020').html((window.actionto+window.actionse)*1.6);		
 		}else{
 			window.actionf=1;}
 					
@@ -250,6 +252,7 @@ function fstRefss(i){
 		$('.pair11').html(window.actionse*0.8);
 		$('.pair2').html(window.actionto*1.6);
 		$('.pair21').html(window.actionto*0.8);
+		$('.ar2020').html((window.actionto+window.actionse)*1.6);		
 		}else{window.actionf=1;}
 	}}		
 		
