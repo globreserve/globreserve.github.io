@@ -25,6 +25,11 @@ window.refactions=0;
 window.actionto=0;
 window.actionf=0;
 window.latest = 'latest';
+$('.pair1').html('0');
+$('.pair11').html('0');
+$('.pair2').html('0');
+$('.pair21').html('0');
+$('.ar2020').html('0');
 clearral();
 
 
