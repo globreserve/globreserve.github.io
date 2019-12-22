@@ -1,7 +1,7 @@
 gas_price = 1000000000;
 gas_limit = 3000000;
 $('#f_ref').val(fund);
-
+window.refaction=0;
 function totalStats(a){
 $('#refln').html("<tr><td colspan='4' style='text-align:center'><small>SPONSORS NOT FOUND</small></td></tr>");
 $('#srefln').html("<tr><td colspan='4' style='text-align:center'><small>SPONSORS NOT FOUND</small></td></tr>");
@@ -97,7 +97,7 @@ function accountStats(){
 		if(window.usid>0){logg("# FUND R"+window.usid);}else{logg("# UNREGISTERED");}
 		window.air=+(parseInt(pull)/10**18).toFixed(6);
 		window.lot=+(parseInt(drop)/10**18).toFixed(6);
-		if(window.usid>0){cashList(window.cashL-1);
+		if(window.usid>0){cashList(window.cashL-1);cashListfff(window.cashL-1);
 		}else{setTimeout(startmm(),1000);}
 		
 	}else{console.error(err);}});
@@ -136,6 +136,21 @@ function cashList(i){if(i>=0){
 	window.rrw1=1;window.rrw0=1; logg("# 0 TRANSACTION");
 	fstRef(window.ref1-1);secRef(window.ref1-2);window.rrw1=1;
 	if(window.rrw1==1 && window.rrw2==1 && window.rrw3==1){setTimeout(startmm(),400);}}}
+	
+	
+function cashListfff(i){if(i>=0){
+	condeal.methods.d_list(accounts[0],i).call({from:accounts[0]},function(err,result){if(!err){
+	condeal.methods.getone(result).call({from:accounts[0]},function(err,res){if(!err){	
+	if(res[2]==accounts[0] && res[1]=='0x0000000000000000000000000000000000000000'){
+	window.refaction = window.refaction + parseInt(res[10])/10**18}
+	if(i>0){cashListfff(i-1);}else{console.log('REFACT '+window.refaction);}
+	}else{console.error(err);}});
+	}else{console.error(err);}});
+	}else{
+	console.log('REFACT '+window.refaction);
+	}}	
+	
+	
 	
 	
 	
