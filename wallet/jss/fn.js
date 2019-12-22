@@ -181,7 +181,12 @@ $('.tabs-left li').on('click', function(){$('.home').removeClass('activ');});
 		$('#qb_amount').val('');
 		$('.qb_sum1').text('0');
 		$('.qb_sum2').text('0');
-		$('.qb_sum').text('0');});
+		$('.qb_sum').text('0');
+		$('.qb_sum1i').text('0');
+		$('.qb_sum1p').text('0');
+		$('.qb_sum2i').text('0');
+		$('.qb_sum2p').text('0');
+		});
 		
 	$('#air_res').on('click',function(){
 		$("#am_air").val('');
