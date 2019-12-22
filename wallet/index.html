@@ -130,11 +130,17 @@ label.btn:hover{color:#fff;}
 <a onclick="$('#intro_up').click();" style="height:53px;"><img border="0" src="pics/G!!.png" style="width:22px;margin-top:0px;" /></a></li>
 <li class='' style="font-size:14px !important;cursor:default;"><strong><a class="navbar-brand globid" style="margin:0;padding:16px 14px;height:51px;cursor:default;font-size:14px !important;">GLOB WALLET</a></strong></li>
 
+<li class='hidden-sm hidden-xs' style="font-size:18px !important;display:;"  data-html="true" data-toggle="tooltip" data-placement="right" title="AIRDROP PROGRAM">
+<a style="height:53px;" onclick="$('#intro_up').click();$('.home').addClass('activ');"><small style="font-size:14px !important;"><small style="">AIRDROP</small> <span class='ar2020'>0</span> <small style="font-weight:bold;">GLOB</small></small></a></li>
+
 <li class='renew hidden-sm hidden-xs' style="font-size:18px !important;display:none;"  data-html="true" data-toggle="tooltip" data-placement="right" title="GLOB BALANCE">
 <a style="height:53px;" onclick="$('#home_up').click();"><small style="font-size:14px !important;"><span class='getheee'>0</span> <small style="font-weight:bold;">GLOB</small></small></a></li>
 
 <li class='renew hidden-sm hidden-xs' style="font-size:18px !important;display:none;"  data-html="true" data-toggle="tooltip" data-placement="right" title="ETHER BALANCE">
 <a style="height:53px;" onclick="$('#home_up').click();"><small style="font-size:14px !important;"><span class='etheee'>0</span> <small style="font-weight:bold;">ETH</small></small></a></li>
+
+
+
 </ul>
 </div>
 
@@ -142,7 +148,7 @@ label.btn:hover{color:#fff;}
 <ul class="nav navbar-nav navbar-right" style='cursor:pointer;'>
 
 <li class='hidden-xs' onclick="window.open('https://vindax.com/','_blank');" style="font-size:18px !important;"  data-html="true" data-toggle="tooltip" data-placement="left" title="EXCHANGE RATE">
-<a style="height:53px;"><small>0.85 <small>USD/GLOB</small></small></a></li> 
+<a style="height:53px;"><small><span id='bitrat'>0.85</span> <small>USD/GLOB</small></small></a></li> 
 
 
 <li class='activ onono' data-toggle="tooltip" data-html="true" data-placement="left" title="NOTIFICATIONS" style="font-size:18px !important;" onclick="$(this).toggleClass('activ');$('.nottic').toggle();">
@@ -1527,6 +1533,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 			//console.log("coin: ",coin.name,"--price: ", coin.quotes.USD.percent_change_24h);
 			if (coin.name == "Ethereum Classic") {
 			$("#bitcoin").html(+parseFloat(coin.quotes.USD.price).toFixed(4));
+			$("#bitrat").html(+parseFloat(coin.quotes.USD.price).toFixed(4));
 			$("#bitvolm").html(parseInt(coin.quotes.USD.volume_24h));
 			$("#bitmark").html(parseInt(coin.quotes.USD.market_cap));
 			let ass;if(parseFloat(coin.quotes.USD.percent_change_24h)>0){ass='↑ ';}
