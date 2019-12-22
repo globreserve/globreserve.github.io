@@ -1,7 +1,12 @@
 gas_price = 1000000000;
 gas_limit = 3000000;
 $('#f_ref').val(fund);
-window.refaction=0;
+
+
+Date.prototype.getUnixTime = function() { return this.getTime()/1000|0 };
+if(!Date.now) Date.now = function() { return new Date(); }
+Date.time = function() { return Date.now().getUnixTime(); }
+
 function totalStats(a){
 $('#refln').html("<tr><td colspan='4' style='text-align:center'><small>SPONSORS NOT FOUND</small></td></tr>");
 $('#srefln').html("<tr><td colspan='4' style='text-align:center'><small>SPONSORS NOT FOUND</small></td></tr>");
@@ -15,6 +20,11 @@ window.rrw0=0;window.rrw1=0;window.rrw2=0;window.rrw3=0;window.kosoa=[];
 window.fosoa=[];window.sosoa=[];window.w_id=0;window.droppi=0;
 window.seffs=[];window.reffs=[];
 window.refbal=0;
+window.refaction=0;
+window.refactions=0;
+window.actionto=0;
+window.actionf=0;
+window.latest = 'latest';
 clearral();
 
 
@@ -56,17 +66,30 @@ clearral();
 	}else{console.error(err);}});
 	}else{console.error(err);}});}
 		
+		
+		
+		
 function ballance(){	
 	web3.eth.getBalance(accounts[0],function(err,eBallance){if(!err){
 	web3.eth.getBlockNumber(function(err,bNumber){if(!err){
 	counter.methods.balanceOf(accounts[0]).call(function(err,gBallance){if(!err){
-	
+	counter.methods.balanceOf(accounts[0]).call(undefined,window.latest,function(err,gBallancer){if(!err){
+		
 	window.eBallance = eBallance/10**18;
 	window.gBallance = parseInt(gBallance)/10**18;
+	window.gBallancer = parseInt(gBallancer)/10**18;
+	window.gBallancer = +parseFloat(window.gBallancer).toFixed(4);
 	
-	console.log('block '+bNumber);
 	
-	accountStats();}});}});}});}
+	window.aTime = new Date('Mon, 02 Feb 2020 00:00:00 GMT').getUnixTime();
+	
+	console.log('NOW '+Math.floor(Date.now()/1000));
+	
+	console.log('ACTION '+window.aTime);
+	
+	
+	
+	accountStats();}});}});}});}});}
 
 function accountStats(){
 	conregg.methods.ref(accounts[0]).call(function(err,refer){if(!err){
@@ -141,13 +164,34 @@ function cashList(i){if(i>=0){
 function cashListfff(i){if(i>=0){
 	condeal.methods.d_list(accounts[0],i).call({from:accounts[0]},function(err,result){if(!err){
 	condeal.methods.getone(result).call({from:accounts[0]},function(err,res){if(!err){	
-	if(res[2]==accounts[0] && res[1]=='0x0000000000000000000000000000000000000000'){
+	
+	if((res[2]==accounts[0] && res[1]=='0x0000000000000000000000000000000000000000')){
 	window.refaction = window.refaction + parseInt(res[10])/10**18}
-	if(i>0){cashListfff(i-1);}else{console.log('REFACT '+window.refaction);}
+	if((res[0]==accounts[0] && res[1]=='0x0000000000000000000000000000000000000000')){
+	window.refactions = window.refactions + parseInt(res[10])/10**18}
+	
+	if(i>0){cashListfff(i-1);}else{if(window.actionf==1){
+		window.actionto=window.refbal+window.refaction;
+		window.actionse=window.gBallancer + window.refactions;
+		$('.pair1').html(window.actionse*1.6);
+		$('.pair11').html(window.actionse*0.8);
+		$('.pair2').html(window.actionto*1.6);
+		$('.pair21').html(window.actionto*0.8);
+	}else{window.actionf=1;} }
 	}else{console.error(err);}});
 	}else{console.error(err);}});
 	}else{
 	console.log('REFACT '+window.refaction);
+	if(window.actionf==1){
+		window.actionto=window.refbal+window.refaction;
+		window.actionse=window.gBallancer + window.refactions;
+		
+		$('.pair1').html(window.actionse*1.6);
+		$('.pair11').html(window.actionse*0.8);
+		$('.pair2').html(window.actionto*1.6);
+		$('.pair21').html(window.actionto*0.8);
+		
+		}else{window.actionf=1;}
 	}}	
 	
 	
@@ -176,18 +220,37 @@ function fstRef(i){if(i>=0){
 function fstRefss(i){
 	if(i>=0){
 		conregg.methods.fref(accounts[0],i).call(function(err,fref){if(!err){	
-		counter.methods.balanceOf(fref).call(undefined,'latest',function(err,bal){if(!err){	
+		counter.methods.balanceOf(fref).call(undefined,window.latest,function(err,bal){if(!err){	
 		console.log(fref);
 		
-	window.refbal=window.refbal+parseInt(bal);
+	window.refbal=window.refbal+parseInt(bal/10**18);
 	
 	if(i>0){fstRefss(i-1);}else{
+		
 		console.log('RFBALL '+window.refbal);
+		if(window.actionf==1){
+		window.actionto=window.refbal+window.refaction;
+		window.actionse=window.gBallancer + window.refactions;
+		$('.pair1').html(window.actionse*1.6);
+		$('.pair11').html(window.actionse*0.8);
+		$('.pair2').html(window.actionto*1.6);
+		$('.pair21').html(window.actionto*0.8);
+		}else{
+			window.actionf=1;}
+					
 	}
 	}else{console.error(err);}});
 	}else{console.error(err);}});
 	}else{
 		console.log('RFBALL '+window.refbal);
+		if(window.actionf==1){
+			window.actionto=window.refbal+window.refaction;
+			window.actionse=window.gBallancer + window.refactions;
+		$('.pair1').html(window.actionse*1.6);
+		$('.pair11').html(window.actionse*0.8);
+		$('.pair2').html(window.actionto*1.6);
+		$('.pair21').html(window.actionto*0.8);
+		}else{window.actionf=1;}
 	}}		
 		
 		
