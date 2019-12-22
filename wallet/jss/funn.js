@@ -647,7 +647,7 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	if($('#b_amount').val()==''){
 	if(!!window.topp){		
 	$('.pay_link').val(window.topp+"?r="+window.usid);}else{
-	$('.pay_link').val("http://glob.money/?r="+window.usid);}
+	$('.pay_link').val("https://globreserve.github.io/?r="+window.usid);}
 	
 	if(typeof ethereum !=='undefined'){
 	if(typeof accounts !=='undefined'){
@@ -672,7 +672,7 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	if(vall<1){alert("WRONG BILL AMOUNT");return;}		
 	if(!!window.topp){		
 	$('.pay_link').val(window.topp+"?r="+window.usid+'l'+vall);}else{
-	$('.pay_link').val("http://glob.money/?r="+window.usid+'l'+vall);}
+	$('.pay_link').val("https://globreserve.github.io/?r="+window.usid+'l'+vall);}
 	if(typeof ethereum !== 'undefined'){
 	if(typeof accounts !== 'undefined'){
 	if(window.usid>0){	
@@ -691,7 +691,7 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	$('#am_drop').attr('disabled','disabled').prop('disabled',true);
 	if(!!window.topp){
 		$('#airlinn').val(window.topp+"?g="+window.usid);}else{
-		$('#airlinn').val("http://glob.money/?g="+window.usid);}
+		$('#airlinn').val("https://globreserve.github.io/?g="+window.usid);}
 		$('.uncharged').addClass('hidden');
 		$('.charged').removeClass('hidden');
 		$('.charged').show();
