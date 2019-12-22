@@ -162,7 +162,7 @@ function cashList(i){if(i>=0){
 	}else{console.error(err);}});}else{console.error(err);}});
 	}else{console.error(err);}});}else{console.error(err);}});}else{
 	window.rrw1=1;window.rrw0=1; logg("# 0 TRANSACTION");
-	fstRef(window.ref1-1);secRef(window.ref1-2);window.rrw1=1;
+	fstRef(window.ref1-1);secRef(window.ref2-1);window.rrw1=1;
 	if(window.rrw1==1 && window.rrw2==1 && window.rrw3==1){setTimeout(startmm(),400);}}}
 	
 	
