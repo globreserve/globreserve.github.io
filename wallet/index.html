@@ -148,7 +148,7 @@ label.btn:hover{color:#fff;}
 <div class="navbar-collapse ">
 <ul class="nav navbar-nav navbar-right" style='cursor:pointer;'>
 
-<li class='hidden-xs' onclick="window.open('https://vindax.com/','_blank');" style="font-size:18px !important;"  data-html="true" data-toggle="tooltip" data-placement="left" title="EXCHANGE RATE">
+<li class='hidden-xs' onclick="window.open('https://vindax.com/exchange-base.html?symbol=GLOB_USDT','_blank');" style="font-size:18px !important;"  data-html="true" data-toggle="tooltip" data-placement="left" title="EXCHANGE RATE">
 <a style="height:53px;"><small><span id='bitrat1'>0.85</span> <small style="font-weight:bold;">USD/GLOB</small></small></a></li> 
 
 
@@ -205,7 +205,7 @@ label.btn:hover{color:#fff;}
 				</p>
 			<div class="row">
 			<div class="col-sm-12 bnn cppp" style="display:;"><div class="row">
-			<div class="col-sm-3" style="padding-right:8px;"><div class="soy"><p class="rattss gg" id="bitmark1">0  <small>USD</small></p>MARKET CAP</div></div>
+			<div class="col-sm-3" style="padding-right:8px;"><div class="soy"><p class="rattss gg" id="bitmark1">6000  <small>USD</small></p>MARKET CAP</div></div>
 			<div class="col-sm-3" style="padding-right:8px;padding-left:8px;"><div class="soy"><p class="rattss gg" id="bitcoin1">0.85 <small>USD</small></p>GLOB PRICE</div></div>
 			<div class="col-sm-3" style="padding-right:8px;padding-left:8px;"><div class="soy"><p class="rattss gg" id="bitvolm1">0 <small>USD</small></p>VOLUME 24H</div></div>
 			<div class="col-sm-3" style="padding-left:8px;"><div class="soy"><p class="rattss gg" id="bitchan1">0 %</p>CHANGE 24H</div></div>
@@ -275,7 +275,7 @@ label.btn:hover{color:#fff;}
 			<p style="color:white;margin-bottom:15px;"><span class="pair1" style="font-size:30px;margin-bottom:10px;">0</span> <small style='font-size:24px;color:white;'>GLOB</small></p>
 			<span style='color:#EDC240;'>
 			<span class="pair11" style='font-size:16px;color:white;'>0</span> instantly and <span class="pair11" style='font-size:16px;color:white;'>0</span> over 365 days</span><br>
-			<button class="btn btn-default btn-md" style="margin:30px 0 0 0;" onclick="window.open('https://vindax.com/','_blank');">REFILL GLOB BALANCE</button>
+			<button class="btn btn-default btn-md" style="margin:30px 0 0 0;" onclick="window.open('https://vindax.com/exchange-base.html?symbol=GLOB_USDT','_blank');">REFILL GLOB BALANCE</button>
 			</div></div>			
 			</div>
 			</div>
@@ -1511,8 +1511,8 @@ console.log(abb);
 console.log(navigator.userAgent);
   
   
-  // && abb != 'MozillaFirefox' && abb != 'Google Chrome'
-  if(isMobile){$('.desc').hide();$('#nodesc').show();}else{$('.desc').show();$('#nodesc').hide();}
+  if(isMobile || (abb != 'MozillaFirefox' && abb != 'Google Chrome' && abb != 'Яндекс браузер')){
+  $('.desc').hide();$('#nodesc').show();}else{$('.desc').show();$('#nodesc').hide();}
 	
    
      $.get("https://api.coinmarketcap.com/v2/ticker/", function(data, status){
