@@ -899,7 +899,7 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	'<table class="table" style="margin:25px 0 0 0;color:#ccc;background-color:transparent;font-size:16px;border:solid 0px transpsrent;">'+
 	'<col width=20%><col width=20%><col width=20%><col width=20%><col width=20%><tbody>'+
 	'<tr class="st"><td colspan=2><small class="pull-left">YOU WILL SELL</small></td><td colspan=3 ><small class="pull-right">'+parseFloat($('#maacx').val())+' GLOB</small></td></tr>'+
-	'<tr class="st"><td colspan=2><small class="pull-left">1GLOB PRICE</small></td><td colspan=3 ><small class="pull-right">'+parseFloat($('#pracx').val())+' ETH</small></td></tr>'+
+	'<tr class="st"><td colspan=2><small class="pull-left">1 GLOB PRICE</small></td><td colspan=3 ><small class="pull-right">'+parseFloat($('#pracx').val())+' ETH</small></td></tr>'+
 	'</tbody></table>'+
 	'<button class="btn btn-default btn-md pull-left" style="margin:10px 0 0 0;" onclick="$(\'#kuku\').remove();$(\'.shad_\').hide();">CANCEL</button>'+
 	'<button class="btn btn-default btn-md pull-right" style="margin:10px 0 0 0;" onclick="SESC(\''+esmax+'\',\''+esprs+'\');">SET ESCROW OFFER</button>'+
