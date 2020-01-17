@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html><head>
+<title>GLOBAL RESERVE SYSTEM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head><link rel="stylesheet" href="csss/boots.css">
+<style>
+html{height:100%;}
+body{overflow-y:scroll;
+height:100%;}
+header{max-width:100%;position:fixed;left:0;top:0;z-index:999;}
+.tabs{margin:0;}
+.tabs-left{border-bottom:none;}.tabs-left>ul{margin-top:-4px;}
+.navbar{min-height:0px;}
+.navbar,.tabs-left>li{float:none;margin-bottom:0;}
+.table{margin:0;}
+.tabs{min-height:100%;height:100%;padding:58px 15px 0 15px;margin:0 auto;text-align:left;}
+.tabs .row{height:100%;%;height:100%;}
+.help{padding:15px 0;}
+.tabs-left>li{margin-top:-1px; margin-right:10px;padding:0; border-radius:0;}
+.tabs-left>li.active{margin-right:-1px;}
+.tab-pane>div{background-color: #35475b;}
+.tab-pane>.col-md-6.tabs-left{max-width:600px;height:100%;min-height:100%;background-color: #35475b;}
+.tab-pane{min-height:100%; padding-top:10px; background-color: #35475b;}
+.tab-content{padding:10px 0; min-height:100%;height:100%;}
+.tab-pane{padding:0 15px;}
+.tabs-left>li>a {margin:10px 0 14px 10px; padding:14px 0 12px 20px;border-radius:0;background-color: #2d3c4d;font-size:18px; color:#C0C0C0;}
+.tabs-left>li>a:hover{color:white;}
+.tabs-left>li.active>a img{opacity:1;}
+.tabs-left>li>a img{opacity:0.7;}
+.tabs-left>li>a:hover img{opacity:1;}
+.tabs-left>li.active>a,.tabs-left>li.active>a:hover,.tabs-left>li.active>a:focus{background-color: #35475b;font-weight:500; color:white; }
+.tabs-left>li.active>a span,.tabs-left>li.active>a:hover span,.tabs-left>li.active>a:focus span{font-weight:normal;}
+.nav > li.hida > a{display:none;font-weight:normal;}
+small{margin-top:4px;}
+.tab-pane.col-sm-12{margin:0;}
+.rowl{margin:0 -10px 0 -15px;}
+.rowr{margin:0 -15px 0 -10px;}
+textarea.form-control, input.form-control,.btn{outline:none !important;border:0px solid transparent;background-color:#151d2a;color:white;}
+input.form-control:disabled{background-color:#151d2a;color:#fff;}
+.btn:focus, textarea.form-control:focus, input.form-control:focus{outline:none !important;box-shadow:none !important;}
+.shad_{width:100%;top:0px;left:0px;right:0px;bottom:-500px;position:absolute;background-color:rgba(13,13,13,0.4);z-index:999999;display:none;}
+.shads_{width:100%;top:0px;left:0px;right:0px;bottom:-500px;position:absolute;background-color:rgba(13,13,23,0.4);z-index:999999999;display:none;cursor:wait;}
+th{height:40px;background-color:#151d2a;}
+th,td{padding:10px;outline:none;border: solid 0 transparent;}
+.ura,.sst{height:60px;} 
+.sst>th,.sst>td{padding:20px;outline:none;cursor:pointer;}
+.ura>th,.ura>td{padding:20px;outline:none; }
+.st>th,.st>td{padding:8px;outline:none;}
+.ura,.ura>td{background-color:#151d2a;padding:10px 20px;font-size:16px;}
+input.form-control{background-color:#151d2a;color:#fff;}
+input.form-control:hover{background-color:#0f141b;color:#fff;}
+.ura>td>h4{margin:20px 0 10px 0;}
+.ura>td>p{text-align:left;margin:10px 0;line-height:135%}
+.bgg{font-size:45px;}
+.tab-pane .form-group{width:100%;padding:0;margin:0;clear:both;min-height:32px;}
+h1,h2,h3,h4{line-height:1.42;color:white;margin:0;}
+.hida,.unloge{display:none;}
+.tx_waiting6{position:fixed;top:68px;right:10px;width:405px;display:none;}
+.tx_waiting5{position:fixed;top:68px;right:10px;width:405px;display:none;}
+.tx_waiting4{position:fixed;top:68px;right:10px;width:405px;display:none;}
+.tx_waiting3{position:fixed;top:68px;right:10px;width:405px;display:none;}
+.tx_waiting2{position:fixed;top:68px;right:10px;width:405px;display:none;}
+.tx_waiting1{position:fixed;top:68px;right:10px;width:405px;display:none;}
+.tx_waiting7{position:fixed;bottom:10px;right:10px;width:405px;}
+.tx_waiting{position:fixed; bottom:40px;right:30px;background-color:transparent;width:350px;display:none;}
+label{width:100%;font-weight:normal;}
+.tabl{padding:0;}
+.tabr{padding:0;padding-right:10px; height:100%;}
+.soy {min-height:120px;min-width:125px;background-color:#151d2a;text-align:center; padding:30px 0;margin:5px 0;}
+.soy p{font-family:Verdana;font-size:22px;font-weight:bold;color:#fff;margin-bottom:10px;}
+.soy p.gg{color:#EDC240;}
+.soy:hover{background-color:#0f141b; }
+.bulog{width:100%; padding:0 20px; margin:15px 0; background-color:#2d3c4d; cursor:pointer;}
+.bulog p{width:100%;display:block;text-align:center;font-size:22px;padding:13px 0;margin:0;color:#c0c0c0;cursor:pointer;}
+.bulog:hover{background-color:#1d2c3d;}
+.bulog:hover p{color:white;}
+.puppa{cursor:pointer;}
+.toww{text-align:left;}
+.consoley {display:none;width:100%;height:500px; margin:17px auto 0 auto;max-width:400px;padding:4px 0 4px 12px;background-color:#151d2a;overflow:hidden;overflow-y:auto;}
+.consoley p{foont-size:8px;margin:1px;padding:0;font-family:monospace,monospace;font-weight:bold;color:#C0C0C0;text-align:left;}
+.kuk{position:absolute;display:none;top:12px;right:8px;font-size:24px;cursor:pointer;background-color:#151d2a;color:#C0C0C0;padding:8px;}
+.u_txt:hover .kuk{display:block;}
+.be_txt:hover .kuk{display:block;}
+input[type=radio]{padding:0.4em;-webkit-appearance:none;outline:0.08em solid #c8c8c8;outline-offset:0.08em;}
+input[type=radio]:checked{display:inline-block;background-color:#c8c8c8;}
+input[type=radio]:focus{padding:0.4em;-webkit-appearance:none;outline:0.08em solid #c8c8c8;outline-offset:0.08em;}
+input[type=checkbox]{padding:0.5em;-webkit-appearance:none;outline:0.1em solid #c8c8c8;outline-offset:0.1em;}
+input[type=checkbox]:checked{display:inline-block;background-color:#c8c8c8;}
+input[type=checkbox]:focus{padding:0.5em;-webkit-appearance:none;outline:0.1em solid #c8c8c8;outline-offset:0.1em;}
+.search{margin:7px 0 7px 15px;} 
+@keyframes blinker{50%{opacity:0.2;}}
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{-webkit-box-shadow: inset 0 0 7px rgba(0,0,0,0.3);border-radius: 6px;}
+::-webkit-scrollbar-thumb{border-radius: 6px;-webkit-box-shadow: inset 0 0 7px rgba(0,0,0,0.5);}
+.bulog .metam img{opacity: 0.7;}
+.bulog:hover .metam img{opacity: 1;}
+.connsi{margin-bottom:16px;}
+.table.table-hover{background-color:#212d41 !important;border:none !important;}
+.table.table-hover>tr.stt.hover{background-color:#212d41 !important;border:none !important;}
+.table.table-hover>tr.stt.hover>td{background-color:#212d41 !important;border:none !important;}
+.table.table-hover:hover{background-color:#212d41 !important;border:none !important;}
+.table.table-hover>tr.stt.hover:hover{background-color:#212d41 !important;border:none !important;}
+.table.table-hover>tr.stt.hover>td:hover{background-color:#212d41 !important;border:none !important;}
+.ura.hover>td{background-color:#212d41 !important;border:none !important;padding-top:0;}
+.navbar .navbar-nav.navbar-right > li > a{border-left:solid 1px #151d2a  !important;outline:none !important;}
+.navbar-left>li.home>a{border-left:solid 0 transparent;outline:none !important;}
+.navbar-left>li.activ>a{background-color:#151d2a;border-bottom:solid 0 transparent;outline:none !important;}
+.navbar-right>li.activ>a{background-color:#151d2a;border-bottom:solid 0 transparent;outline:none !important;}
+tr.blaaa,tr.blaaa>td{background-color:#151d2a;color:#fff;border-bottom:1px solid #35475b;}
+tr.blaaa:hover{background-color:#0f141b !important;}
+tr.blaaa:hover>td{background-color:#0f141b !important;}
+tr.toto,tr.toto>td{border-bottom:1px solid #35475b;}
+tr>td{color:#c8c8c8;}
+tr:hover>td{color:#fff;}
+tr>td:hover{color:#fff;}
+label.btn{color:#c8c8c8;}
+label.btn:hover{color:#fff;}
+</style>
+<body style="text-align:center;min-width:1270px !important;">
+
+<input type='text' class='hidden' style='display:none' spellcheck='false' id='sssr' /><a class='hidden serrr' style='display:none'></a>
+
+<header  class='desc' style='width:100%;display:none'>
+<div class="navbar">
+<div class="pull-left">
+<ul class="nav navbar-nav navbar-left" style='cursor:pointer;clear:none;'>
+<li class='home activ' style="font-size:18px !important;" data-toggle="tooltip" data-html="true" data-placement="right" title="ABOUT" onclick="$(this).addClass('activ');">
+<a onclick="$('#intro_up').click();" style="height:53px;"><img border="0" src="pics/G!!.png" style="width:22px;margin-top:0px;" /></a></li>
+<li class='' style="font-size:14px !important;cursor:default;"><strong><a class="navbar-brand globid" style="margin:0;padding:16px 14px;height:51px;cursor:default;font-size:14px !important;"> ESCROW MARKET</a></strong></li>
+<li class='renew hidden-sm hidden-xs' style="font-size:18px !important;display:none;"  data-html="true" data-toggle="tooltip" data-placement="right" title="GLOB BALANCE">
+<a style="height:53px;" onclick="$('#home_up').click();"><small style="font-size:14px !important;"><span class='getheee'>0</span> <small style="font-weight:bold;">GLOB</small></small></a></li>
+<li class='renew hidden-sm hidden-xs' style="font-size:18px !important;display:none;"  data-html="true" data-toggle="tooltip" data-placement="right" title="ETHER BALANCE">
+<a style="height:53px;" onclick="$('#home_up').click();"><small style="font-size:14px !important;"><span class='etheee'>0</span> <small style="font-weight:bold;">ETH</small></small></a></li>
+</ul>
+</div>
+
+<div class="navbar-collapse ">
+<ul class="nav navbar-nav navbar-right" style='cursor:pointer;'>
+<li class='activ onono' data-toggle="tooltip" data-html="true" data-placement="left" title="NOTIFICATIONS" style="font-size:18px !important;" onclick="$(this).toggleClass('activ');$('.nottic').toggle();">
+<a style="height:53px;"><img border="0" src="pics/notification.png" style="width:20px;margin-top:-4px;" /></a></li>
+<li class='renew metam' data-toggle="tooltip" data-html="true" data-placement="left" title="REFRESH"   style="display:none;font-size:18px !important;">
+<a style="height:53px;"><img border="0" src="pics/refresh.png" style="width:20px;margin-top:-4px;" /></a></li>
+
+<li class='metam msec' style="font-size:18px !important;"  data-html="true" data-toggle="tooltip" data-placement="left" title="LOGIN">
+<a style="height:53px;"><img border="0" src="pics/metamask__.png" style="width:22px;margin-top:-4px;" /></a></li>
+
+<li class='renew' style="display:none;font-size:18px !important;" data-html="true" data-toggle="tooltip" data-placement="left" title="EXIT">
+<a style="height:53px;" onclick="location.reload();"><img border="0" src="pics/exit.png" style="width:22px;margin-top:-4px;" /></a></li></ul></div>
+</div>
+</header>
+
+<div  class="tabs desc"  style="min-width:1270px !important;display:none"><div  class="row"> 
+    <div class="pull-left tabl " style="width:270px;max-width:270px;min-width:270px;clear:none;">
+    <ul class="nav nav-tabs tabs-left">
+	<li class='deal ppgg hida'><a id='deal_up' href="#deal" data-toggle="tab">D<span class='be_num'>0</span> <span class="pull-right btn btn-default btn-sm puppa" style="margin-right:10px;" data-html="true" data-toggle="tooltip" data-placement="left" title="CLOSE">&#x2716;</span></a></li>		
+	
+	<li class="hidaq loloq"><a id='home_up' href="#home" data-toggle="tab"><img border="0" src="pics/send.png" style='margin-right:10px;margin-top:-4px;height:13px;'></span>BUY GLOB</a></li>	
+	<li class='wal hidaq'><a id='senn' href="#transfer" data-toggle="tab"><img border="0" src="pics/send.png" style='margin-right:10px;margin-top:-4px;height:13px;'>SELL GLOB</a></li>
+
+	<li class='logq active hidden'><a id='intro_up' href="#intro" data-toggle="tab"><span style='margin-right:15px;'>&#128213;</span>ABOUT</a></li>	
+	</ul>
+	<div class="consoley" style=""></div>	
+    </div>
+        
+<div class="pull-left tabr" style="width:1000px;max-width:1000px;min-width:1000px;clear:none;">
+
+        <div class="tab-content">
+		
+		<div class="tab-pane col-sm-12 active" id="intro">
+			
+				<div class="col-md-12">
+				<div style='padding:17px 0 4px 0;margin:0;'>
+				<p class='help-block'><span class='usrid' data-toggle="tooltip" data-html="true" data-placement="left" title="FUND ID"  >UNCONNECTED</span>
+				<button class="btn btn-default btn-sm pull-right ethadr" data-toggle="tooltip" data-html="true" data-placement="left"
+				title="<nobr>ETHEREUM ADDRESS</nobr>"	style="margin-top:-9px;">NO ADDRESS</button></p>
+				<div class="row" style='margin:-5px -15px 7px -15px;'>
+				
+				<div class="col-sm-6" style="margin-bottom:6px;padding-right:8px;cursor:pointer;" onclick="$('#home_up').click();"><div class="soy" style='min-height:0;height:auto;'><p style="font-size:32px;margin:0;padding:0;">
+				BUY GLOB</p>
+				</div></div>
+				<div class="col-sm-6" style="margin-bottom:6px;padding-left:8px;cursor:pointer;" onclick="$('#senn').click();"><div class="soy" style='min-height:0;height:auto;'><p style="font-size:32px;margin:0;padding:0;">
+				SELL GLOB</p>
+				</div></div></div>
+				</div>
+		</div>	
+			
+			
+		</div>					
+			
+		<div class="tab-pane col-sm-12" id="home">
+				
+		<div class="col-md-12">
+				<div style='padding:17px 0 4px 0;margin:0;'>
+				
+				
+				
+				<p  class='help-block'  style='margin-bottom:10px;'>SELLER ADDRESS 
+				<button class="btn btn-default btn-sm pull-right" data-toggle="tooltip" data-html="true" data-placement="left"
+				title="GET OFFER" style="margin-top:-9px;" id='getesc'>GET OFFER INFO</button></p>
+				
+				<input class="form-control input-lg" type='text' spellcheck='false' autocomplete="off" id="selladd" name='' style='margin-bottom:17px;' value='' 
+				placeholder='Enter Glob Seller addrеss'/>
+				
+				<div class="row unloge">
+				<div class="col-sm-6" style="margin-bottom:6px;padding-right:8px;"><div class="soy" style="padding-top:21px;padding-bottom:31px;"><p style="font-size:32px;margin-bottom:16px;">
+				<span class="gethoff">-</span><small></small></p>
+				<span class="">GLOB AVIALABLE</span></div></div>
+				<div class="col-sm-6" style="margin-bottom:6px;padding-left:8px;"><div class="soy" style="padding-top:21px;padding-bottom:31px;"><p style="font-size:32px;margin-bottom:16px;">
+				<span class="ethoff">-</span><small></small></p>
+				<span class="">1 GLOB PRICE</span></div></div>
+				</div>
+				
+				
+				
+				<p class='help-block unloge' style='margin-bottom:10px;'>GLOB AMOUNT TO BUY</p>
+				<input class="form-control input-lg unloge" type='number' id="amescr" value='' min="1" max="100000" step="0.01" style='margin-bottom:22px;' placeholder='Minimum 1 Glob'/>
+				
+				
+				<div class="form-group unloge" style="margin:0 0 15px 0;">
+				<button class="btn btn-default btn-md pull-left" id="escclear">CLEAR</button>
+				<button class="btn btn-default btn-md pull-right" id="bayescr">BUY GLOB</button>
+				</div>
+				
+				
+				
+				
+				
+				
+				</div>
+				</div>
+				
+							
+		</div>
+ 
+	
+		
+		<div class="tab-pane col-sm-12" id="transfer">
+				
+				<div class="col-md-12">
+				<div class='toww' style='padding:17px 0 4px 0; margin:0 auto;'>
+				
+			
+				<p class='help-block' style='margin-bottom:10px;'>GLOB AMOUNT TO SELL</p>
+				<input class="form-control input-lg" type='number' id="maacx" value='' min="1" max="100000" step="0.01" style='margin-bottom:22px;' placeholder='Minimum 1 Glob'/>
+				<p class='help-block' style='margin-bottom:10px;'>1 GLOB PRICE (ETH)</p>
+				<input class="form-control input-lg" type='number' id="pracx" value='' min="0" max="100000" step="0.001" style='margin-bottom:22px;' placeholder='Minimum 0.001 ETH'/>
+				
+				<div class="form-group" style="margin:21px 0 15px 0;">
+				<button class="btn btn-default btn-md pull-left" id="">CLEAR</button>
+				<button class="btn btn-default btn-md pull-right" id="addescr">ADD ESCROW</button>
+				</div>
+				
+				
+				</div>
+				</div>
+				
+		</div>
+		
+		
+
+	</div>			
+</div>
+</div></div>
+<div class="shad_"></div>
+<div class="shads_"></div>
+<div class="nottic desc" style='display:none'>
+<div class="tx_waiting2 xoff" style="height:auto;padding:15px 20px 20px 20px;z-index:1;background-color:#0f141b;color:white;border:solid 1px #35475b;text-align:left;">
+<small>STEP 1 <span class="glyphicon glyphicon-bell" style="margin-left:10px;"></span>
+<span class="pull-right gttmm" style="margin:3px 0 0 0;color:#c8c8c8;font-weight:bold;display:none;">INSTALL AND RELOAD THIS PAGE</span>
+</small>
+<h4 class="help-block" style="color:#efb734;"><b>METAMASK EXTENSION REQUIRED</b></h4>
+<a target="" onclick="if(window.cme!=1){$(this).html('CHECK METAMASK EXTENSION');window.open('https://metamask.io/','_blank');window.cme=1;}else{location.reload();}" class="btn btn-default btn-sm pull-right" style="margin:0;">
+GET METAMASK EXTENSION <small class="glyphicon glyphicon-triangle-right"></small></a>
+<button class="btn btn-default btn-sm pull-left" style="margin:0;" onclick="$('.onono').click();">CLOSE</button>
+<div class='' style="position:absolute;top:123px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="color:#BFBFBF;">STEP 2 <span class="glyphicon glyphicon-ban-circle" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#9C710C;"><b>CHECKING ETHEREUM CONNECTION</b></h4>
+</div>
+<div class='' style="position:absolute;top:285px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="color:#BFBFBF;">STEP 4 <span class="glyphicon glyphicon-ban-circle" style="margin-left:10px;"></span>
+</small>
+<h4 class="help-block" style="color:#9C710C;"><b>CHECKING FUND REGISTRATION</b></h4>
+</div>
+<div class='' style="position:absolute;top:204px;right:-1px; padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="color:#BFBFBF;">STEP 3 <span class="glyphicon glyphicon-ban-circle" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#9C710C;"><b>CHECKING ETHEREUM BALANCE</b></h4>
+</div>
+<div class='' style="position:absolute;top:366px;right:-1px; padding:15px 20px 5px 20px; width:405px; color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="color:#BFBFBF;">STEP 5 <span class="glyphicon glyphicon-ban-circle" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#9C710C;"><b>CHECKING GLOB BALANCE</b></h4>
+</div>
+</div>
+
+<div class="tx_waiting4 xoff" style="height:auto;padding:15px 20px 5px 20px;z-index:1;color:white;border:solid 1px #35475b;text-align:left;background-color:#151d2a;">
+<small>STEP 1 <span class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>METAMASK EXTENSION ACTIVE</b></h4>
+<div class='' style="position:absolute;top:80px;right:-1px;padding:15px 20px 20px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#0f141b;">
+<small>STEP 2 <span class="glyphicon glyphicon-bell" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>CONNECT TO ETHEREUM NETWORK</b></h4>
+<a target="_blank" class="btn btn-default btn-sm pull-right metam" style="margin:0;">
+CONNECT WITH METAMASK</a>
+<button class="btn btn-default btn-sm pull-left" style="margin:0;" onclick="$('.onono').click();">CLOSE</button>
+</div>
+<div class='' style="position:absolute;top:285px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="color:#BFBFBF;">STEP 4 <span class="glyphicon glyphicon-ban-circle" style="margin-left:10px;"></span>
+</small>
+<h4 class="help-block" style="color:#9C710C;"><b>CHECKING FUND REGISTRATION</b></h4>
+</div>
+<div class='' style="position:absolute;top:204px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="color:#BFBFBF;">STEP 3 <span class="glyphicon glyphicon-ban-circle" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#9C710C;"><b>CHECKING ETHEREUM BALANCE</b></h4>
+</div>
+<div class='' style="position:absolute;top:366px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="color:#BFBFBF;">STEP 5 <span class="glyphicon glyphicon-ban-circle" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#9C710C;"><b>CHECKING GLOB BALANCE</b></h4>
+</div>
+</div>
+<div class="tx_waiting3 xoff" style="height:auto;padding:15px 20px 5px 20px;z-index:1;color:white;border:solid 1px #35475b;text-align:left;background-color:#151d2a;">
+<small style="">STEP 1 <span class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>METAMASK EXTENSION FOUND</b></h4>
+<div class='' style="position:absolute;top:80px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="">STEP 2 <span class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>CONNECTED TO ETHEREUM</b></h4>
+</div>
+<div class='' style="position:absolute;top:161px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small>STEP 3 <span class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>ETHEREUM BALANCE IS SUFFICIENT</b></h4>
+</div>
+<div class='' style="position:absolute;top:242px;right:-1px;padding:15px 20px 20px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#0f141b;">
+<small>STEP 4 <span class="glyphicon glyphicon-bell" style="margin-left:10px;"></span> 
+<span class="pull-right gairag" style="margin:3px 0 0 0;color:#c8c8c8;font-weight:bold;"></span>
+</small>
+<h4 class="help-block" style="color:#efb734;margin-bottom:10px;"><b>FUND REGISTRATION REQUIRED</b></h4>
+<div class='input-group' style="margin:0 0 20px 0;padding:0;"  data-html="true" data-toggle="tooltip" data-placement="left" title="ENTER INVITATION ADDRESS"><span class='input-group-addon inininv' style='background-color:#151d2a !important; border:solid 1px #35475b;padding:0 7px;height:30px  !important;font-size:10px;'>INVITE</span>
+<input class="form-control input-sm" type='text' id="f_ref" style='margin:0;background-color:#000;color:#fff;border:solid 1px #35475b;border-left:solid 0px #35475b;height:30px  !important;' spellcheck='false' placeholder='Enter your invitation address'/></div>
+<button target="_blank" id="us_in" class="btn btn-default btn-sm pull-right chekinv" style="margin:0;">CREATE RESERVE FUND</span></button>
+<button class="btn btn-default btn-sm pull-left" style="margin:0;" onclick="$('.onono').click();">CLOSE</button>
+</div>
+<div class='' style="position:absolute;top:416px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="color:#BFBFBF;">STEP 5 <span class="glyphicon glyphicon-ban-circle" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#9C710C;"><b>CHECKING GLOB BALANCE</b></h4>
+</div>
+</div>
+<div class="tx_waiting1 xoff" style="height:auto;padding:15px 20px 5px 20px;z-index:1;color:white;border:solid 1px #35475b;text-align:left;background-color:#151d2a;">
+<small style="">STEP 1 <span class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>METAMASK EXTENSION FOUND</b></h4>
+<div class='' style="position:absolute;top:80px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="">STEP 2 <span class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>CONNECTED TO ETHEREUM</b></h4>
+</div>
+<div class='' style="position:absolute;top:161px;right:-1px;padding:15px 20px 20px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#0f141b;">
+<small>STEP 3 <span class="glyphicon glyphicon-bell" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>INSUFFICIENT ETHEREUM BALANCE</b></h4>
+<a target="_blank" onclick="if(window.cmee!=1){$(this).html('CHECK ETHEREUM BALANCE');window.open('https://coinmarketcap.com/currencies/ethereum/markets/','_blank');window.cmee=1;}else{metammst();window.cmee=0;$(this).html('REFILL BALANCE  <small class=\'glyphicon glyphicon-triangle-right\'></small>');}" class="btn btn-default btn-sm pull-right" style="margin:0;">
+REFILL BALANCE <small class="glyphicon glyphicon-triangle-right"></small></a>
+<button class="btn btn-default btn-sm pull-left" style="margin:0;" onclick="$('.onono').click();">CLOSE</button>
+</div>
+<div style="position:absolute;top:285px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small class='fundii' style="color:#BFBFBF;">STEP 4 <span class="glyphicon glyphicon-ban-circle" style="margin-left:10px;"></span>
+</small>
+<h4 class="help-block fundi" style="color:#9C710C;"><b>CHECKING FUND REGISTRATION</b></h4>
+</div>
+<div class='' style="position:absolute;top:366px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="color:#BFBFBF;">STEP 5 <span class="glyphicon glyphicon-ban-circle" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#9C710C;"><b>CHECKING GLOB BALANCE</b></h4>
+</div>
+</div>
+<div class="tx_waiting5 xoff" style="height:auto;padding:15px 20px 5px 20px;z-index:1;color:white;border:solid 1px #35475b;text-align:left;background-color:#151d2a;">
+<small style="">STEP 1 <span class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>METAMASK EXTENSION FOUND</b></h4>
+<div class='' style="position:absolute;top:80px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small style="">STEP 2 <span class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>CONNECTED TO ETHEREUM</b></h4>
+</div>
+<div class='' style="position:absolute;top:161px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small>STEP 3 <span class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>ETHEREUM BALANCE IS SUFFICIENT</b></h4>
+</div>
+<div style="position:absolute;top:240px;right:-1px;padding:15px 20px 5px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#151d2a;">
+<small class='fundii'>STEP 4 <span class="glyphicon glyphicon-ok" style="margin-left:10px;"></span></small>
+<h4 class="help-block fundi" style="color:#efb734;"><b>THE FUND <span class='usrid'></span> REGISTERED</b></h4>
+</div>
+<div class='' style="position:absolute;top:321px;right:-1px;padding:15px 20px 20px 20px; width:405px;color:white;border:solid 1px #35475b;background-color:#0f141b;">
+<small>STEP 5 <span class="glyphicon glyphicon-bell" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>INSUFFICIENT GLOB BALANCE</b></h4>
+<a target="_blank"  onclick="if(window.cmeg!=1){$(this).html('CHECK GLOB BALANCE');window.open('https://vindax.com/exchange-base.html?symbol=GLOB_ETH','_blank');window.cmeg=1;}else{metammst();window.cmeg=0;$(this).html('REFILL BALANCE  <small class=\'glyphicon glyphicon-triangle-right\'></small>');}" class="btn btn-default btn-sm pull-right" style="margin:0;">
+REFILL BALANCE <small class="glyphicon glyphicon-triangle-right"></small></a>
+<button class="btn btn-default btn-sm pull-left" style="margin:0;" onclick="$('.onono').click();">CLOSE</button>
+</div>
+</div>
+
+<div class="tx_waiting6 xoff" style="height:auto;padding:15px 20px 5px 20px;z-index:1;color:white;border:solid 1px #35475b;text-align:left;background-color:#0f141b;">
+<small style="">NOTIFICATION <span class="glyphicon glyphicon-bell" style="margin-left:10px;"></span></small>
+<h4 class="help-block" style="color:#efb734;"><b>NO NOTIFICATIONS</b>
+<button class="btn btn-default btn-sm pull-right" style="margin:-5px 0 0 0;" onclick="$('.onono').click();">CLOSE</button>
+</h4>
+</div>
+</div>
+
+
+<div id="nodesc" style="margin:0; width:360px;padding:15px 20px 20px 20px;color:white;background-color:#0f141b;display:none">
+<div style="text-align:center;width:100%;"><div style='margin:0 auto;padding:0;'><img border="0" src="pics/glob.png" width="102" height="80"></div></div>
+<p style="margin:5px auto 0 auto;font-size:18px;text-transform:uppercase;letter-spacing:1pt;color:#efb734;text-align:center;font-weight:bold;">WELCOME</p>
+<p style="margin:0 auto;font-size:28px;text-align:center;font-weight:bold;color:white;">Global Reserve System</p>
+
+<h5 style="color:#aaa;line-height:1.6;"><b>THIS APPLICATION WORKS ONLY ON DESKTOP OR LAPTOP, USING MOBILE DEVICES IS IMPOSSIBLE</b></h5>
+
+<h4 class="help-block" style="color:#ccc;margin:15px auto 20px auto;"><b>SYSTEM REQUIREMENTS</b></h4>
+
+<h6 class="help-block" style="color:#888;"><b>WINDOWS 7+, MAC OS OR LINUX</b></h6>
+<h6 class="help-block" style="color:#888;"><b>BROWSER CHROME, CHROMIUM OR FIREFOX</b></h6>
+<h6 class="help-block" style="color:#888;"><b>METAMASK EXTENSION</b></h6>
+
+</div>
+
+
+
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="jss/bootstrap.min.js"></script>
+<script src="//piyolab.github.io/sushiether/web3.js/libs/web3.js_v1.0.0-beta.34/web3.min.js"></script>
+<script src="jss/kss.js"></script>
+<script src="jss/fn.js"></script>
+<script src="jss/funn.js"></script>
+<script>
+isMobile = false;
+if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
+    || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0,4))) { 
+    isMobile = true;}
+
+
+let abb;
+if (navigator.userAgent.search(/Safari/) > 0) {abb = 'Safari'};
+if (navigator.userAgent.search(/Firefox/) > 0) {abb = 'MozillaFirefox'};
+if (navigator.userAgent.search(/MSIE/) > 0 || navigator.userAgent.search(/NET CLR /) > 0) {a = 'Internet Explorer'};
+if (navigator.userAgent.search(/Chrome/) > 0) {abb = 'Google Chrome'};
+if (navigator.userAgent.search(/YaBrowser/) > 0) {abb = 'Яндекс браузер'};
+if (navigator.userAgent.search(/OPR/) > 0) {a = 'Opera'};
+if (navigator.userAgent.search(/Konqueror/) > 0) {abb = 'Konqueror'};
+if (navigator.userAgent.search(/Iceweasel/) > 0) {abb = 'Debian Iceweasel'};
+if (navigator.userAgent.search(/SeaMonkey/) > 0) {abb = 'SeaMonkey'};
+if (navigator.userAgent.search(/Edge/) > 0) {a = 'Microsoft Edge'};
+console.log(abb); 
+console.log(navigator.userAgent);
+  
+  
+  if(isMobile || (abb != 'MozillaFirefox' && abb != 'Google Chrome' && abb != 'Яндекс браузер')){
+  $('.desc').hide();$('#nodesc').show();}else{$('.desc').show();$('#nodesc').hide();}
+	
+   
+     $.get("https://api.coinmarketcap.com/v2/ticker/", function(data, status){
+        for(var key in data.data){
+            var coin = data.data[key];
+			//console.log("coin: ",coin.name,"--price: ", coin.quotes.USD.percent_change_24h);
+			if (coin.name == "Ethereum Classic") {
+			$("#bitcoin").html(+parseFloat(coin.quotes.USD.price).toFixed(4));
+			$("#bitrat").html(+parseFloat(coin.quotes.USD.price).toFixed(4));
+			$("#bitvolm").html(parseInt(coin.quotes.USD.volume_24h));
+			$("#bitmark").html(parseInt(coin.quotes.USD.market_cap));
+			let ass;if(parseFloat(coin.quotes.USD.percent_change_24h)>0){ass='↑ ';}
+			if(parseFloat(coin.quotes.USD.percent_change_24h)<0){ass='↓ ';} 
+			if(parseFloat(coin.quotes.USD.percent_change_24h)==0){ass='= ';} 
+			$("#bitchan").html(ass+coin.quotes.USD.percent_change_24h+'<small>%</small>');
+			}
+        }
+    });
+   
+$('.swin').click();	
+console.log('mobile '+isMobile);
+window.start=0;
+window.topstring='';
+window.cTime='';
+
+
+
+if(typeof ethereum !== 'undefined'){
+ethereum.autoRefreshOnNetworkChange=false;
+ethereum.on('accountsChanged', function (accounts){metammst();})
+$('.tx_waiting2').hide();
+$('.tx_waiting4').show();}else{$('.tx_waiting2').show();}
+
+
+
+$(function(){$('[data-toggle="tooltip"]').tooltip()})
+$(window).on('message',function(evt){ 
+if(evt.originalEvent.data=="glob:zero"){
+$('.puppa').click();}else{
+if(window.start==0){
+window.start=1;
+if(evt.originalEvent.data.length>6){
+if(evt.originalEvent.data.substr(0,5)=='glob:'){
+window.topp=evt.originalEvent.data.substr(5).split('?')[0];
+window.topstring=evt.originalEvent.data.substr(5).split('?')[1];
+console.log(window.topp);
+console.log(window.topstring);
+//if(typeof ethereum !== 'undefined'){startre();}else{startre();}
+}}}else{
+if(evt.originalEvent.data.length>6){
+if(evt.originalEvent.data.substr(0,5)=='glob:'){
+window.topstring=evt.originalEvent.data.substr(5);
+
+ronly();
+
+}}}}});
+async function startre(){
+host = "https://mainnet.infura.io/v3/e0961ac4b5a44ff68c5855369286db88";
+web3 = new Web3(new Web3.providers.HttpProvider(host));	
+counter=new web3.eth.Contract(abi,address);
+conregg=new web3.eth.Contract(regabi,regaddress);
+condeal=new web3.eth.Contract(dealabi,dealaddress);
+consend=new web3.eth.Contract(sendabi,sendaddress);
+conjoin=new web3.eth.Contract(joinabi,joinaddress);
+conair=new web3.eth.Contract(airabi,airaddress);
+conmint=new web3.eth.Contract(mintabi,mintaddress);
+conpull=new web3.eth.Contract(pullabi,pulladdress);
+conescr=new web3.eth.Contract(escrabi,escraddress);
+setTimeout(totalStats(1),400);console.log('infura');
+window.start=1;}
+$('.metam').on('click',function(e){
+$('.renew').removeClass('metam');
+e.preventDefault();event.stopPropagation();
+metammst();});
+async function metammst(){
+if(window.ethereum){window.web3 = new Web3(ethereum);try {await ethereum.enable();
+network=await web3.eth.net.getNetworkType(); console.log(network);
+accounts=await web3.eth.getAccounts();
+counter=new web3.eth.Contract(abi,address);
+conregg=new web3.eth.Contract(regabi,regaddress);
+condeal=new web3.eth.Contract(dealabi,dealaddress);
+consend=new web3.eth.Contract(sendabi,sendaddress);
+conjoin=new web3.eth.Contract(joinabi,joinaddress);
+conair=new web3.eth.Contract(airabi,airaddress);
+conmint=new web3.eth.Contract(mintabi,mintaddress);
+conpull=new web3.eth.Contract(pullabi,pulladdress);
+conescr=new web3.eth.Contract(escrabi,escraddress);
+unlock();
+}catch(error){console.log('User denied account access');}}else{
+window.open('https://metamask.io/','_blank');
+$('.tx_waiting2').show();}}
+function unlock(){web3.eth.getAccounts(function(err, accounts){
+      if(err != null){console.log(err);}
+      else if(accounts.length===0){console.log('MetaMask is locked')}
+      else{$('.shads_').show();$('.consoley').html('');$('.consoley').show();
+	  logg("* WALLET LOADING *</br></br>");logg("# METAMASK UNLOCKED");
+	  totalStats();}});}
+</script>
+</body>
+</html>
