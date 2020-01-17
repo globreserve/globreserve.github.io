@@ -809,3 +809,98 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	'<button class="btn btn-default btn-md pull-right" style="margin:10px 0 0 0;" onclick="GADR();">GET AIRDROP</button>'+
 	'</div>');$('.shad_').show();});
 
+
+
+
+
+
+
+	/** SHOW ESCROW20**/
+	$('#getesc').click(function(e){e.preventDefault();
+	if(typeof accounts === 'undefined'){alert("NO BLOCKCHAIN CONNECTION");$('.onono').addClass('activ');$('.nottic').show();return;}
+	if(window.eBallance<0.0005){alert("INSUFFICIENT ETHEREUM BALANCE");$('.onono').addClass('activ');$('.nottic').show();return;}
+	let comm = $('#selladd').val(); if(comm==''){return;}
+	conregg.methods.idd(comm).call(function(err,cococo){if(!err){	
+	if(cococo == 0){ alert("UNREGISTERED FUND ADDRESS");return;}else{
+	conescr.methods.geInfo(comm).call(function(err,vovovo){if(!err){	
+	
+	window.gstack =vovovo[1];window.gprice =vovovo[0];
+	$('.gethoff').html(vovovo[1]/(10**18));	$('.ethoff').html(vovovo[0]/(10**18));
+	
+	$('.unloge').show();
+	if(vovovo[0] == 0 || vovovo[1] == 0){alert("NO ESCROW OFFER FOUND");return;}
+	if(accounts[0].toLowerCase()==comm.toLowerCase()){alert("YOU CAN'T BUY FROM YOURSELF");return;}
+	}});}}});});
+	$('#escclear').click(function(e){e.preventDefault();
+	window.gstack =0; window.gprice =0;$('#amescr').val('');$('.gethoff').html(0);
+	$('.ethoff').html(0);$('.unloge').hide();$('#getesc').click();});
+	
+	
+	/** PAY ESCROW20 **/
+	function BAGLB(){
+	let comm = $('#selladd').val(); let sum = parseFloat($('#amescr').val()); let amm = sum*window.gprice;
+	web3.eth.getTransactionCount(accounts[0]).then(nonce =>{window.nonce=nonce;
+	conescr.methods.payEscrow(comm).send({from:accounts[0],gasLimit:gas_limit,gasPrice:gas_price,value:amm},function(err,result){if(!err){
+	window.waiting=result; localStorage['waiting']=window.waiting; window.cTime = setInterval(function(){autochecker(result)},2000);
+	$('#kuku').css('cursor','progress');$('#kuku').html('');$('#kuku').append(
+	'<h2 id="tx-status" style="color:#fff;animation:blinker 1.4s linear infinite;cursor:progress;text-align:center;"><b>WAITING FOR TRANSACTION</b></h2>'+
+	'<a target="_blank" href="https://etherscan.io/tx/'+result+
+	'" class="btn btn-default btn-md pull-right tr-eth" style="margin:20px 0 0 0;">VIEW DETAILS ON ETHERSCAN <span class="glyphicon glyphicon-triangle-right"></span></a>'+
+	'<button class="btn btn-default btn-md pull-left" style="margin:20px 0 0 0;" onclick="xrel();">CLOSE AND REFRESH</button>');}else{
+	let errr = JSON.stringify(err);$('#kuku').html('');$('#kuku').append('<h2 id="tx-status" style=color:#ff7777;text-align:center;"><b>TRANSACTION FAILED!<b></h2>'+
+	'<button class="btn btn-default btn-md pull-left" style="margin:20px 0 0 0;" onclick=\'alert('+JSON.stringify(errr)+');\'>VIEW ERROR LOG INFO</button>'+
+	'<button class="btn btn-default btn-md pull-right" style="margin:20px 0 0 0;" onclick="xrel();">CLOSE AND REFRESH</button>');}});});}
+	/** PAY ESCROW20 INITER**/
+	$('#bayescr').click(function(e){e.preventDefault();
+	let comm = $('#selladd').val();
+	if(accounts[0].toLowerCase()==comm.toLowerCase()){alert("YOU CAN'T BUY FROM YOURSELF");return;}
+	if($('#amescr').val()==''){alert("WRONG GLOB AMOUNT");return;}
+	let sum = parseFloat($('#amescr').val());
+	if(sum<1){alert("WRONG GLOB AMOUNT");return;}
+	if(sum>(window.gstack/(10**18))){alert("WRONG GLOB AMOUNT");return;}
+	let amm = sum*window.gprice;
+	if(typeof accounts === 'undefined'){alert("NO BLOCKCHAIN CONNECTION");$('.onono').addClass('activ');$('.nottic').show();return;}
+	if(window.eBallance<(amm/(10**18))){alert("INSUFFICIENT ETHEREUM BALANCE");return;}
+	let x=($(window).width()/2)-275; $('.shad_').append('<div id="kuku" style="z-index:999999999;width:550px;height:auto;padding:30px; top:185px;left:'+x+
+	'px;position:absolute;z-index:1;background-color:#35475b;color:white;border-radius:4px;box-shadow:2px 5px 3px rgba(0,0,0,0.8);text-align:center;">'+
+	'<h2 style="color:#fff"><strong>BUY GLOB FROM ESCROW</strong></h2>'+ 
+	'<table class="table" style="margin:25px 0 0 0;color:#ccc;background-color:transparent;font-size:16px;border:solid 0px transpsrent;">'+
+	'<col width=20%><col width=20%><col width=20%><col width=20%><col width=20%><tbody>'+
+	'<tr class="st"><td colspan=2><small class="pull-left">YOU WILL BAY</small></td><td colspan=3 ><small class="pull-right">'+sum+' GLOB</small></td></tr>'+
+	'<tr class="st"><td colspan=2><small class="pull-left">YOU WILL PAY</small></td><td colspan=3 ><small class="pull-right">'+amm/(10**18)+' ETH</small></td></tr>'+
+	'</tbody></table>'+'<button class="btn btn-default btn-md pull-left" style="margin:10px 0 0 0;" onclick="$(\'#kuku\').remove();$(\'.shad_\').hide();">CANCEL</button>'+
+	'<button class="btn btn-default btn-md pull-right" style="margin:10px 0 0 0;" onclick="BAGLB();">BUY GLOB</button>'+
+	'</div>');$('.shad_').show();});
+	
+	/** SET ESCROW20 DATA **/
+	function SESC(a,b){
+	web3.eth.getTransactionCount(accounts[0]).then(nonce =>{window.nonce=nonce;
+	conescr.methods.setEscrow(b,a).send({from:accounts[0],gasLimit:gas_limit,gasPrice:gas_price},function(err,result){if(!err){
+	window.waiting=result; localStorage['waiting']=window.waiting; window.cTime = setInterval(function(){autochecker(result)},2000);
+	$('#kuku').css('cursor','progress');$('#kuku').html('');$('#kuku').append(
+	'<h2 id="tx-status" style="color:#fff;animation:blinker 1.4s linear infinite;cursor:progress;text-align:center;"><b>WAITING FOR TRANSACTION</b></h2>'+
+	'<a target="_blank" href="https://etherscan.io/tx/'+result+
+	'" class="btn btn-default btn-md pull-right tr-eth" style="margin:20px 0 0 0;">VIEW DETAILS ON ETHERSCAN <span class="glyphicon glyphicon-triangle-right"></span></a>'+
+	'<button class="btn btn-default btn-md pull-left" style="margin:20px 0 0 0;" onclick="xrel();">CLOSE AND REFRESH</button>');}else{
+	let errr = JSON.stringify(err);$('#kuku').html('');$('#kuku').append('<h2 id="tx-status" style=color:#ff7777;text-align:center;"><b>TRANSACTION FAILED<b></h2>'+
+	'<button class="btn btn-default btn-md pull-left" style="margin:20px 0 0 0;" onclick=\'alert('+JSON.stringify(errr)+');\'>VIEW ERROR LOG</button>'+
+	'<button class="btn btn-default btn-md pull-right" style="margin:20px 0 0 0;" onclick="xrel();">CLOSE AND REFRESH</button>');}});});}
+	/** SET ESCROW20 INITER**/
+	$('#addescr').click(function(e){e.preventDefault();
+	if(window.eBallance<0.0005){alert("INSUFFICIENT ETHEREUM BALANCE");$('.onono').addClass('activ');$('.nottic').show();return;}
+	if(typeof accounts=='undefined'){alert("NO BLOCKCHAIN CONNECTION");$('.onono').addClass('activ');$('.nottic').show();return;}
+	let esmax= parseFloat($('#maacx').val());
+	let esprs= parseFloat($('#pracx').val());
+	if(esmax<=window.gBallance){esmax=BigInt(esmax*(10**6))*BigInt(10**12);esmax=esmax.toString(16);}else{alert("WRONG ESCROW AMOUNT");return;} 
+	if(esprs>=0.001){esprs=BigInt(parseInt(esprs*(10**8)))*BigInt(10**10);esprs=esprs.toString(16);}else{alert("WRONG PRICE VALUE");return;} 	
+	let x=($(window).width()/2)-275; $('.shad_').append('<div id="kuku" style="z-index:999999999;width:550px;height:auto;padding:30px; top:185px;left:'+x+
+	'px;position:absolute;z-index:1;background-color:#35475b;color:white;border-radius:4px;box-shadow:2px 5px 3px rgba(0,0,0,0.8);text-align:center;">'+
+	'<h2 style="color:#fff"><strong>REGISTER & GET AIRDROP</strong></h2>'+ 
+	'<table class="table" style="margin:25px 0 0 0;color:#ccc;background-color:transparent;font-size:16px;border:solid 0px transpsrent;">'+
+	'<col width=20%><col width=20%><col width=20%><col width=20%><col width=20%><tbody>'+
+	'<tr class="st"><td colspan=2><small class="pull-left">YOU WILL SELL</small></td><td colspan=3 ><small class="pull-right">'+parseFloat($('#maacx').val())+' GLOB</small></td></tr>'+
+	'<tr class="st"><td colspan=2><small class="pull-left">1GLOB PRICE</small></td><td colspan=3 ><small class="pull-right">'+parseFloat($('#pracx').val())+' ETH</small></td></tr>'+
+	'</tbody></table>'+
+	'<button class="btn btn-default btn-md pull-left" style="margin:10px 0 0 0;" onclick="$(\'#kuku\').remove();$(\'.shad_\').hide();">CANCEL</button>'+
+	'<button class="btn btn-default btn-md pull-right" style="margin:10px 0 0 0;" onclick="SESC(\''+esmax+'\',\''+esprs+'\');">SET ESCROW OFFER</button>'+
+	'</div>');$('.shad_').show();});

@@ -621,6 +621,7 @@ if(window.air>0){
 	//$('.charged').hide();
 	
 $('.consoley').hide();
+$('#getesc').click();
 if(window.usid!=0){$('.wal').removeClass('hida');}
 $('.shads_').hide();
 if(window.num>0){$('.serrr').click();}
