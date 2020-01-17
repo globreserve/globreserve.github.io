@@ -831,7 +831,8 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	if(vovovo[0] == 0 || vovovo[1] == 0){alert("NO ESCROW OFFER FOUND");return;}
 	if(accounts[0].toLowerCase()==comm.toLowerCase()){alert("YOU CAN'T BUY FROM YOURSELF");return;}
 	}});}}});});
-	$('#escclear').click(function(e){e.preventDefault();
+	$('#escclear,#escclear1').click(function(e){e.preventDefault();
+	$('#maacx').val('');$('#pracx').val('');
 	window.gstack =0; window.gprice =0;$('#amescr').val('');$('.gethoff').html(0);
 	$('.ethoff').html(0);$('.unloge').hide();$('#getesc').click();});
 	
