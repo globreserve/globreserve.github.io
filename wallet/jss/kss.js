@@ -26,5 +26,5 @@ const pullabi=[{"inputs":[],"payable":false,"stateMutability":"nonpayable","type
 //0xf43b86852796a7755089fff34ef94d36c0a9317f uni
 
 let conescr;
-const escraddress='0x4ae0adaed5920babec1aacf1eac3977d53a0e56e';
+const escraddress='0x2bb28da0910dd1b07184c4fb3935ccc1f2ad2474';
 const escrabi=[{"constant":false,"inputs":[{"internalType":"address payable","name":"w","type":"address"}],"name":"payEscrow","outputs":[{"internalType":"bool","name":"","type":"bool"}],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"internalType":"uint256","name":"p","type":"uint256"},{"internalType":"uint256","name":"a","type":"uint256"}],"name":"setEscrow","outputs":[{"internalType":"bool","name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"payable":false,"stateMutability":"nonpayable","type":"fallback"},{"constant":true,"inputs":[{"internalType":"address","name":"n","type":"address"}],"name":"geInfo","outputs":[{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}];
