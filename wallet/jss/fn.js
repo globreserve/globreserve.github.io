@@ -53,7 +53,7 @@ $('.serrr').on('click',async()=>{
 	
 	if(parseInt(res[8])==2){window.tppt = 'GLOB TRANSFER'; window.gottn = window.dealamm*0.8;}
 	if(parseInt(res[8])==1){window.tppt = 'AIRDROPS'; window.gottn = 0;}
-	if(parseInt(res[8])==0){window.tppt = 'TURBO MINING'; window.gottn = 0; getterid=senderid;}
+	if(parseInt(res[8])==0){window.tppt = 'TOTAL MINING'; window.gottn = 0; getterid=senderid;}
 	
 	$('.dealt').html(window.tppt);
 	let datt=0; 
