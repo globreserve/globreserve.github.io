@@ -896,7 +896,7 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	if(esprs>=0.001){esprs=BigInt(parseInt(esprs*(10**8)))*BigInt(10**10);esprs=esprs.toString(16);}else{alert("WRONG PRICE VALUE");return;} 	
 	let x=($(window).width()/2)-275; $('.shad_').append('<div id="kuku" style="z-index:999999999;width:550px;height:auto;padding:30px; top:185px;left:'+x+
 	'px;position:absolute;z-index:1;background-color:#35475b;color:white;border-radius:4px;box-shadow:2px 5px 3px rgba(0,0,0,0.8);text-align:center;">'+
-	'<h2 style="color:#fff"><strong>REGISTER & GET AIRDROP</strong></h2>'+ 
+	'<h2 style="color:#fff"><strong>SET ESCROW OFFER</strong></h2>'+ 
 	'<table class="table" style="margin:25px 0 0 0;color:#ccc;background-color:transparent;font-size:16px;border:solid 0px transpsrent;">'+
 	'<col width=20%><col width=20%><col width=20%><col width=20%><col width=20%><tbody>'+
 	'<tr class="st"><td colspan=2><small class="pull-left">YOU WILL SELL</small></td><td colspan=3 ><small class="pull-right">'+parseFloat($('#maacx').val())+' GLOB</small></td></tr>'+
