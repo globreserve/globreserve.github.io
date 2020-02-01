@@ -24,7 +24,7 @@ window.refaction=0;
 window.refactions=0;
 window.actionto=0;
 window.actionf=0;
-window.latest = 'latest';
+window.latest = 9393430;
 $('.pair1').html('0');
 $('.pair11').html('0');
 $('.pair2').html('0');
