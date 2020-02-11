@@ -84,16 +84,6 @@ function ballance(){
 	window.gBallance = parseInt(gBallance)/10**18;
 	window.gBallancer = parseInt(gBallancer)/10**18;
 	window.gBallancer = +parseFloat(window.gBallancer).toFixed(4);
-	
-	
-	window.aTime = new Date('Mon, 02 Feb 2020 00:00:00 GMT').getUnixTime();
-	
-	console.log('NOW '+Math.floor(Date.now()/1000));
-	
-	console.log('ACTION '+window.aTime);
-	
-	
-	
 	accountStats();}});}});}});}});}
 
 function accountStats(){
@@ -125,7 +115,7 @@ function accountStats(){
 		if(window.usid>0){logg("# FUND R"+window.usid);}else{logg("# UNREGISTERED");}
 		window.air=+(parseInt(pull)/10**18).toFixed(6);
 		window.lot=+(parseInt(drop)/10**18).toFixed(6);
-		if(window.usid>0){cashList(window.cashL-1);cashListfff(window.cashL-1);
+		if(window.usid>0){cashList(window.cashL-1);
 		}else{setTimeout(startmm(),1000);}
 		
 	}else{console.error(err);}});
@@ -164,49 +154,7 @@ function cashList(i){if(i>=0){
 	window.rrw1=1;window.rrw0=1; logg("# 0 TRANSACTION");
 	fstRef(window.ref1-1);secRef(window.ref2-1);window.rrw1=1;
 	if(window.rrw1==1 && window.rrw2==1 && window.rrw3==1){setTimeout(startmm(),400);}}}
-	
-	
-function cashListfff(i){if(i>=0){
-	condeal.methods.d_list(accounts[0],i).call({from:accounts[0]},function(err,result){if(!err){
-	condeal.methods.getone(result).call({from:accounts[0]},function(err,res){if(!err){	
-	
-	if((res[2]==accounts[0] && res[1]=='0x0000000000000000000000000000000000000000')){
-	window.refaction = window.refaction + parseInt(res[10])/10**18}
-	if((res[0]==accounts[0] && res[1]=='0x0000000000000000000000000000000000000000')){
-	window.refactions = window.refactions + parseInt(res[10])/10**18}
-	
-	if(i>0){cashListfff(i-1);}else{if(window.actionf==1){
-		window.actionto=window.refbal+window.refaction;
-		window.actionse=window.gBallancer + window.refactions;
-		$('.pair1').html(window.actionse*1.6);
-		$('.pair11').html(window.actionse*0.8);
-		$('.pair2').html(window.actionto*1.6);
-		$('.pair21').html(window.actionto*0.8);
-		$('.ar2020').html((window.actionto+window.actionse)*1.6);		
-	}else{window.actionf=1;} }
-	}else{console.error(err);}});
-	}else{console.error(err);}});
-	}else{
-	console.log('REFACT '+window.refaction);
-	if(window.actionf==1){
-		window.actionto=window.refbal+window.refaction;
-		window.actionse=window.gBallancer + window.refactions;
-		
-		$('.pair1').html(window.actionse*1.6);
-		$('.pair11').html(window.actionse*0.8);
-		$('.pair2').html(window.actionto*1.6);
-		$('.pair21').html(window.actionto*0.8);
-		$('.ar2020').html((window.actionto+window.actionse)*1.6);		
-		}else{window.actionf=1;}
-	}}	
-	
-	
-	
-	
-	
-	
-	
-	
+
 
 function fstRef(i){if(i>=0){
 	conregg.methods.fref(accounts[0],i).call(function(err,fref){if(!err){	
@@ -221,19 +169,17 @@ function fstRef(i){if(i>=0){
 		}}});}});}});}});}else{logg("# 0 SPONSORS 1"); window.rrw2=1;
 		if(window.rrw1==1 && window.rrw3==1){setTimeout(startmm(),400);}}}	
 		
-		/*undefined,9118508, */
 		
 function fstRefss(i){
 	if(i>=0){
 		conregg.methods.fref(accounts[0],i).call(function(err,fref){if(!err){	
 		counter.methods.balanceOf(fref).call(undefined,window.latest,function(err,bal){if(!err){	
-		console.log(fref);
+
 		
 	window.refbal=window.refbal+parseInt(bal/10**18);
 	
 	if(i>0){fstRefss(i-1);}else{
 		
-		console.log('RFBALL '+window.refbal);
 		if(window.actionf==1){
 		window.actionto=window.refbal+window.refaction;
 		window.actionse=window.gBallancer + window.refactions;
@@ -260,7 +206,8 @@ function fstRefss(i){
 		$('.ar2020').html((window.actionto+window.actionse)*1.6);		
 		}else{window.actionf=1;}
 	}}		
-		
+
+
 		
 function secRef(i){
 	if(i>=0){conregg.methods.sref(accounts[0],i).call(function(err,sref){if(!err){	
@@ -713,8 +660,6 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	'<button class="btn btn-default btn-md pull-left" style="margin:20px 0 0 0;" onclick=\'alert('+JSON.stringify(errr)+');\'>VIEW ERROR LOG</button>'+
 	'<button class="btn btn-default btn-md pull-right" style="margin:20px 0 0 0;" onclick="xrel();">CLOSE AND REFRESH</button>');}});});}
 	
-	
-	
 	/** SET AIRDROP INITER**/
 	$('#air_set').click(function(e){e.preventDefault();
 	if(window.eBallance<0.0005){alert("INSUFFICIENT ETHEREUM BALANCE");$('.onono').addClass('activ');$('.nottic').show();return;}
@@ -749,9 +694,6 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 		'<span><input style="margin-right:2px;" type="radio" name="pod" id="fond" value="1" /> FOUNDATION</span></label></div>'+
 		'<div class="pull-right"><label onclick="$(\'.btn-xs\').removeClass(\'active\');$(this).addClass(\'active\');"  class="btn btn-default btn-xs active" style="text-align:center;">'+
 		'<span><input style="margin-right:2px;" type="radio" name="pod" id="burn" value="1" checked /> BURN</span></label></div>'+'</td></tr></tbody></table>'+whtm;
-	
-
-	
 	$('.shad_').append(wht);$('.shad_').show();});
 	/** STOP POOL **/
 	function SAIR(){web3.eth.getTransactionCount(accounts[0]).then(nonce =>{window.nonce=nonce;
@@ -810,10 +752,136 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	'</div>');$('.shad_').show();});
 
 
+    function depodat(){
+	window.deppo=0;
+	conuescr.methods.geUInfo(accounts[0]).call(function(err,vovovo1){if(!err){	
+	conescr.methods.geInfo(accounts[0]).call(function(err,vovovo){if(!err){	
+	window.deppo=vovovo1[1];
+	console.log(window.deppo);
+	if(vovovo1[0]!=0 && vovovo1[1]!=0){
+	$('#maacx1').val(vovovo1[1]/(10**18));
+	$('#pracx1').val(vovovo1[0]/(10**18));}
+	if(vovovo[0]!=0 && vovovo[1]!=0){
+	$('#maacx').val(vovovo[1]/(10**18));
+	$('#pracx').val(vovovo[0]/(10**18));}
+	}});}});}
 
 
 
+	/** SHOW UNESCROW20**/
+	$('#getesc1').click(function(e){e.preventDefault();
+	if(typeof accounts === 'undefined'){alert("NO BLOCKCHAIN CONNECTION");$('.onono').addClass('activ');$('.nottic').show();return;}
+	if(window.eBallance<0.0005){alert("INSUFFICIENT ETHEREUM BALANCE");$('.onono').addClass('activ');$('.nottic').show();return;}
+	let comm = $('#selladd1').val(); if(comm==''){return;}
+	conregg.methods.idd(comm).call(function(err,cococo){if(!err){	
+	if(cococo == 0){ alert("UNREGISTERED FUND ADDRESS");return;}else{
+	conuescr.methods.geUInfo(comm).call(function(err,vovovo){if(!err){	
+	window.ugstack =vovovo[1];window.ugprice =vovovo[0];
+	$('.gethoff1').html(vovovo[1]/(10**18));$('.ethoff1').html(vovovo[0]/(10**18));
+	$('#amescr1').attr('placeholder','Mах '+ (vovovo[1] / vovovo[0]).toFixed(4) +' Glob, min 0.01 Glob');$('.unloge1').show();
+	if(vovovo[0] == 0 || vovovo[1] == 0){alert("NO ESCROW OFFER FOUND");return;}
+	if(accounts[0].toLowerCase()==comm.toLowerCase()){alert("YOU CAN'T SELL TO YOURSELF");return;}}});}}});});
+	$('#escclear1,#escclear11').click(function(e){e.preventDefault();$('#maacx1').val('');$('#pracx1').val('');
+	window.ugstack =0; window.ugprice =0;$('#amescr1').val('');$('.gethoff1').html(0);
+	$('.ethoff1').html(0);$('.unloge').hide();$('#getesc1').click();});
 
+
+	/** SET UNESCROW20 DATA **/
+	function SUESC(a,b){
+	web3.eth.getTransactionCount(accounts[0]).then(nonce =>{window.nonce=nonce;
+	conuescr.methods.setUEscrow(b).send({from:accounts[0],gasLimit:gas_limit,gasPrice:gas_price,value:a},function(err,result){if(!err){
+	window.waiting=result; localStorage['waiting']=window.waiting; window.cTime = setInterval(function(){autochecker(result)},2000);
+	$('#kuku').css('cursor','progress');$('#kuku').html('');$('#kuku').append(
+	'<h2 id="tx-status" style="color:#fff;animation:blinker 1.4s linear infinite;cursor:progress;text-align:center;"><b>WAITING FOR TRANSACTION</b></h2>'+
+	'<a target="_blank" href="https://etherscan.io/tx/'+result+
+	'" class="btn btn-default btn-md pull-right tr-eth" style="margin:20px 0 0 0;">VIEW DETAILS ON ETHERSCAN <span class="glyphicon glyphicon-triangle-right"></span></a>'+
+	'<button class="btn btn-default btn-md pull-left" style="margin:20px 0 0 0;" onclick="xrel();">CLOSE AND REFRESH</button>');}else{
+	let errr = JSON.stringify(err);$('#kuku').html('');$('#kuku').append('<h2 id="tx-status" style=color:#ff7777;text-align:center;"><b>TRANSACTION FAILED<b></h2>'+
+	'<button class="btn btn-default btn-md pull-left" style="margin:20px 0 0 0;" onclick=\'alert('+JSON.stringify(errr)+');\'>VIEW ERROR LOG</button>'+
+	'<button class="btn btn-default btn-md pull-right" style="margin:20px 0 0 0;" onclick="xrel();">CLOSE AND REFRESH</button>');}});});}
+	
+	
+	/** SET UNESCROW20 INITER**/
+	$('#addescr1').click(function(e){e.preventDefault();
+	if(window.eBallance<0.0005){alert("INSUFFICIENT ETHEREUM BALANCE");$('.onono').addClass('activ');$('.nottic').show();return;}
+	if(typeof accounts=='undefined'){alert("NO BLOCKCHAIN CONNECTION");$('.onono').addClass('activ');$('.nottic').show();return;}
+	let esmax= parseFloat($('#maacx1').val());
+	let esprs= parseFloat($('#pracx1').val());
+	if(esmax==0 && window.deppo>0){deltescr();return;}
+	if(esmax>0 && esmax<=window.eBallance){esmax=BigInt(esmax*(10**6))*BigInt(10**12);}else{alert("WRONG ESCROW AMOUNT");return;} 
+	if(esprs>=0.001){esprs=BigInt(parseInt(esprs*(10**8)))*BigInt(10**10);esprs=esprs.toString(16);}else{alert("WRONG PRICE VALUE");return;} 	
+	
+	let x=($(window).width()/2)-275; $('.shad_').append('<div id="kuku" style="z-index:999999999;width:550px;height:auto;padding:30px; top:185px;left:'+x+
+	'px;position:absolute;z-index:1;background-color:#35475b;color:white;border-radius:4px;box-shadow:2px 5px 3px rgba(0,0,0,0.8);text-align:center;">'+
+	'<h2 style="color:#fff"><strong>SET ETHER ESCROW OFFER</strong></h2>'+ 
+	'<table class="table" style="margin:25px 0 0 0;color:#ccc;background-color:transparent;font-size:16px;border:solid 0px transpsrent;">'+
+	'<col width=20%><col width=20%><col width=20%><col width=20%><col width=20%><tbody>'+
+	'<tr class="st"><td colspan=2><small class="pull-left">YOU WILL DEPOSITE</small></td><td colspan=3 ><small class="pull-right">'+parseFloat($('#maacx1').val())+' ETH</small></td></tr>'+
+	'<tr class="st"><td colspan=2><small class="pull-left">1 GLOB PRICE</small></td><td colspan=3 ><small class="pull-right">'+parseFloat($('#pracx1').val())+' ETH</small></td></tr>'+
+	'</tbody></table>'+
+	'<button class="btn btn-default btn-md pull-left" style="margin:10px 0 0 0;" onclick="$(\'#kuku\').remove();$(\'.shad_\').hide();">CANCEL</button>'+
+	'<button class="btn btn-default btn-md pull-right" style="margin:10px 0 0 0;" onclick="SUESC(\''+esmax+'\',\''+esprs+'\');">SET ETHER ESCROW OFFER</button>'+
+	'</div>');$('.shad_').show();});
+
+
+	function deltescr(){let x=($(window).width()/2)-275; $('.shad_').append('<div id="kuku" style="z-index:999999999;width:550px;height:auto;padding:30px; top:185px;left:'+x+
+	'px;position:absolute;z-index:1;background-color:#35475b;color:white;border-radius:4px;box-shadow:2px 5px 3px rgba(0,0,0,0.8);text-align:center;">'+
+	'<h2 style="color:#fff"><strong>RETURN ETHER DEPOSITE</strong></h2>'+ 
+	'<button class="btn btn-default btn-md pull-left" style="margin:10px 0 0 0;" onclick="$(\'#kuku\').remove();$(\'.shad_\').hide();">CANCEL</button>'+
+	'<button class="btn btn-default btn-md pull-right" style="margin:10px 0 0 0;" onclick="DELESC();">DELETE ETHER ESCROW OFFER</button>'+
+	'</div>');$('.shad_').show();}
+	function DELESC(){web3.eth.getTransactionCount(accounts[0]).then(nonce =>{window.nonce=nonce;
+	conuescr.methods.delUEscrow().send({from:accounts[0],gasLimit:gas_limit,gasPrice:gas_price},function(err,result){if(!err){
+	window.waiting=result; localStorage['waiting']=window.waiting; window.cTime = setInterval(function(){autochecker(result)},2000);
+	$('#kuku').css('cursor','progress');$('#kuku').html('');$('#kuku').append(
+	'<h2 id="tx-status" style="color:#fff;animation:blinker 1.4s linear infinite;cursor:progress;text-align:center;"><b>WAITING FOR TRANSACTION</b></h2>'+
+	'<a target="_blank" href="https://etherscan.io/tx/'+result+
+	'" class="btn btn-default btn-md pull-right tr-eth" style="margin:20px 0 0 0;">VIEW DETAILS ON ETHERSCAN <span class="glyphicon glyphicon-triangle-right"></span></a>'+
+	'<button class="btn btn-default btn-md pull-left" style="margin:20px 0 0 0;" onclick="xrel();">CLOSE AND REFRESH</button>');}else{
+	let errr = JSON.stringify(err);$('#kuku').html('');$('#kuku').append('<h2 id="tx-status" style=color:#ff7777;text-align:center;"><b>TRANSACTION FAILED<b></h2>'+
+	'<button class="btn btn-default btn-md pull-left" style="margin:20px 0 0 0;" onclick=\'alert('+JSON.stringify(errr)+');\'>VIEW ERROR LOG</button>'+
+	'<button class="btn btn-default btn-md pull-right" style="margin:20px 0 0 0;" onclick="xrel();">CLOSE AND REFRESH</button>');}});});}
+
+	/** PAY UESCROW20 **/
+	function BAUGLB(smm){let comm = $('#selladd1').val(); 
+	
+	let sum = parseFloat($('#amescr1').val());
+	let amm = sum*window.ugprice;
+		
+	web3.eth.getTransactionCount(accounts[0]).then(nonce =>{window.nonce=nonce;
+	conuescr.methods.payUEscrow(comm,smm).send({from:accounts[0],gasLimit:gas_limit,gasPrice:gas_price},function(err,result){if(!err){
+	window.waiting=result; localStorage['waiting']=window.waiting; window.cTime = setInterval(function(){autochecker(result)},2000);
+	$('#kuku').css('cursor','progress');$('#kuku').html('');$('#kuku').append(
+	'<h2 id="tx-status" style="color:#fff;animation:blinker 1.4s linear infinite;cursor:progress;text-align:center;"><b>WAITING FOR TRANSACTION</b></h2>'+
+	'<a target="_blank" href="https://etherscan.io/tx/'+result+
+	'" class="btn btn-default btn-md pull-right tr-eth" style="margin:20px 0 0 0;">VIEW DETAILS ON ETHERSCAN <span class="glyphicon glyphicon-triangle-right"></span></a>'+
+	'<button class="btn btn-default btn-md pull-left" style="margin:20px 0 0 0;" onclick="xrel();">CLOSE AND REFRESH</button>');}else{
+	let errr = JSON.stringify(err);$('#kuku').html('');$('#kuku').append('<h2 id="tx-status" style=color:#ff7777;text-align:center;"><b>TRANSACTION FAILED!<b></h2>'+
+	'<button class="btn btn-default btn-md pull-left" style="margin:20px 0 0 0;" onclick=\'alert('+JSON.stringify(errr)+');\'>VIEW ERROR LOG INFO</button>'+
+	'<button class="btn btn-default btn-md pull-right" style="margin:20px 0 0 0;" onclick="xrel();">CLOSE AND REFRESH</button>');}});});}
+	/** PAY UESCROW20 INITER**/
+	$('#bayescr1').click(function(e){e.preventDefault();
+	let comm = $('#selladd1').val();
+	if(accounts[0].toLowerCase()==comm.toLowerCase()){alert("YOU CAN'T SELL TO YOURSELF");return;}
+	if($('#amescr1').val()==''){alert("WRONG GLOB AMOUNT");return;}
+	let sum = parseFloat($('#amescr1').val());
+	if(sum<0.1){alert("WRONG GLOB AMOUNT");return;}
+	if(sum>(window.ugstack/window.ugprice)){alert("WRONG GLOB AMOUNT");return;}
+	let amm = sum*window.ugprice;
+	let ssum = BigInt(parseInt(sum*(10**8)))*BigInt(10**10);ssum=ssum.toString(16);
+	
+	if(typeof accounts === 'undefined'){alert("NO BLOCKCHAIN CONNECTION");$('.onono').addClass('activ');$('.nottic').show();return;}
+	if(window.gBallance<sum){alert("INSUFFICIENT ETHEREUM BALANCE");return;}
+	let x=($(window).width()/2)-275; $('.shad_').append('<div id="kuku" style="z-index:999999999;width:550px;height:auto;padding:30px; top:185px;left:'+x+
+	'px;position:absolute;z-index:1;background-color:#35475b;color:white;border-radius:4px;box-shadow:2px 5px 3px rgba(0,0,0,0.8);text-align:center;">'+
+	'<h2 style="color:#fff"><strong>SELL GLOB TO ESCROW</strong></h2>'+ 
+	'<table class="table" style="margin:25px 0 0 0;color:#ccc;background-color:transparent;font-size:16px;border:solid 0px transpsrent;">'+
+	'<col width=20%><col width=20%><col width=20%><col width=20%><col width=20%><tbody>'+
+	'<tr class="st"><td colspan=2><small class="pull-left">YOU WILL SELL</small></td><td colspan=3 ><small class="pull-right">'+sum+' GLOB</small></td></tr>'+
+	'<tr class="st"><td colspan=2><small class="pull-left">YOU WILL GOT</small></td><td colspan=3 ><small class="pull-right">'+amm/(10**18)+' ETH</small></td></tr>'+
+	'</tbody></table>'+'<button class="btn btn-default btn-md pull-left" style="margin:10px 0 0 0;" onclick="$(\'#kuku\').remove();$(\'.shad_\').hide();">CANCEL</button>'+
+	'<button class="btn btn-default btn-md pull-right" style="margin:10px 0 0 0;" onclick="BAUGLB(\''+ssum+'\');">BUY GLOB</button>'+
+	'</div>');$('.shad_').show();});
 
 	/** SHOW ESCROW20**/
 	$('#getesc').click(function(e){e.preventDefault();
@@ -835,7 +903,6 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	$('#maacx').val('');$('#pracx').val('');
 	window.gstack =0; window.gprice =0;$('#amescr').val('');$('.gethoff').html(0);
 	$('.ethoff').html(0);$('.unloge').hide();$('#getesc').click();});
-	
 	
 	/** PAY ESCROW20 **/
 	function BAGLB(){
@@ -903,5 +970,5 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	'<tr class="st"><td colspan=2><small class="pull-left">1 GLOB PRICE</small></td><td colspan=3 ><small class="pull-right">'+parseFloat($('#pracx').val())+' ETH</small></td></tr>'+
 	'</tbody></table>'+
 	'<button class="btn btn-default btn-md pull-left" style="margin:10px 0 0 0;" onclick="$(\'#kuku\').remove();$(\'.shad_\').hide();">CANCEL</button>'+
-	'<button class="btn btn-default btn-md pull-right" style="margin:10px 0 0 0;" onclick="SESC(\''+esmax+'\',\''+esprs+'\');">SET ESCROW OFFER</button>'+
+	'<button class="btn btn-default btn-md pull-right" style="margin:10px 0 0 0;" onclick="SESC(\''+esmax+'\',\''+esprs+'\');">SET GLOB ESCROW OFFER</button>'+
 	'</div>');$('.shad_').show();});
