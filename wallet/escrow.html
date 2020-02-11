@@ -156,8 +156,10 @@ label.btn:hover{color:#fff;}
     <ul class="nav nav-tabs tabs-left">
 	<li class='deal ppgg hida'><a id='deal_up' href="#deal" data-toggle="tab">D<span class='be_num'>0</span> <span class="pull-right btn btn-default btn-sm puppa" style="margin-right:10px;" data-html="true" data-toggle="tooltip" data-placement="left" title="CLOSE">&#x2716;</span></a></li>		
 	
-	<li class="hidaq loloq"><a id='home_up' href="#home" data-toggle="tab"><img border="0" src="pics/send.png" style='margin-right:10px;margin-top:-4px;height:13px;'></span>BUY GLOB</a></li>	
-	<li class='wal hidaq'><a id='senn' href="#transfer" data-toggle="tab"><img border="0" src="pics/send.png" style='margin-right:10px;margin-top:-4px;height:13px;'>SELL GLOB</a></li>
+	<li class="hidaq loloq"><a id='home_up' href="#home" data-toggle="tab"><img border="0" src="pics/send.png" style='margin-right:10px;margin-top:-4px;height:13px;'></span>BUY GLOB</a></li>
+	<li class="hidaq loloq"><a id='home_up1' href="#home1" data-toggle="tab"><img border="0" src="pics/send.png" style='margin-right:10px;margin-top:-4px;height:13px;'></span>SELL GLOB</a></li>	
+	<li class='wal hidaq'><a id='senn' href="#transfer" data-toggle="tab"><img border="0" src="pics/send.png" style='margin-right:10px;margin-top:-4px;height:13px;'>GLOB OFFER</a></li>
+	<li class='wal hidaq'><a id='senn1' href="#transfer1" data-toggle="tab"><img border="0" src="pics/send.png" style='margin-right:10px;margin-top:-4px;height:13px;'>GLOB REQUEST</a></li>
 
 	<li class='logq active hidden'><a id='intro_up' href="#intro" data-toggle="tab"><span style='margin-right:15px;'>&#128213;</span>ABOUT</a></li>	
 	</ul>
@@ -180,9 +182,18 @@ label.btn:hover{color:#fff;}
 				<div class="col-sm-6" style="margin-bottom:6px;padding-right:8px;cursor:pointer;" onclick="$('#home_up').click();"><div class="soy" style='min-height:0;height:auto;'><p style="font-size:32px;margin:0;padding:0;">
 				BUY GLOB</p>
 				</div></div>
-				<div class="col-sm-6" style="margin-bottom:6px;padding-left:8px;cursor:pointer;" onclick="$('#senn').click();"><div class="soy" style='min-height:0;height:auto;'><p style="font-size:32px;margin:0;padding:0;">
+				<div class="col-sm-6" style="margin-bottom:6px;padding-left:8px;cursor:pointer;" onclick="$('#home_up1').click();"><div class="soy" style='min-height:0;height:auto;'><p style="font-size:32px;margin:0;padding:0;">
 				SELL GLOB</p>
-				</div></div></div>
+				</div></div>
+				<div class="col-sm-6" style="margin-bottom:6px;padding-right:8px;cursor:pointer;" onclick="$('#senn').click();"><div class="soy" style='min-height:0;height:auto;'><p style="font-size:32px;margin:0;padding:0;">
+				GLOB OFFER</p>
+				</div></div>
+				<div class="col-sm-6" style="margin-bottom:6px;padding-left:8px;cursor:pointer;" onclick="$('#senn1').click();"><div class="soy" style='min-height:0;height:auto;'><p style="font-size:32px;margin:0;padding:0;">
+				GLOB REQUEST</p>
+				</div></div>
+				
+				
+				</div>
 				</div>
 		</div>	
 			
@@ -206,7 +217,7 @@ label.btn:hover{color:#fff;}
 				<div class="row unloge">
 				<div class="col-sm-6" style="margin-bottom:6px;padding-right:8px;"><div class="soy" style="padding-top:21px;padding-bottom:31px;"><p style="font-size:32px;margin-bottom:16px;">
 				<span class="gethoff">-</span><small></small></p>
-				<span class="">GLOB AVIALABLE</span></div></div>
+				<span class="">GLOB AVAILABLE</span></div></div>
 				<div class="col-sm-6" style="margin-bottom:6px;padding-left:8px;"><div class="soy" style="padding-top:21px;padding-bottom:31px;"><p style="font-size:32px;margin-bottom:16px;">
 				<span class="ethoff">-</span><small></small></p>
 				<span class="">1 GLOB PRICE</span></div></div>
@@ -235,6 +246,51 @@ label.btn:hover{color:#fff;}
 		</div>
  
 	
+		<div class="tab-pane col-sm-12" id="home1">
+				
+		<div class="col-md-12">
+				<div style='padding:17px 0 4px 0;margin:0;'>
+				
+				
+				
+				<p  class='help-block'  style='margin-bottom:10px;'>BUYER ADDRESS 
+				<button class="btn btn-default btn-sm pull-right" data-toggle="tooltip" data-html="true" data-placement="left"
+				title="GET OFFER" style="margin-top:-9px;" id='getesc1'>GET OFFER INFO</button></p>
+				
+				<input class="form-control input-lg" type='text' spellcheck='false' autocomplete="off" id="selladd1" name='' style='margin-bottom:17px;' value='' 
+				placeholder='Enter Glob Buyer addrеss'/>
+				
+				<div class="row unloge1" style='display:none;'>
+				<div class="col-sm-6" style="margin-bottom:6px;padding-right:8px;"><div class="soy" style="padding-top:21px;padding-bottom:31px;"><p style="font-size:32px;margin-bottom:16px;">
+				<span class="gethoff1">-</span><small></small></p>
+				<span class="">ETHER AVAILABLE</span></div></div>
+				<div class="col-sm-6" style="margin-bottom:6px;padding-left:8px;"><div class="soy" style="padding-top:21px;padding-bottom:31px;"><p style="font-size:32px;margin-bottom:16px;">
+				<span class="ethoff1">-</span><small></small></p>
+				<span class="">1 GLOB PRICE</span></div></div>
+				</div>
+				
+				
+				
+				<p class='help-block unloge1' style='margin-bottom:10px;display:none;'>GLOB AMOUNT TO SELL</p>
+				<input class="form-control input-lg unloge1" type='number' id="amescr1" value='' min="1" max="100000" step="0.01" style='margin-bottom:22px;display:none;' 
+				placeholder=''/>
+				
+				
+				<div class="form-group unloge1" style="margin:0 0 15px 0;display:none;">
+				<button class="btn btn-default btn-md pull-left" id="escclear11">CLEAR</button>
+				<button class="btn btn-default btn-md pull-right" id="bayescr1">SELL GLOB</button>
+				</div>
+				
+				</div>
+				</div>
+				
+							
+		</div>
+	
+	
+	
+	
+	
 		
 		<div class="tab-pane col-sm-12" id="transfer">
 				
@@ -243,13 +299,37 @@ label.btn:hover{color:#fff;}
 				
 			
 				<p class='help-block' style='margin-bottom:10px;'>GLOB AMOUNT TO SELL</p>
-				<input class="form-control input-lg" type='number' id="maacx" value='' min="1" max="100000" step="0.01" style='margin-bottom:22px;' placeholder='Minimum 1 Glob'/>
+				<input class="form-control input-lg" type='number' id="maacx" value='' min="0.1" max="100000" step="0.01" style='margin-bottom:22px;' placeholder='Minimum 1 Glob'/>
 				<p class='help-block' style='margin-bottom:10px;'>1 GLOB PRICE (ETH)</p>
 				<input class="form-control input-lg" type='number' id="pracx" value='' min="0" max="100000" step="0.001" style='margin-bottom:22px;' placeholder='Minimum 0.001 ETH'/>
 				
 				<div class="form-group" style="margin:21px 0 15px 0;">
 				<button class="btn btn-default btn-md pull-left" id="escclear1">CLEAR</button>
 				<button class="btn btn-default btn-md pull-right" id="addescr">ADD ESCROW</button>
+				</div>
+				
+				
+				</div>
+				</div>
+				
+		</div>
+		
+		<div class="tab-pane col-sm-12" id="transfer1">
+				
+				<div class="col-md-12">
+				<div class='toww' style='padding:17px 0 4px 0; margin:0 auto;'>
+				
+			
+				<p class='help-block' style='margin-bottom:10px;'>ETHER DEPOSIT TO BUY GLOB</p>
+				<input class="form-control input-lg" type='number' id="maacx1" value='' min="0.1" max="100000" step="0.01" style='margin-bottom:22px;' placeholder='Minimum 0.01 ETH'/>
+				<p class='help-block' style='margin-bottom:10px;'>1 GLOB PRICE (ETH)</p>
+				<input class="form-control input-lg" type='number' id="pracx1" value='' min="0" max="100000" step="0.001" style='margin-bottom:22px;' placeholder='Minimum 0.001 ETH'/>
+				
+				<div class="form-group" style="margin:21px 0 15px 0;">
+				<button class="btn btn-default btn-md pull-left" id="escclear11">CLEAR</button>
+				
+				<button class="btn btn-default btn-md pull-right" id="addescr1">ADD ETHER ESCROW</button>
+			
 				</div>
 				
 				
@@ -515,6 +595,7 @@ conair=new web3.eth.Contract(airabi,airaddress);
 conmint=new web3.eth.Contract(mintabi,mintaddress);
 conpull=new web3.eth.Contract(pullabi,pulladdress);
 conescr=new web3.eth.Contract(escrabi,escraddress);
+conuescr=new web3.eth.Contract(uescrabi,uescraddress);
 setTimeout(totalStats(1),400);console.log('infura');
 window.start=1;}
 $('.metam').on('click',function(e){
@@ -534,6 +615,7 @@ conair=new web3.eth.Contract(airabi,airaddress);
 conmint=new web3.eth.Contract(mintabi,mintaddress);
 conpull=new web3.eth.Contract(pullabi,pulladdress);
 conescr=new web3.eth.Contract(escrabi,escraddress);
+conuescr=new web3.eth.Contract(uescrabi,uescraddress);
 unlock();
 }catch(error){console.log('User denied account access');}}else{
 window.open('https://metamask.io/','_blank');
@@ -543,7 +625,10 @@ function unlock(){web3.eth.getAccounts(function(err, accounts){
       else if(accounts.length===0){console.log('MetaMask is locked')}
       else{$('.shads_').show();$('.consoley').html('');$('.consoley').show();
 	  logg("* WALLET LOADING *</br></br>");logg("# METAMASK UNLOCKED");
-	  totalStats();}});}
+	  totalStats();
+	  $('#escclear,#escclear1').click();
+	  depodat();
+	  }});}
 </script>
 </body>
 </html>
