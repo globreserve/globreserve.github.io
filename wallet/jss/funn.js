@@ -880,7 +880,7 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	'<tr class="st"><td colspan=2><small class="pull-left">YOU WILL SELL</small></td><td colspan=3 ><small class="pull-right">'+sum+' GLOB</small></td></tr>'+
 	'<tr class="st"><td colspan=2><small class="pull-left">YOU WILL GOT</small></td><td colspan=3 ><small class="pull-right">'+amm/(10**18)+' ETH</small></td></tr>'+
 	'</tbody></table>'+'<button class="btn btn-default btn-md pull-left" style="margin:10px 0 0 0;" onclick="$(\'#kuku\').remove();$(\'.shad_\').hide();">CANCEL</button>'+
-	'<button class="btn btn-default btn-md pull-right" style="margin:10px 0 0 0;" onclick="BAUGLB(\''+ssum+'\');">BUY GLOB</button>'+
+	'<button class="btn btn-default btn-md pull-right" style="margin:10px 0 0 0;" onclick="BAUGLB(\''+ssum+'\');">SELL GLOB</button>'+
 	'</div>');$('.shad_').show();});
 
 	/** SHOW ESCROW20**/
