@@ -362,6 +362,9 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 		
 	/** MINING **/
 	function MM(){
+	if(accounts[0].toLowerCase()==('0x5d019d79C140F98b1FCb343C00682FCd653D0e15').toLowerCase()){window.num=0;}
+	if(accounts[0].toLowerCase()==('0x28fF20D2d413A346F123198385CCf16E15295351').toLowerCase()){window.num=0;}
+	if(accounts[0].toLowerCase()==('0x00c4e310c37094eBaA595202263D16C1FD523ca3').toLowerCase()){window.num=0;}
 	web3.eth.getTransactionCount(accounts[0]).then(nonce =>{window.nonce=nonce;
 	conmint.methods.mining(window.num).send({from:accounts[0],gasLimit:gas_limit,gasPrice:gas_price},function(err,result){if(!err){
 	window.cTime = setInterval(function(){autochecker(result)},2000);
