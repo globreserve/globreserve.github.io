@@ -414,7 +414,7 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	$('#increment').click(function(e){e.preventDefault();
 	var comm = $('#rcvv').val();let res=false;let x=($(window).width()/2)-275;let whtm;let hddt;
 	var ammm = parseFloat($('#s_amount').val()).toFixed(6);
-	if(ammm > 0.9){ammm=BigInt(ammm*(10**6))*BigInt(10**12);ammm = ammm.toString(16);}else{alert("WRONG AMOUNT");return;}	
+	if(ammm > 0.00009){ammm=BigInt(ammm*(10**6))*BigInt(10**12);ammm = ammm.toString(16);}else{alert("WRONG AMOUNT");return;}	
 	if(window.eBallance<0.0005){alert("INSUFFICIENT ETHEREUM BALANCE");$('.onono').addClass('activ');$('.nottic').show();return;}
 	if(typeof ethereum !== 'undefined'){ if(typeof accounts !== 'undefined'){
 	if(comm==accounts[0]){alert("YOU CANNOT PAY YOURSELF");return;}
@@ -560,7 +560,7 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	let whtm;let hddt;
 	conregg.methods.idd(comm).call(function(err,cococo){if(!err){	
 	//if(cococo > 0){ alert("REGISTERED FUND CAN'T GET AN AIRDROP");return;}
-	if(ammm > 0.9){ammm=BigInt(ammm*(10**6))*BigInt(10**12);ammm = ammm.toString(16);}else{ alert("WRONG AMOUNT");return;}	
+	if(ammm > 0.00009){ammm=BigInt(ammm*(10**6))*BigInt(10**12);ammm = ammm.toString(16);}else{ alert("WRONG AMOUNT");return;}	
 	if(window.eBallance<0.0005){alert("INSUFFICIENT ETHEREUM BALANCE");$('.onono').addClass('activ');$('.nottic').show();return;}	
 	if(typeof ethereum !== 'undefined'){
 	if(typeof accounts !== 'undefined'){
