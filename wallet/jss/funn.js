@@ -627,7 +627,7 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 		$('.pay_link').hide();
 		$('#pay_link').val('');
 	}else{
-	if(vall<1){alert("WRONG BILL AMOUNT");return;}		
+	if(vall<0.0001){alert("WRONG BILL AMOUNT");return;}		
 	if(!!window.topp){		
 	$('.pay_link').val(window.topp+"?r="+window.usid+'l'+vall);}else{
 	$('.pay_link').val("https://globreserve.github.io/?r="+window.usid+'l'+vall);}
