@@ -504,7 +504,7 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	
 	let x=($(window).width()/2)-275;let whtm;let hddt;
 	var ammm = parseFloat($('#qb_amount').val()).toFixed(6); 
-	if(ammm > 0.9){ammm=BigInt(ammm*(10**6))*BigInt(10**12);ammm = ammm.toString(16);}else{alert("WRONG AMOUNT");return;}
+	if(ammm > 0.00009){ammm=BigInt(ammm*(10**6))*BigInt(10**12);ammm = ammm.toString(16);}else{alert("WRONG AMOUNT");return;}
 	if(typeof ethereum !== 'undefined'){
 	if(typeof accounts !== 'undefined'){
 	if(window.eBallance<0.0005){alert("INSUFFICIENT ETHEREUM BALANCE");$('.onono').addClass('activ');$('.nottic').show();return;}
@@ -627,7 +627,7 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 		$('.pay_link').hide();
 		$('#pay_link').val('');
 	}else{
-	if(vall<0.0001){alert("WRONG BILL AMOUNT");return;}		
+	if(vall<0.00009){alert("WRONG BILL AMOUNT");return;}		
 	if(!!window.topp){		
 	$('.pay_link').val(window.topp+"?r="+window.usid+'l'+vall);}else{
 	$('.pay_link').val("https://globreserve.github.io/?r="+window.usid+'l'+vall);}
