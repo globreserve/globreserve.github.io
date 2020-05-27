@@ -1407,8 +1407,9 @@ console.log(navigator.userAgent);
   $('.desc').hide();$('#nodesc').show();}else{$('.desc').show();$('#nodesc').hide();}
 	
    
-  $.get("http://glob.money/00.php", function(data, status){
-	console.log('data - '+data);
+  $.get("//glob.money/00.php", function(data, status){
+	var ccrrs = parseFloat(data).toFixed(2);
+	$('#bitrat1').html(ccrrs);
     });
    
 $('.swin').click();	
