@@ -1407,7 +1407,7 @@ console.log(navigator.userAgent);
   $('.desc').hide();$('#nodesc').show();}else{$('.desc').show();$('#nodesc').hide();}
 	
    
-  $.get("https://api.coinmarketcap.com/v2/ticker/", function(data, status){
+  $.get("https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=GLOB&convert=USD&CMC_PRO_API_KEY=073b86ec-f9c8-4ef5-8d18-70f82dddfd68", function(data, status){
         for(var key in data.data){
             var coin = data.data[key];
 			//console.log("coin: ",coin.name,"--price: ", coin.quotes.USD.percent_change_24h);
