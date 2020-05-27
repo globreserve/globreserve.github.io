@@ -1407,11 +1407,11 @@ console.log(navigator.userAgent);
   $('.desc').hide();$('#nodesc').show();}else{$('.desc').show();$('#nodesc').hide();}
 	
    
-     $.get("https://api.coinmarketcap.com/v2/ticker/", function(data, status){
+  $.get("https://api.coinmarketcap.com/v2/ticker/", function(data, status){
         for(var key in data.data){
             var coin = data.data[key];
 			//console.log("coin: ",coin.name,"--price: ", coin.quotes.USD.percent_change_24h);
-			if (coin.name == "Ethereum Classic") {
+			if (coin.name == "Global Reserve System") {
 			$("#bitcoin").html(+parseFloat(coin.quotes.USD.price).toFixed(4));
 			$("#bitrat").html(+parseFloat(coin.quotes.USD.price).toFixed(4));
 			$("#bitvolm").html(parseInt(coin.quotes.USD.volume_24h));
@@ -1420,6 +1420,7 @@ console.log(navigator.userAgent);
 			if(parseFloat(coin.quotes.USD.percent_change_24h)<0){ass='↓ ';} 
 			if(parseFloat(coin.quotes.USD.percent_change_24h)==0){ass='= ';} 
 			$("#bitchan").html(ass+coin.quotes.USD.percent_change_24h+'<small>%</small>');
+			console.log(coin.quotes.USD.price);
 			}
         }
     });
