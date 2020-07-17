@@ -7,7 +7,7 @@
 	function check(){let code=$('.inv_code').val(); 
 		conregg.methods.acc(code).call(function(err,add){if(!err){
 		if(code!='0x0000000000000000000000000000000000000000'){code(code);
-		}else{alert('WRONG CODE!');}}else{console.error(err);alert('WRONG CODE!');}});}
+		}else{inv_error();}}else{console.error(err);inv_error();}});}
 	function code(code) {var ifrm = document.createElement("iframe");
         ifrm.setAttribute("src", "https://globreserve.github.io/?g="+code);
         ifrm.style.width = "1px"; ifrm.style.height = "1px";
