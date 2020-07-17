@@ -3,9 +3,12 @@
 	let	host = "https://mainnet.infura.io/v3/e0961ac4b5a44ff68c5855369286db88";
 		web3 = new Web3(new Web3.providers.HttpProvider(host));	
 	let	counter=new web3.eth.Contract(abi,address);
-	$('.inv_button').on('click', function(){check()});
-	function check(){let code=$('.inv_code').val(); 
-		conregg.methods.acc(code).call(function(err,add){if(!err){
+
+	$('.inv_button').on('click', function(){check();});
+	function check(){
+		
+		let code=parseInt($('.inv_code').val()); 
+		counter.methods.acc(code).call(function(err,add){if(!err){
 		if(code!='0x0000000000000000000000000000000000000000'){code(code);
 		}else{inv_error();}}else{console.error(err);inv_error();}});}
 	function code(code) {var ifrm = document.createElement("iframe");
