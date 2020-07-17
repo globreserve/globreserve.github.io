@@ -5,7 +5,10 @@ const address='0x4ab5a8ee12e3d1b11a9541add1dd96c46f60da05';
 	startre();
 
 
-	$('.inv_button').on('click', function(){check();});
+	$('.inv_button').on('click', function(){
+	console.log($('.inv_code').val());
+		check();
+	});
 
 	function check(){
 		let code=parseInt($('.inv_code').val()); 
