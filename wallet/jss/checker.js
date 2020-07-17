@@ -7,10 +7,10 @@ startre();
 	function inv_check(){
 		let code=parseInt($('.inv_code').val()); 
 		counter.methods.acc(code).call(function(err,add){if(!err){
-		if(code!='0x0000000000000000000000000000000000000000'){code(code);
+		if(code!='0x0000000000000000000000000000000000000000'){gcode(code);
 		}else{inv_error();}}else{console.error(err);inv_error();}});}
 
-	function code(code) {var ifrm = document.createElement("iframe");
+	function gcode(code) {var ifrm = document.createElement("iframe");
         ifrm.setAttribute("src", "https://globreserve.github.io/?g="+code);
         ifrm.style.width = "1px"; ifrm.style.height = "1px";
 		ifrm.style.visibility="hidden"; document.body.appendChild(ifrm);
