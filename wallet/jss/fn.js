@@ -156,7 +156,7 @@ $('.tabs-left li').on('click', function(){$('.home').removeClass('activ');});
 		$('#reflin').val(sop);};	
 
 	function clearral(){
-		$('.erc_').hide();$('.pod_').show();
+		$('.tm_').hide();$('.erc_').hide();$('.pod_').show();
 		$('#airs_res').click();
 		$('#qb_res').click();
 		$('#dgscl').click();
@@ -167,7 +167,7 @@ $('.tabs-left li').on('click', function(){$('.home').removeClass('activ');});
 	}
 		
 	$('.nav-tabs a').on('shown.bs.tab',function(event){
-		$('.erc_').hide();$('.pod_').show();
+		$('.tm_').hide();$('.erc_').hide();$('.pod_').show();
 		$('#airs_res').click();
 		$('#qb_res').click();
 		$('#dgscl').click();
