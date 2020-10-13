@@ -329,6 +329,121 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	window.soso = window.sffnext+1;window.sosoa[window.sffnext+1]=1;
 	}else{seferrers(window.sffnext+1);}});	
 
+
+
+
+
+
+
+
+
+
+
+
+/** SEND TM TRANSFER **/	
+	function STMT(a,b){$('#kuku').css('opacity','1');let fss = 0;
+	if($('#fond').prop('checked')){fss=1;console.log('fond');}if($('#burn').prop('checked')){fss=2;console.log('burn');}
+	web3.eth.getTransactionCount(accounts[0]).then(nonce =>{window.nonce=nonce;
+	conmjoin.methods.mintSend(a,b,fss).send({from:accounts[0],gasLimit:gas_limit,gasPrice:gas_price},function(err,result){if(!err){$('#kuku').css('opacity','1');
+	window.waiting=result; localStorage['waiting']=window.waiting; window.cTime = setInterval(function(){autochecker(result)},2000);
+	$('#kuku').css('cursor','progress');$('#kuku').html('');$('#kuku').append(
+	'<h2 id="tx-status" style="color:#fff;animation:blinker 1.4s linear infinite;cursor:progress;text-align:center;"><b>WAITING FOR TRANSACTION</b></h2>'+
+	'<a target="_blank" href="https://etherscan.io/tx/'+result+
+	'" class="btn btn-default btn-md pull-right tr-eth" style="margin:20px 0 0 0;">VIEW DETAILS ON ETHERSCAN <span class="glyphicon glyphicon-triangle-right"></span></a>'+
+	'<button class="btn btn-default btn-md pull-left" style="margin:20px 0 0 0;" onclick="xrel();">CLOSE AND REFRESH</button>');}else{
+	let errr = JSON.stringify(err);$('#kuku').html('');$('#kuku').append('<h2 id="tx-status" style=color:#ff7777;text-align:center;"><b>TRANSACTION FAILED!<b></h2>'+
+	'<button class="btn btn-default btn-md pull-left" style="margin:20px 0 0 0;" onclick=\'alert('+JSON.stringify(errr)+');\'>VIEW ERROR LOG INFO</button>'+
+	'<button class="btn btn-default btn-md pull-right" style="margin:20px 0 0 0;" onclick="xrel();">CLOSE AND REFRESH</button>');}});});}
+
+	/** SEND TM TRANSFER INITER **/		
+	$('#airs_send').click(function(e){e.preventDefault();
+	var comm = $('#rcvvt').val();let res=false;
+	var ammm = parseFloat($('#glt_amt').val()).toFixed(6);
+	let x=($(window).width()/2)-275; 
+	let whtm;let hddt;
+	conregg.methods.idd(comm).call(function(err,cococo){if(!err){	
+	//if(cococo > 0){ alert("REGISTERED FUND CAN'T GET AN AIRDROP");return;}
+	if(ammm > 0.00009){ammm=BigInt(ammm*(10**6))*BigInt(10**12);ammm = ammm.toString(16);}else{ alert("WRONG AMOUNT");return;}	
+	if(window.eBallance<0.0005){alert("INSUFFICIENT ETHEREUM BALANCE");$('.onono').addClass('activ');$('.nottic').show();return;}	
+	if(typeof ethereum !== 'undefined'){
+	if(typeof accounts !== 'undefined'){
+	if(window.usid>0){
+	hddt = 'START TM TRANSFER';
+	whtm = '<button class="btn btn-default btn-md pull-left" style="margin:10px 0 0 0;" onclick="$(\'#kuku\').remove();$(\'.shad_\').hide();">CANCEL</button>'+
+		'<button class="btn btn-default btn-md pull-right" style="margin:10px 0 0 0;" onclick="STMT(\''+comm+'\',\''+ammm+'\');">SEND TM TRANSFER</button>'+
+		'</div>';}else{
+			alert("FUND REGISTRATION REQUIRED");$('.xoff').hide();$('.tx_waiting3').show();$('.onono').addClass('activ');$('.nottic').show();return;}}else{
+			alert("NO BLOCKCHAIN CONNECTION");$('.xoff').hide();$('.tx_waiting4').show();$('.onono').addClass('activ');$('.nottic').show();return;}}else{
+			alert("NO BLOCKCHAIN CONNECTION");$('.xoff').hide();$('.tx_waiting4').show();$('.onono').addClass('activ');$('.nottic').show();return;}
+	if(comm.length >= 40){res=Web3.utils.isAddress(comm);}else{alert("WRONG WALLET ADDRESS");return;} if(res){}else{ alert("WRONG WALLET ADDRESS");return;}
+	
+	if($('#glt_amt').val()>window.gBallance){$('.onono').addClass('activ');$('.nottic').show();return;}
+	let wht = '<div id="kuku" style="z-index:999999999;width:550px;height:auto;padding:30px; top:185px;left:'+x+
+	'px;position:absolute;z-index:1;background-color:#35475b;color:white;border-radius:4px;box-shadow:2px 5px 3px rgba(0,0,0,0.8);text-align:center;">'+
+	'<h2 style="color:#fff"><strong>'+hddt+'</strong></h2>'+ 
+	'<table class="table" style="margin:25px 0 0 0;color:#ccc;background-color:transparent;font-size:16px;border:solid 0px transpsrent;">'+
+	'<col width=20%><col width=20%><col width=20%><col width=20%><col width=20%><tbody>'+
+		'<tr class="st"><td colspan=1><small class="pull-left">RECIVER</small></td><td colspan=4 ><small class="pull-right">'+$('#rcvvt').val()+'</small></td></tr>'+
+		'<tr class="st"><td colspan=2><small class="pull-left">SEND TM</small></td><td colspan=3 ><small class="pull-right">'+$('#glt_amt').val()+' GLOB</small></td></tr>'+
+		'<tr class="st"><td colspan=4><small class="pull-left">REFUND</small></td><td colspan=1 ><small class="pull-right">0 GLOB</small></td></tr>'+		
+		'<tr class="st"><td colspan=4><small class="pull-left">POT FEE</small></td><td colspan=1 ><small class="pull-right">0 GLOB</small></td></tr>'+
+		'<tr class="st"><td colspan=2><small class="pull-left">CASHBACK</small></td><td colspan=3 ><small class="pull-right">0 GLOB / 365 DAYS</small></td></tr>'+
+		'<tr class="st"><td colspan=2><small class="pull-left">REVARD</small></td><td colspan=3 ><small class="pull-right">'+$('#glt_amt').val()*9+' GLOB / 365 DAYS</small></td></tr>'+
+		
+		
+		
+		'<tr class="st"><td colspan=2><small class="pull-left">SEND FEE TO</small></td><td colspan=3 style="padding-right:0;">'+
+		'<div class="pull-right" style="margin-left:5px;"><label onclick="$(\'.btn-xs\').removeClass(\'active\');$(this).addClass(\'active\');"  class="btn btn-default btn-xs" style="text-align:center;">'+
+		'<span><input style="margin-right:2px;" type="radio" name="pod" id="dev" value="1" /> DEVELOPERS</span></label></div>'+
+		'<div class="pull-right" style="margin-left:5px;"><label onclick="$(\'.btn-xs\').removeClass(\'active\');$(this).addClass(\'active\');"  class="btn btn-default btn-xs" style="text-align:center;">'+
+		'<span><input style="margin-right:2px;" type="radio" name="pod" id="fond" value="1" /> FOUNDATION</span></label></div>'+
+		'<div class="pull-right"><label onclick="$(\'.btn-xs\').removeClass(\'active\');$(this).addClass(\'active\');"  class="btn btn-default btn-xs active" style="text-align:center;">'+
+		'<span><input style="margin-right:2px;" type="radio" name="pod" id="burn" value="1" checked /> BURN</span></label></div>'+'</td></tr></tbody></table>'+whtm;
+	$('.shad_').append(wht);
+	$('.shad_').show();
+	}});}); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /** REGISTER **/
 	function WLT(a){
 	web3.eth.getTransactionCount(accounts[0]).then(nonce =>{window.nonce=nonce;

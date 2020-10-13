@@ -241,7 +241,7 @@ $('.tabs-left li').on('click', function(){$('.home').removeClass('activ');});
 	$('#am_drop').on('keydown change blur paste',function(){setTimeout(function(){sogggss();},10);});
 	$('#s_amount').on('keydown change blur paste',function(){setTimeout(function(){sooggg();},10);});
 	$('#b_amount').on('keydown change blur paste',function(){setTimeout(function(){soorrr();},10);});
-	$('#gl_amt').on('keydown change blur paste',function(){setTimeout(function(){sooggt();},10);});	
+	$('#glt_amt').on('keydown change blur paste',function(){setTimeout(function(){ttsooggt();},10);});	
 	
 	
 	
@@ -350,6 +350,23 @@ $('.tabs-left li').on('click', function(){$('.home').removeClass('activ');});
 		if(vtt>1000000000){$('#gl_amt').val(1000000000);
 		vtt = parseFloat($('#gl_amt').val()).toFixed(6);}	
 		$('.erc_sum').text(+(parseFloat(vtt).toFixed(6)));}},5)};
+		
+		
+		
+		
+	function ttsooggt(){
+		setTimeout(function(){
+		if($('#glt_amt').val()==''){
+		$('.tm_sum').text('0');	
+		}else{
+		let vtt = parseFloat($('#glt_amt').val()).toFixed(6);
+		if(vtt>1000000000){$('#glt_amt').val(1000000000);
+		vtt = parseFloat($('#glt_amt').val()).toFixed(6);}	
+		$('.tm_sum').text(+(parseFloat(vtt).toFixed(6)));}},5)};
+		
+		
+		
+		
 	
 	$('#qb_amount').on('keydown change blur paste', function(){setTimeout(function(){
 		if($('#qb_amount').val()==''){
