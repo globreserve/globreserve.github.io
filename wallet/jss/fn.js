@@ -236,6 +236,14 @@ $('.tabs-left li').on('click', function(){$('.home').removeClass('activ');});
 		
 		});
 	
+	$('#dgscltt').on('click', function(){	
+		$('#glt_amt').val('');
+		$('#rcvvt').val('');
+		$('.tm_sum').text('0');
+		
+	});
+	
+	
 	$('#am_sair').on('keydown change blur paste',function(){setTimeout(function(){sogggg();},10);});
 	$('#am_air').on('keydown change blur paste',function(){setTimeout(function(){sogggss();},10);});
 	$('#am_drop').on('keydown change blur paste',function(){setTimeout(function(){sogggss();},10);});

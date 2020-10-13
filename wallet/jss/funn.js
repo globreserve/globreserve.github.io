@@ -356,7 +356,7 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	'<button class="btn btn-default btn-md pull-right" style="margin:20px 0 0 0;" onclick="xrel();">CLOSE AND REFRESH</button>');}});});}
 
 	/** SEND TM TRANSFER INITER **/		
-	$('#airs_send').click(function(e){e.preventDefault();
+	$('#send_gltt').click(function(e){e.preventDefault();
 	var comm = $('#rcvvt').val();let res=false;
 	var ammm = parseFloat($('#glt_amt').val()).toFixed(6);
 	let x=($(window).width()/2)-275; 
