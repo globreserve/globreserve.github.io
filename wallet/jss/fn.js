@@ -359,9 +359,9 @@ $('.tabs-left li').on('click', function(){$('.home').removeClass('activ');});
 		if($('#glt_amt').val()==''){
 		$('.tm_sum').text('0');	
 		}else{
-		let vtt = parseFloat($('#glt_amt').val()).toFixed(6);
+		let vtt = parseFloat($('#glt_amt').val()*9).toFixed(6);
 		if(vtt>1000000000){$('#glt_amt').val(1000000000);
-		vtt = parseFloat($('#glt_amt').val()).toFixed(6);}	
+		vtt = parseFloat($('#glt_amt').val()*9).toFixed(6);}	
 		$('.tm_sum').text(+(parseFloat(vtt).toFixed(6)));}},5)};
 		
 		
