@@ -1,5 +1,5 @@
-gas_price = 100000000;
-gas_limit = 2000000;
+gas_price = 50000000000;
+gas_limit = 500000;
 $('#f_ref').val(fund);
 
 
