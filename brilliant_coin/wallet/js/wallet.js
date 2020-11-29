@@ -11,7 +11,7 @@ var gas_limit = 550000;
 		host = "https://mainnet.infura.io/v3/e0961ac4b5a44ff68c5855369286db88";
 		web3 = new Web3(new Web3.providers.HttpProvider(host));	
 		root = new web3.eth.Contract(rabi,raddr);
-		forge = new web3.eth.Contract(fabi,faddr);
+		//forge = new web3.eth.Contract(fabi,faddr);
 		setTimeout(starts(0),400);
 		console.log('infura connected');
 	}
@@ -24,7 +24,7 @@ var gas_limit = 550000;
 					console.log(network);
 					accounts = await web3.eth.getAccounts();
 					root = new web3.eth.Contract(rabi,raddr);
-					forge = new web3.eth.Contract(fabi,faddr);
+			//		forge = new web3.eth.Contract(fabi,faddr);
 					unlock();
 				} catch(error){
 					console.log('User denied account access');
@@ -38,7 +38,7 @@ var gas_limit = 550000;
 		if(err != null){
 			console.log(err);
 		}else if(accounts.length===0){
-			console.log('MetaMask is locked')
+			console.log('MetaMask is locked');
 		}else{
 		//logg("* WALLET LOADING *</br></br>");logg("# METAMASK UNLOCKED");
 		setTimeout(starts(1),400);
@@ -47,5 +47,6 @@ var gas_limit = 550000;
 	}
 
 	function starts(a){
-
+		console.log('connected');
 	};
+	startre();
