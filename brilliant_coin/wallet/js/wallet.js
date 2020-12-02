@@ -66,8 +66,9 @@ var gas_limit = 550000;
 			}else{console.error(err);}});	
 		
 
-			});}
-	}	
+			});
+	}
+		
 
 	startre();
         $(".bcoin_call_connect").on('click', function(){metast();});
