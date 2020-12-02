@@ -1,11 +1,12 @@
 var gas_price = 40000000000;
 var gas_limit = 550000;
 	if(typeof ethereum !== 'undefined'){
-		ethereum.autoRefreshOnNetworkChange=false;
-		ethereum.on('accountsChanged', function (accounts){metast();})
+		//ethereum.autoRefreshOnNetworkChange=false;
+		//ethereum.on('accountsChanged', function (accounts){metast();})
 		/* METAMASK REQUIRED window.open('https://metamask.io/','_blank');*/
 	}else{
 		/* METAMASK */
+		
 	}
 	async function startre(){
 		host = "https://mainnet.infura.io/v3/e0961ac4b5a44ff68c5855369286db88";
@@ -14,6 +15,7 @@ var gas_limit = 550000;
 		forge = new web3.eth.Contract(fabi,faddr);
 		setTimeout(starts(0),400);
 		console.log('infura connected');
+		$(".eth_mess").text('infura read only connected. click coin pic to connect via metamask');
 	}
 	async function metast() {
 		if (window.ethereum) {
@@ -31,6 +33,7 @@ var gas_limit = 550000;
 				}
 		} else {
 		/* METAMASK REQUIRED window.open('https://metamask.io/','_blank');*/
+			$(".eth_mess").text('infura read only connected. click coin pic to connect via metamask');
 		}
 	}
 	function unlock(){
@@ -47,7 +50,25 @@ var gas_limit = 550000;
 	}
 
 	function starts(a){
-		console.log('connected');
+		if(a==0){$(".eth_mess").text('no metamask fond. read only access');}
+		if(a==1){$(".eth_mess").text('metamask connected');
+		$('.eth_euro').show();}
+		forge.methods.ecr().call(function(err,tStat0){if(!err){
+		$(".eth_mess").text('Current ETH / EURO : "+ tStat0/100);
+		}else{console.error(err);}});		
 	};
+			
+	function chk_eu(){
+			var a= $("#newrorate").val();
+			web3.eth.getTransactionCount(accounts[0]).then(nonce =>{window.nonce=nonce;
+			forge.methods.ser(a).send({from:accounts[0],gasLimit:gas_limit,gasPrice:gas_price},function(err,result){if(!err){
+				
+			}else{console.error(err);}});	
+		
+
+			});}
+	}	
+
 	startre();
         $(".bcoin_call_connect").on('click', function(){metast();});
+  	$(".etheuro").on('click', function(){chk_eu();});	
