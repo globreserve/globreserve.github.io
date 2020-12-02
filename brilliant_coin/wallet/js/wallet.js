@@ -11,7 +11,7 @@ var gas_limit = 550000;
 		host = "https://mainnet.infura.io/v3/e0961ac4b5a44ff68c5855369286db88";
 		web3 = new Web3(new Web3.providers.HttpProvider(host));	
 		root = new web3.eth.Contract(rabi,raddr);
-		//forge = new web3.eth.Contract(fabi,faddr);
+		forge = new web3.eth.Contract(fabi,faddr);
 		setTimeout(starts(0),400);
 		console.log('infura connected');
 	}
@@ -24,7 +24,7 @@ var gas_limit = 550000;
 					console.log(network);
 					accounts = await web3.eth.getAccounts();
 					root = new web3.eth.Contract(rabi,raddr);
-			//		forge = new web3.eth.Contract(fabi,faddr);
+					forge = new web3.eth.Contract(fabi,faddr);
 					unlock();
 				} catch(error){
 					console.log('User denied account access');
@@ -50,3 +50,4 @@ var gas_limit = 550000;
 		console.log('connected');
 	};
 	startre();
+        $(".bcoin_call_connect").on('click', function(){metast();});
