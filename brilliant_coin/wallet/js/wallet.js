@@ -54,7 +54,7 @@ var gas_limit = 550000;
 		if(a==1){$(".eth_mess").text('metamask connected');
 		$('.eth_euro').show();}
 		forge.methods.ecr().call(function(err,tStat0){if(!err){
-		$(".eth_mess").text('Current ETH / EURO : "+ tStat0/100);
+		$(".eth_mess").text("Current ETH / EURO : "+ tStat0/100);
 		}else{console.error(err);}});		
 	};
 			
