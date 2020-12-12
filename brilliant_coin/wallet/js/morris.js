@@ -1,10 +1,3 @@
-/* @license
-morris.js v0.5.0
-Copyright 2014 Olly Smith All rights reserved.
-Licensed under the BSD-2-Clause License.
-*/
-
-
 (function() {
   var $, Morris, minutesSpecHelper, secondsSpecHelper,
     __slice = [].slice,
@@ -169,9 +162,9 @@ Licensed under the BSD-2-Clause License.
       dateFormat: null,
       axes: true,
       grid: true,
-      gridLineColor: '#aaa',
-      gridStrokeWidth: 0.5,
-      gridTextColor: '#888',
+      gridLineColor: '#8ea',
+      gridStrokeWidth: 0.2,
+      gridTextColor: '#fff',
       gridTextSize: 12,
       gridTextFamily: 'sans-serif',
       gridTextWeight: 'normal',
@@ -187,12 +180,12 @@ Licensed under the BSD-2-Clause License.
       ymin: 'auto 0',
       goals: [],
       goalStrokeWidth: 1.0,
-      goalLineColors: ['#666633', '#999966', '#cc6666', '#663333'],
+      goalLineColors: ['#fff'],
       events: [],
       eventStrokeWidth: 1.0,
-      eventLineColors: ['#005a04', '#ccffbb', '#3a5f0b', '#005502'],
+      eventLineColors: ['#fff'],
       rangeSelect: null,
-      rangeSelectColor: '#eef',
+      rangeSelectColor: '#000',
       resize: false
     };
 
@@ -525,6 +518,7 @@ Licensed under the BSD-2-Clause License.
       for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
         goal = _ref[i];
         color = this.options.goalLineColors[i % this.options.goalLineColors.length];
+		//color='#000';
         _results.push(this.drawGoal(goal, color));
       }
       return _results;
@@ -537,7 +531,7 @@ Licensed under the BSD-2-Clause License.
       for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
         event = _ref[i];
         color = this.options.eventLineColors[i % this.options.eventLineColors.length];
-        _results.push(this.drawEvent(event, color));
+		_results.push(this.drawEvent(event, color));
       }
       return _results;
     };
@@ -840,11 +834,13 @@ Licensed under the BSD-2-Clause License.
     Line.prototype.hoverContentForRow = function(index) {
       var content, j, row, y, _i, _len, _ref;
       row = this.data[index];
-      content = "<div class='morris-hover-row-label'>" + row.label + "</div>";
+      content = "<div class='morris-hover-row-label style='color:#165bb0'>" + row.label + "</div>";
       _ref = row.y;
       for (j = _i = 0, _len = _ref.length; _i < _len; j = ++_i) {
         y = _ref[j];
-        content += "<div class='morris-hover-point' style='color: " + (this.colorFor(row, j, 'label')) + "'>\n  " + this.options.labels[j] + ":\n  " + (this.yLabelFormat(y)) + "\n</div>";
+       // content += "<div class='morris-hover-point' style='color: " + (this.colorFor(row, j, 'label')) + "'>\n  " + this.options.labels[j] + "\n  " + (this.yLabelFormat(y)) + "\n</div>";
+	   content += "<div class='morris-hover-point' style='color: " + "#165bb0" + "'>\n  " + this.options.labels[j] + "\n  " + (this.yLabelFormat(y)) + "\n</div>";
+	   
       }
       if (typeof this.options.hoverCallback === 'function') {
         content = this.options.hoverCallback(index, this.options, content, row.src);
@@ -972,7 +968,8 @@ Licensed under the BSD-2-Clause License.
         row = _ref[_i];
         circle = null;
         if (row._y[index] != null) {
-          circle = this.drawLinePoint(row._x, row._y[index], this.colorFor(row, index, 'point'), index);
+          //circle = this.drawLinePoint(row._x, row._y[index], this.colorFor(row, index, 'point'), index);
+		  circle = this.drawLinePoint(row._x, row._y[index], '#165bb0', index);
         }
         _results.push(this.seriesPoints[index].push(circle));
       }
@@ -983,7 +980,8 @@ Licensed under the BSD-2-Clause License.
       var path;
       path = this.paths[index];
       if (path !== null) {
-        return this.drawLinePath(path, this.colorFor(null, index, 'line'), index);
+       // return this.drawLinePath(path, this.colorFor(null, index, 'line'), index);
+		return this.drawLinePath(path, 'white', index);
       }
     };
 
@@ -1591,7 +1589,7 @@ Licensed under the BSD-2-Clause License.
       _ref = row.y;
       for (j = _i = 0, _len = _ref.length; _i < _len; j = ++_i) {
         y = _ref[j];
-        content += "<div class='morris-hover-point' style='color: " + (this.colorFor(row, j, 'label')) + "'>\n  " + this.options.labels[j] + ":\n  " + (this.yLabelFormat(y)) + "\n</div>";
+        content += "<div class='morris-hover-point' style='color: " + (this.colorFor(row, j, 'label')) + "'>\n  " + this.options.labels[j] + "\n  " + (this.yLabelFormat(y)) + "\n</div>";
       }
       if (typeof this.options.hoverCallback === 'function') {
         content = this.options.hoverCallback(index, this.options, content, row.src);
