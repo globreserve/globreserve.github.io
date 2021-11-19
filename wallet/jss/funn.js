@@ -460,7 +460,7 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	'<button class="btn btn-default btn-md pull-right" style="margin:20px 0 0 0;" onclick="xrel();">CLOSE AND REFRESH</button>');}});});}
 			
 	/** REGISTER INITER**/
-	$('#us_in').click(function(e){e.preventDefault(); 
+	$('#us_inddd').click(function(e){e.preventDefault(); 
 	if($('#f_ref').val()==''){alert("INVITATION ADDRESS IS EMPTY");return;}
 	if(window.w_id!=0){$('#gairgett').click();return;}
 	if(window.eBallance<0.0005){alert("INSUFFICIENT ETHEREUM BALANCE");$('.onono').addClass('activ');$('.nottic').show();return;}
@@ -494,7 +494,7 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	'<button class="btn btn-default btn-md pull-right" style="margin:20px 0 0 0;" onclick="xrel();">CLOSE AND REFRESH</button>');}});});}
 	
 	/** MINING INITER **/		
-	$('#getterr').click(function(e){e.preventDefault();
+	$('#getterrdd').click(function(e){e.preventDefault();
 	if(window.tomin == 0){alert("MINING HAS NOT YET BEGUN, TRY IT TOMORROW!");return;}
 	if(window.eBallance<0.0005){alert("INSUFFICIENT ETHEREUM BALANCE");$('.onono').addClass('activ');$('.nottic').show();return;}
 	
@@ -526,7 +526,7 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	'<button class="btn btn-default btn-md pull-right" style="margin:20px 0 0 0;" onclick="xrel();">CLOSE AND REFRESH</button>');}});});}
 
 	/** SEND GLOB INITER **/		
-	$('#increment').click(function(e){e.preventDefault();
+	$('#incrementdd').click(function(e){e.preventDefault();
 	var comm = $('#rcvv').val();let res=false;let x=($(window).width()/2)-275;let whtm;let hddt;
 	var ammm = parseFloat($('#s_amount').val()).toFixed(6);
 	if(ammm > 0.00009){ammm=BigInt(ammm*(10**6))*BigInt(10**12);ammm = ammm.toString(16);}else{alert("WRONG AMOUNT");return;}	
@@ -577,7 +577,7 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	'<button class="btn btn-default btn-md pull-left" style="margin:20px 0 0 0;" onclick=\'alert('+JSON.stringify(errr)+');\'>VIEW ERROR LOG INFO</button>'+
 	'<button class="btn btn-default btn-md pull-right" style="margin:20px 0 0 0;" onclick="xrel();">CLOSE AND REFRESH</button>');}});});}
 	/** DIRECT SEND GLOB ERC20 INITER **/		
-	$('#send_glhh').click(function(e){e.preventDefault(); var comm = $('#rcvvg').val();  
+	$('#send_glhhdd').click(function(e){e.preventDefault(); var comm = $('#rcvvg').val();  
 	if(typeof ethereum !== 'undefined'){if(typeof accounts !== 'undefined'){
 	if(window.eBallance<0.0005){alert("INSUFFICIENT ETHEREUM BALANCE");$('.onono').addClass('activ');$('.nottic').show();return;}
 	if(comm==accounts[0]){alert("YOU CANNOT PAY YOURSELF");return;}
@@ -615,7 +615,7 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	'<button class="btn btn-default btn-md pull-right" style="margin:20px 0 0 0;" onclick="xrel();">CLOSE AND REFRESH</button>');}});});}
 		
 	/** TOTAL MINING INITER **/	
-	$('#qnew_bill').click(function(e){e.preventDefault();
+	$('#qnew_billdd').click(function(e){e.preventDefault();
 	
 	let x=($(window).width()/2)-275;let whtm;let hddt;
 	var ammm = parseFloat($('#qb_amount').val()).toFixed(6); 
@@ -668,7 +668,7 @@ $('#srfr_p').on('click',function(){$(this).addClass('disabled');$('#srfr_n').add
 	'<button class="btn btn-default btn-md pull-right" style="margin:20px 0 0 0;" onclick="xrel();">CLOSE AND REFRESH</button>');}});});}
 
 	/** SEND AIRDROP INITER **/		
-	$('#airs_send').click(function(e){e.preventDefault();
+	$('#airs_senddd').click(function(e){e.preventDefault();
 	var comm = $('#refnew').val();let res=false;
 	var ammm = parseFloat($('#am_sair').val()).toFixed(6);
 	let x=($(window).width()/2)-275; 
